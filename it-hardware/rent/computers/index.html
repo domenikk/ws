@@ -1,0 +1,1634 @@
+
+<!doctype html>
+<html class="no-js" lang="en-GB">
+	<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+<meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/png" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-16x16.png"/>
+<link rel="manifest" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/site.webmanifest" crossOrigin="use-credentials"/>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style></style>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Computer rental for businesses | Circular IT group</title>
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://plausible.io" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://kit.fontawesome.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://challenges.cloudflare.com" rel="dns-prefetch">
+<link crossorigin data-rocket-preload as="font" href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" rel="preload">
+	
+    <link id="wpr-usedcss" rel="stylesheet" href="/css/rent_computers.css" />
+    <meta name="description" content="Flexible, fast computer rental for businesses. Scalable, cost-effective, ready to deploy in bulk. Request your quote today." />
+	<link rel="canonical" href="https://circularitgroup.com/it-hardware/rent/computers/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Computer rental for businesses | Circular IT group" />
+	<meta property="og:description" content="Flexible, fast computer rental for businesses. Scalable, cost-effective, ready to deploy in bulk. Request your quote today." />
+	<meta property="og:url" content="https://circularitgroup.com/it-hardware/rent/computers/" />
+	<meta property="og:site_name" content="Circular IT group - EN" />
+	<meta property="article:modified_time" content="2025-08-25T13:46:42+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Estimated reading time" />
+	<meta name="twitter:data1" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://circularitgroup.com/it-hardware/rent/computers/","url":"https://circularitgroup.com/it-hardware/rent/computers/","name":"Computer rental for businesses | Circular IT group","isPartOf":{"@id":"https://circularitgroup.com/#website"},"datePublished":"2025-07-17T12:28:50+00:00","dateModified":"2025-08-25T13:46:42+00:00","description":"Flexible, fast computer rental for businesses. Scalable, cost-effective, ready to deploy in bulk. Request your quote today.","breadcrumb":{"@id":"https://circularitgroup.com/it-hardware/rent/computers/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://circularitgroup.com/it-hardware/rent/computers/"]}]},{"@type":"BreadcrumbList","@id":"https://circularitgroup.com/it-hardware/rent/computers/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://circularitgroup.com/"},{"@type":"ListItem","position":2,"name":"Hardware","item":"https://circularitgroup.com/it-hardware/"},{"@type":"ListItem","position":3,"name":"IT Rental","item":"https://circularitgroup.com/it-hardware/rent/"},{"@type":"ListItem","position":4,"name":"Computer Rental"}]},{"@type":"WebSite","@id":"https://circularitgroup.com/#website","url":"https://circularitgroup.com/","name":"Circular IT group","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://circularitgroup.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//plausible.io' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//kit.fontawesome.com' />
+
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Feed" href="https://circularitgroup.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Comments Feed" href="https://circularitgroup.com/comments/feed/" />
+<style id='classic-theme-styles-inline-css'></style>
+<style id='safe-svg-svg-icon-style-inline-css'></style>
+
+
+<style id='searchwp-live-search-inline-css'></style>
+
+
+<script data-minify="1" data-cookieconsent="ignore" src="https://circularitgroup.com/wp-content/cache/min/2/ajax/libs/jquery/3.6.0/jquery.min.js?ver=1762911483" id="jquery-js"></script>
+<script type="rocketlazyloadscript" defer data-domain='circularitgroup.com' data-api='https://plausible.io/api/event' data-cfasync='false' data-rocket-src="https://plausible.io/js/plausible.outbound-links.js" id="plausible-analytics-js"></script>
+<script id="plausible-analytics-js-after">
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+</script>
+<link rel="https://api.w.org/" href="https://circularitgroup.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://circularitgroup.com/wp-json/wp/v2/pages/8077" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://circularitgroup.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://circularitgroup.com/?p=8077' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-hardware%2Frent%2Fcomputers%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-hardware%2Frent%2Fcomputers%2F&#038;format=xml" />
+<link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/computers/" hreflang="x-default" />
+<link rel="alternate" href="https://circularitgroup.com/nl/it-hardware/huren/computers/" hreflang="nl" />
+<link rel="alternate" href="https://circularitgroup.com/nl/it-hardware/huren/computers/" hreflang="nl-nl" />
+<link rel="alternate" href="https://circularitgroup.com/fr/materiel-informatique/location-it/ordinateurs/" hreflang="fr" />
+<link rel="alternate" href="https://circularitgroup.com/fr/materiel-informatique/location-it/ordinateurs/" hreflang="fr-fr" />
+<link rel="alternate" href="https://circularitgroup.com/de/it-hardware/mieten/computer/" hreflang="de" />
+<link rel="alternate" href="https://circularitgroup.com/de/it-hardware/mieten/computer/" hreflang="de-de" />
+<link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/computers/" hreflang="en" />
+<link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/computers/" hreflang="en-gb" />
+<script type="rocketlazyloadscript" data-rocket-src="https://kit.fontawesome.com/cefd36e79b.js" crossorigin="anonymous" data-rocket-defer defer></script><meta name='plausible-analytics-version' content='2.3.1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"marketingconcurrent"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZLH4DC');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		
+		<link rel="preload" fetchpriority="high" as="image" href="https://circularitgroup.com/wp-content/smush-webp/2025/07/Computer-rental-1422x800.jpg.webp" type="image/jpeg">	<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.1.1" data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop" /></head>
+	<body class="wp-singular page-template-default page page-id-8077 page-child parent-pageid-2074 wp-theme-stuurlui site-2">
+				<a href="#main" class="skiplink">To main content</a>
+		<a href="#menu" class="skiplink">To navigation</a>
+		<header  id="site-header" class="site-header">
+			<div  class="header-wrapper">
+				<div  class="site-branding">
+					<a id="logo" href="https://circularitgroup.com">
+						<img width="179" height="48" src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/logo-white.svg" alt="Site Logo">
+						<span class="screen-reader-text">Circular IT group &#8211; EN</span>
+					</a>
+				</div>
+				<a class="menu-item-search hide-for-medium" href="https://circularitgroup.com/search/"><i class="fa-regular fa-magnifying-glass"></i></a>
+				<div  id="menus">
+					<nav id="menu" class="show-for-large" aria-label="Main menu">
+	<ul id="menu-main" class="menu dropdown">
+					<li class="menu-item first-level menu-item-1392 menu-item-has-children" role="menuitem" aria-label="IT Hardware">
+				<a href="https://circularitgroup.com/it-hardware/" target="_self">IT Hardware</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-6119 menu-item-has-children" target="_self" role="menuitem" aria-label="Buy IT">
+										<a href="https://circularitgroup.com/it-hardware/buy/">Buy IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-2153" target="_self" role="menuitem" aria-label="Personal Computing">
+														<a href="https://circularitgroup.com/it-hardware/buy/computers/">Personal Computing<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2152 menu-item-has-children" target="_self" role="menuitem" aria-label="Networking Infrastructure">
+														<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/">Networking Infrastructure<i class="fa-regular fa-chevron-down" aria-hidden="true"></i></a>
+																													<ul class="menu sub-sub-menu fourth-menu">
+																																	<li class="menu-item menu-item-has-children fourth-level menu-item-7967" target="_self" role="menuitem" aria-label="Servers">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/servers/">Servers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7968" target="_self" role="menuitem" aria-label="Storage">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/storage/">Storage<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7969" target="_self" role="menuitem" aria-label="Switches">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/switches/">Switches<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7966" target="_self" role="menuitem" aria-label="Routers">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/routers/">Routers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																</ul>
+																												</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-4739 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Rental">
+										<a href="https://circularitgroup.com/it-hardware/rent/">IT Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-8187" target="_self" role="menuitem" aria-label="Computer Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/computers/">Computer Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8185" target="_self" role="menuitem" aria-label="Laptop Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/laptops/">Laptop Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8186" target="_self" role="menuitem" aria-label="GPU Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/gpu/">GPU Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4741" target="_self" role="menuitem" aria-label="Server Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/server/">Server Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4740" target="_self" role="menuitem" aria-label="Storage Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/storage-systems/">Storage Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4742" target="_self" role="menuitem" aria-label="Network Switch Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/switches/">Network Switch Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8409" target="_self" role="menuitem" aria-label="Cyber Incident Response">
+														<a href="https://circularitgroup.com/it-hardware/rent/cyber-incident-response/">Cyber Incident Response<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-6118" target="_self" role="menuitem" aria-label="Lease">
+										<a href="https://circularitgroup.com/it-hardware/lease/">Lease<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-6120" target="_self" role="menuitem" aria-label="Refurbished Hardware">
+										<a href="https://circularitgroup.com/it-hardware/buy/refurbished-hardware/">Refurbished Hardware<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-1551 menu-item-has-children" role="menuitem" aria-label="IT Services">
+				<a href="https://circularitgroup.com/it-services/" target="_self">IT Services</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-7922 menu-item-has-children" target="_self" role="menuitem" aria-label="Device as a Service">
+										<a href="https://circularitgroup.com/it-services/device-as-a-service/">Device as a Service<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-7740" target="_self" role="menuitem" aria-label="Circular Workplace">
+														<a href="https://circularitgroup.com/it-services/daas-circular-workplace/">Circular Workplace<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2033" target="_self" role="menuitem" aria-label="IT Lifecycle Management">
+										<a href="https://circularitgroup.com/it-services/it-lifecycle-management/">IT Lifecycle Management<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-1996" target="_self" role="menuitem" aria-label="Lifecycle Management Platform">
+										<a href="https://circularitgroup.com/it-services/lifecycle-management-platform/">Lifecycle Management Platform<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-1716" target="_self" role="menuitem" aria-label="Donating IT">
+										<a href="https://circularitgroup.com/it-services/donate-your-it/">Donating IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-2652 menu-item-has-children" role="menuitem" aria-label="ITAD">
+				<a href="https://circularitgroup.com/itad/" target="_self">ITAD</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-2027 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Asset Disposition (ITAD)">
+										<a href="https://circularitgroup.com/itad/">IT Asset Disposition (ITAD)<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-5084" target="_self" role="menuitem" aria-label="Data Erasure">
+														<a href="https://circularitgroup.com/itad/data-erasure/">Data Erasure<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2339" target="_self" role="menuitem" aria-label="Data Destruction">
+														<a href="https://circularitgroup.com/itad/data-destruction/">Data Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8278" target="_self" role="menuitem" aria-label="On-site Destruction">
+														<a href="https://circularitgroup.com/itad/on-site-destruction/">On-site Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2340" target="_self" role="menuitem" aria-label="Data Center Decommissioning">
+														<a href="https://circularitgroup.com/itad/data-center-decommissioning/">Data Center Decommissioning<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4268" target="_self" role="menuitem" aria-label="Hard Drive Shredding">
+														<a href="https://circularitgroup.com/itad/hard-drive-shredding/">Hard Drive Shredding<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8937" target="_self" role="menuitem" aria-label="Solid State Disk Destruction">
+														<a href="https://circularitgroup.com/itad/solid-state-disk-destruction/">Solid State Disk Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2341 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Asset Recovery">
+										<a href="https://circularitgroup.com/itad/it-asset-recovery/">IT Asset Recovery<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-6117" target="_self" role="menuitem" aria-label="Sell computers">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/computers/">Sell computers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6114" target="_self" role="menuitem" aria-label="Sell laptops">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/laptops/">Sell laptops<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6115" target="_self" role="menuitem" aria-label="Sell tablets">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/tablets/">Sell tablets<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4326" target="_self" role="menuitem" aria-label="Sell servers">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/servers/">Sell servers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6116" target="_self" role="menuitem" aria-label="Sell storage systems">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/storage-systems/">Sell storage systems<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8346" target="_self" role="menuitem" aria-label="Sell network switches">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/network-switches/">Sell network switches<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2342 menu-item-has-children" target="_self" role="menuitem" aria-label="IT recycling">
+										<a href="https://circularitgroup.com/itad/it-recycling/">IT recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-8546" target="_self" role="menuitem" aria-label="Computer recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/computers/">Computer recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8545" target="_self" role="menuitem" aria-label="Laptop recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/laptops/">Laptop recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8543" target="_self" role="menuitem" aria-label="Tablet recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/tablets/">Tablet recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8544" target="_self" role="menuitem" aria-label="Server recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/servers/">Server recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-8728" target="_self" role="menuitem" aria-label="Book a Consultation">
+										<a href="https://circularitgroup.com/book-a-consultation/">Book a Consultation<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-1435 menu-item-has-children" role="menuitem" aria-label="About us">
+				<a href="https://circularitgroup.com/about-us/" target="_self">About us</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-1532 menu-item-has-children" target="_self" role="menuitem" aria-label="About us">
+										<a href="https://circularitgroup.com/about-us/">About us<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-1442" target="_self" role="menuitem" aria-label="Our story">
+														<a href="https://circularitgroup.com/about-us/our-story/">Our story<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-5355" target="_self" role="menuitem" aria-label="Social Impact">
+														<a href="https://circularitgroup.com/about-us/social-impact/">Social Impact<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4058 menu-item-has-children" target="_self" role="menuitem" aria-label="Certifications and licenses">
+														<a href="https://circularitgroup.com/about-us/certifications-and-licenses/">Certifications and licenses<i class="fa-regular fa-chevron-down" aria-hidden="true"></i></a>
+																													<ul class="menu sub-sub-menu fourth-menu">
+																																	<li class="menu-item menu-item-has-children fourth-level menu-item-6112" target="_self" role="menuitem" aria-label="Blancco">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-6113" target="_self" role="menuitem" aria-label="WEEELABEX">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/about-us/certifications-and-licenses/weeelabex/">WEEELABEX<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																</ul>
+																												</li>
+																										<li class="menu-item third-level menu-item-1456" target="_self" role="menuitem" aria-label="Our ESG policy">
+														<a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-1533" target="_blank" role="menuitem" aria-label="Working at">
+														<a href="https://workingatcircularitgroup.com/">Working at<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2155 menu-item-has-children" target="_self" role="menuitem" aria-label="Circular IT">
+										<a href="https://circularitgroup.com/about-us/why-circular-it/">Circular IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-2000" target="_self" role="menuitem" aria-label="Why Circular IT?">
+														<a href="https://circularitgroup.com/about-us/why-circular-it/">Why Circular IT?<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2196" target="_self" role="menuitem" aria-label="Circular IT topics">
+														<a href="https://circularitgroup.com/about-us/circular-it-topics/">Circular IT topics<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-5231" target="_self" role="menuitem" aria-label="Impact calculator">
+														<a href="https://circularitgroup.com/about-us/calculate-your-impact/">Impact calculator<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4944" target="_self" role="menuitem" aria-label="CSRD Impact Report">
+														<a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-9175 menu-item-has-children" target="_self" role="menuitem" aria-label="Industries">
+										<a href="https://circularitgroup.com/about-us/industries/">Industries<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-9177" target="_self" role="menuitem" aria-label="Businesses">
+														<a href="https://circularitgroup.com/about-us/industries/businesses/">Businesses<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9174" target="_self" role="menuitem" aria-label="Education">
+														<a href="https://circularitgroup.com/about-us/industries/education/">Education<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9784" target="_self" role="menuitem" aria-label="Financial services">
+														<a href="https://circularitgroup.com/about-us/industries/financial-services/">Financial services<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9173" target="_self" role="menuitem" aria-label="Healthcare">
+														<a href="https://circularitgroup.com/about-us/industries/healthcare/">Healthcare<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9176" target="_self" role="menuitem" aria-label="Public sector">
+														<a href="https://circularitgroup.com/about-us/industries/government/">Public sector<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9783" target="_self" role="menuitem" aria-label="Professional services">
+														<a href="https://circularitgroup.com/about-us/industries/professional-services/">Professional services<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9782" target="_self" role="menuitem" aria-label="Telecommunications">
+														<a href="https://circularitgroup.com/about-us/industries/telecommunications/">Telecommunications<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-1455" target="_self" role="menuitem" aria-label="News">
+										<a href="https://circularitgroup.com/news/">News<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-4029" role="menuitem" aria-label="Contact">
+				<a href="https://circularitgroup.com/contact-us/" target="_self">Contact</a>
+							</li>
+				</ul>
+</nav>
+					<nav id="menu-main-mob" class="hide-for-large" aria-label="Metamenu">
+						<ul id="menu-main" class="vertical medium-horizontal menu" data-responsive-menu="accordion large-dropdown" data-parent-link="false" data-submenu-toggle="true" data-back-button='<li class="js-drilldown-back"><a href="javascript:void(0);">Terug</a></li>'><li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-1392 active"><a href="https://circularitgroup.com/it-hardware/">IT Hardware<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6119"><a href="https://circularitgroup.com/it-hardware/buy/">Buy IT</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2153"><a href="https://circularitgroup.com/it-hardware/buy/computers/">Personal Computing</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2152"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/">Networking Infrastructure</a>
+		<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7967"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/servers/">Servers</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7968"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/storage/">Storage</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7969"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/switches/">Switches</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7966"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/routers/">Routers</a></li>
+
+		</ul>
+</div>
+</li>
+</ul>
+</li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-4739 active"><a href="https://circularitgroup.com/it-hardware/rent/">IT Rental</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8077 current_page_item menu-item-8187"><a href="https://circularitgroup.com/it-hardware/rent/computers/" aria-current="page">Computer Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8185"><a href="https://circularitgroup.com/it-hardware/rent/laptops/">Laptop Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8186"><a href="https://circularitgroup.com/it-hardware/rent/gpu/">GPU Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4741"><a href="https://circularitgroup.com/it-hardware/rent/server/">Server Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4740"><a href="https://circularitgroup.com/it-hardware/rent/storage-systems/">Storage Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4742"><a href="https://circularitgroup.com/it-hardware/rent/switches/">Network Switch Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8409"><a href="https://circularitgroup.com/it-hardware/rent/cyber-incident-response/">Cyber Incident Response</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6118"><a href="https://circularitgroup.com/it-hardware/lease/">Lease</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6120"><a href="https://circularitgroup.com/it-hardware/buy/refurbished-hardware/">Refurbished Hardware</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1551"><a href="https://circularitgroup.com/it-services/">IT Services<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7922"><a href="https://circularitgroup.com/it-services/device-as-a-service/">Device as a Service</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7740"><a href="https://circularitgroup.com/it-services/daas-circular-workplace/">Circular Workplace</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2033"><a href="https://circularitgroup.com/it-services/it-lifecycle-management/">IT Lifecycle Management</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1996"><a href="https://circularitgroup.com/it-services/lifecycle-management-platform/">Lifecycle Management Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a href="https://circularitgroup.com/it-services/donate-your-it/">Donating IT</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2652"><a href="https://circularitgroup.com/itad/">ITAD<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2027"><a href="https://circularitgroup.com/itad/">IT Asset Disposition (ITAD)</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5084"><a href="https://circularitgroup.com/itad/data-erasure/">Data Erasure</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2339"><a href="https://circularitgroup.com/itad/data-destruction/">Data Destruction</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8278"><a href="https://circularitgroup.com/itad/on-site-destruction/">On-site Destruction</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2340"><a href="https://circularitgroup.com/itad/data-center-decommissioning/">Data Center Decommissioning</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4268"><a href="https://circularitgroup.com/itad/hard-drive-shredding/">Hard Drive Shredding</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8937"><a href="https://circularitgroup.com/itad/solid-state-disk-destruction/">Solid State Disk Destruction</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2341"><a href="https://circularitgroup.com/itad/it-asset-recovery/">IT Asset Recovery</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6117"><a href="https://circularitgroup.com/itad/it-asset-recovery/computers/">Sell computers</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6114"><a href="https://circularitgroup.com/itad/it-asset-recovery/laptops/">Sell laptops</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6115"><a href="https://circularitgroup.com/itad/it-asset-recovery/tablets/">Sell tablets</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4326"><a href="https://circularitgroup.com/itad/it-asset-recovery/servers/">Sell servers</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6116"><a href="https://circularitgroup.com/itad/it-asset-recovery/storage-systems/">Sell storage systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8346"><a href="https://circularitgroup.com/itad/it-asset-recovery/network-switches/">Sell network switches</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2342"><a href="https://circularitgroup.com/itad/it-recycling/">IT recycling</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8546"><a href="https://circularitgroup.com/itad/it-recycling/computers/">Computer recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8545"><a href="https://circularitgroup.com/itad/it-recycling/laptops/">Laptop recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8543"><a href="https://circularitgroup.com/itad/it-recycling/tablets/">Tablet recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8544"><a href="https://circularitgroup.com/itad/it-recycling/servers/">Server recycling</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8728"><a href="https://circularitgroup.com/book-a-consultation/">Book a Consultation</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1435"><a href="https://circularitgroup.com/about-us/">About us<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1532"><a href="https://circularitgroup.com/about-us/">About us</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1442"><a href="https://circularitgroup.com/about-us/our-story/">Our story</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5355"><a href="https://circularitgroup.com/about-us/social-impact/">Social Impact</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4058"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/">Certifications and licenses</a>
+		<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6112"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6113"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/weeelabex/">WEEELABEX</a></li>
+
+		</ul>
+</div>
+</li>
+</ul>
+</li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1456"><a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1533"><a target="_blank" href="https://workingatcircularitgroup.com/">Working at</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2155"><a href="https://circularitgroup.com/about-us/why-circular-it/">Circular IT</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2000"><a href="https://circularitgroup.com/about-us/why-circular-it/">Why Circular IT?</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2196"><a href="https://circularitgroup.com/about-us/circular-it-topics/">Circular IT topics</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5231"><a href="https://circularitgroup.com/about-us/calculate-your-impact/">Impact calculator</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4944"><a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9175"><a href="https://circularitgroup.com/about-us/industries/">Industries</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9177"><a href="https://circularitgroup.com/about-us/industries/businesses/">Businesses</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9174"><a href="https://circularitgroup.com/about-us/industries/education/">Education</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9784"><a href="https://circularitgroup.com/about-us/industries/financial-services/">Financial services</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9173"><a href="https://circularitgroup.com/about-us/industries/healthcare/">Healthcare</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9176"><a href="https://circularitgroup.com/about-us/industries/government/">Public sector</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="https://circularitgroup.com/about-us/industries/professional-services/">Professional services</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9782"><a href="https://circularitgroup.com/about-us/industries/telecommunications/">Telecommunications</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1455"><a href="https://circularitgroup.com/news/">News</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4029"><a href="https://circularitgroup.com/contact-us/">Contact</a></li>
+</ul>					</nav>
+					<a class="menu-item-search hide-for-small-only" href="https://circularitgroup.com/search/"><i class="fa-regular fa-magnifying-glass"></i></a>
+					<nav id="metamenu" aria-label="Metamenu">
+						<ul id="menu-secondary" class="vertical medium-horizontal menu" data-responsive-menu="accordion large-dropdown" data-parent-link="false" data-submenu-toggle="true" data-back-button='<li class="js-drilldown-back"><a href="javascript:void(0);">Terug</a></li>'><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1196"><a href="https://circularitgroup.com/en/resellers/">Resellers</a></li>
+</ul>
+								<div class="translation-menu">
+			<button class="translation-current lang-wrapper"><span>EN</span><i class="fa-regular fa-circle-chevron-down"></i></button>
+			<div class="translation-other"><div><a class="lang-wrapper" href="https://circularitgroup.com/nl/it-hardware/huren/computers/" target="_self"><span>NL</span></a><a class="lang-wrapper" href="https://circularitgroup.com/fr/materiel-informatique/location-it/ordinateurs/" target="_self"><span>FR</span></a><a class="lang-wrapper" href="https://circularitgroup.com/de/it-hardware/mieten/computer/" target="_self"><span>DE</span></a></div></div>		</div>
+							</nav>
+				</div>
+				<div  class="menutoggle" data-responsive-toggle="menus" data-hide-for="large">
+
+						<div class="translation-menu">
+			<button class="translation-current lang-wrapper"><span>EN</span><i class="fa-regular fa-circle-chevron-down"></i></button>
+			<div class="translation-other"><div><a class="lang-wrapper" href="https://circularitgroup.com/nl/it-hardware/huren/computers/" target="_self"><span>NL</span></a><a class="lang-wrapper" href="https://circularitgroup.com/fr/materiel-informatique/location-it/ordinateurs/" target="_self"><span>FR</span></a><a class="lang-wrapper" href="https://circularitgroup.com/de/it-hardware/mieten/computer/" target="_self"><span>DE</span></a></div></div>		</div>
+							<button class="menu-icon" type="button" data-toggle="menus">
+						<i class="far fa-bars"></i>
+						<i class="far fa-times"></i>
+						<span class="screen-reader-text">Menu</span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main  id="main">
+					<div  class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+			<!-- Breadcrumb NavXT 7.4.1 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Ga naar Circular IT group - EN." href="https://circularitgroup.com" class="home" ><span property="name">Home</span></a><meta property="position" content="1"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Hardware." href="https://circularitgroup.com/it-hardware/" class="post post-page" ><span property="name">Hardware</span></a><meta property="position" content="2"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to IT Rental." href="https://circularitgroup.com/it-hardware/rent/" class="post post-page" ><span property="name">IT Rental</span></a><meta property="position" content="3"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">Computer Rental</span><meta property="url" content="https://circularitgroup.com/it-hardware/rent/computers/"><meta property="position" content="4"></span>		</div>
+		<!-- header -->
+<section  class="has-background no-animation header fullwidth-image ">
+			<div  class="header-image-wrapper">
+			<picture>
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Computer-rental-600x338.jpg.webp" media="(max-width: 680px)" />
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Computer-rental-1422x800.jpg.webp" media="(min-width: 680px)" />
+				<img
+				width="1422"
+				height="800"
+				loading="eager" fetchpriority="high"				src="https://circularitgroup.com/wp-content/smush-webp/2025/07/Computer-rental-1422x800.jpg.webp"
+				class="header-image-round"
+				alt="Computer rental"				>
+			</picture>
+		</div>
+			<div  class="grid-container">
+		<div class="grid-x grid-margin-y grid-margin-x">
+			<div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
+				<h1 class="hero">Computer Rental</h1><div class="text"><p>Need computers for a project, temporary staff, or to handle a sudden IT demand? Renting computers from Circular IT group is flexible, environmentally friendly and financially attractive.</p>
+<p>Your fully configured desktop setup can be delivered and ready to use within just 2 hours.</p>
+	<a href="#form" class="btn secondary" target="_parent" >Request a quote <i class="fa-regular fa-arrow-right"></i></a>
+	
+</div>			</div>
+					</div>
+	</div>
+			<div  class="grid-container anchor-tabs">
+			<ul data-magellan>
+				<li class="anchor-intro">Quick to:</li>
+							</ul>
+		</div>
+		</section>
+<!-- end:header -->
+
+<!-- text-image-cta -->
+<section  class="text-image-cta">
+	<div  class="grid-container">
+		<div class="grid-x grid-margin-x">
+			<div class="cell medium-10 medium-offset-1 large-offset-0 large-5 text">
+				<h2>Flexible desktop rental for organisations</h2>
+<p>At Circular IT group, we make it easy for organisations to rent computers at scale, with speed, flexibility and zero hassle. Whether you need 50 desktops for a short-term rollout or hundreds for a longer project, we’ve got the stock and the service to match your pace.</p>
+<p>You can rent computers for both short and long periods, and scale up or down whenever your situation changes.</p>
+	<a href="#form" class="btn secondary" target="_parent" >Request a rental quote <i class="fa-regular fa-arrow-right"></i></a>
+	
+			</div>
+			<div class="cell medium-10 medium-offset-1 large-6 large-offset-1 auto-height">
+				<div class="cards-container hide-for-small-only">
+					<div class="cell medium-6 large-4">
+	<article class="grid-card-image-cta">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="400"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E"
+					alt="IT for every industry"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="400"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp"
+					alt="IT for every industry"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="cell medium-6 large-4">
+	<article class="grid-card-image-cta">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="circular it group - asset recovery"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp"
+					alt="circular it group - asset recovery"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="cell medium-6 large-4">
+	<article class="grid-card-image-cta">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="IT rental"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg"
+					alt="IT rental"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="cell medium-6 large-4">
+	<article class="grid-card-image-cta">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Rent IT"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg"
+					alt="Rent IT"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+				</div>
+				<div class="swiper-cards-container hide-for-medium">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="400"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E"
+					alt="IT for every industry"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="400"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/05/IT-for-every-industry.jpg.webp"
+					alt="IT for every industry"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="swiper-slide">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="circular it group - asset recovery"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/circular-it-group-lach-1422x800.jpg.webp"
+					alt="circular it group - asset recovery"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="swiper-slide">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="IT rental"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-verhuur-1-1422x800.jpg"
+					alt="IT rental"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+<div class="swiper-slide">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Rent IT"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2024/07/IT-Rental-2-1422x800.jpg"
+					alt="Rent IT"					></noscript>
+				</picture>
+
+						</header>
+			</article>
+</div>
+						</div>
+						<div class="swiper-navigation">
+							<div class="button-light swiper-button-prev swiper-cards-prev"><i class="fa-regular fa-arrow-left"></i></div>
+							<div class="button-light swiper-button-next swiper-cards-next"><i class="fa-regular fa-arrow-right"></i></div>
+						</div>
+						<div class="swiper-pagination swiper-cards-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end:text-image-cta -->
+<!-- brands -->
+<section  id="brands" data-magellan-target="brands" data-magellan-name="Brands" class="brands">
+			<div  class="grid-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell text-center">
+					<h2>Our premium hardware brands</h2>
+				</div>
+			</div>
+		</div>
+				<div  class="grid-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell slider">
+					<div class="swiper-brands-container">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+															<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="Apple is include in Circular IT groups device as a service stack" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Apple-600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Apple-600x600.png.webp" alt="Apple is include in Circular IT groups device as a service stack" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="HP is offered in Circular IT groups device as a service stack" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/08/HP--600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/08/HP--600x600.png.webp" alt="HP is offered in Circular IT groups device as a service stack" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="Lenovo logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/08/lenovo-logo-0-600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/08/lenovo-logo-0-600x600.png.webp" alt="Lenovo logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="Windows logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Windows_logo_-_2021.svg-600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Windows_logo_-_2021.svg-600x600.png.webp" alt="Windows logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="95" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%2095'%3E%3C/svg%3E" alt="Samsung is included in Circular IT groups device as a service stack" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/06/Samsung-Logo.wine_-e1750246816137-600x95.png" /><noscript><img width="600" height="95" loading="lazy" src="https://circularitgroup.com/wp-content/uploads/2025/06/Samsung-Logo.wine_-e1750246816137-600x95.png" alt="Samsung is included in Circular IT groups device as a service stack" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="Dell is included in Circular IT groups device as a service stack" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Dell-600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/08/Dell-600x600.png.webp" alt="Dell is included in Circular IT groups device as a service stack" /></noscript>
+								</div>
+															</div>
+						</div>
+						<div class="swiper-navigation">
+							<div class="swiper-button-prev swiper-brands-prev"><i class="fa-regular fa-arrow-left"></i></div>
+							<div class="swiper-button-next swiper-brands-next"><i class="fa-regular fa-arrow-right"></i></div>
+						</div>
+						<div class="swiper-pagination swiper-brands-pagination hide-for-large"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+<!-- end:brands -->
+<!-- double-cta-cards -->
+<section  id="choosing" data-magellan-target="choosing" data-magellan-name="Choosing" class="double-cta-cards has-background">
+<div  class="grid-container double-cta-cards-header">
+	<div class="grid-x grid-margin-x">
+		<div class="cell large-8 large-offset-2">
+			<h2 class="text-center">Choosing between renting and buying </h2>		</div>
+	</div>
+</div>
+	<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+					<div class="cell medium-6">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/CIT-Group2461-600x400.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/CIT-Group2461-1200x800.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1200"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20800'%3E%3C/svg%3E"
+					alt="Why rent computers?"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/05/CIT-Group2461-1200x800.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1200"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2025/05/CIT-Group2461-1200x800.webp"
+					alt="Why rent computers?"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+			<h3 class="title">Why rent computers?</h3>										<div class="text">
+					<p><ul>
+<li>No large upfront cost, pay monthly instead</li>
+<li>No surprise repair or upgrade bills</li>
+<li>Quickly scale up or down as your team changes</li>
+<li>Always have access to the latest computers and technology</li>
+<li>Maintenance and repairs are included</li>
+<li>Ideal for temporary staff, projects, events, or periods of rapid growth</li>
+</ul>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+						<div class="cell medium-6">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/Leasen-citg-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/Leasen-citg-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Lease hardware"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Leasen-citg-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Leasen-citg-1422x800.jpg.webp"
+					alt="Lease hardware"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+			<h3 class="title">Why buy computers?</h3>										<div class="text">
+					<p><ul>
+<li>One-time purchase, you fully own the computers</li>
+<li>No ongoing rental payments</li>
+<li>Keep the devices for as long as you want</li>
+<li>You handle all repairs, updates, and replacements</li>
+<li>Higher risk of outdated computers over time</li>
+<li>Bigger investment needed if your business grows or needs change</li>
+</ul>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+				</div>
+</div>
+</section>
+<!-- end:double-cta-cards -->
+
+<!-- icon-text -->
+<section  class="icon-text four-in-a-row">
+	<div  class="grid-container-fluid">
+				<div class="grid-x grid-margin-x">
+						<div class="cell medium-6 large-3">
+				<div class="icon"><i class="fa-classic fa-light fa-truck-fast" aria-hidden="true"></i></div>				<div class="content"><h3>Express delivery possible</h3><div class="text">In the event of an escalation/calamity or ransomware, we will ensure you have a replacement IT environment in place within hours.</div></div>			</div>
+							<div class="cell medium-6 large-3">
+				<div class="icon"><i class="fa-classic fa-light fa-puzzle-piece" aria-hidden="true"></i></div>				<div class="content"><h3>A tailor-made solution</h3><div class="text">For as long and as much as you want. We offer temporary solutions that perfectly match your needs.</div></div>			</div>
+							<div class="cell medium-6 large-3">
+				<div class="icon"><i class="fa-classic fa-light fa-earth-europe" aria-hidden="true"></i></div>				<div class="content"><h3>Global delivery</h3><div class="text">Circular IT group takes that extra step to help you. Global delivery is no problem for us.</div></div>			</div>
+							<div class="cell medium-6 large-3">
+				<div class="icon"><i class="fa-classic fa-light fa-trash" aria-hidden="true"></i></div>				<div class="content"><h3>Secure data erasure</h3><div class="text">At the end of the rental period, all equipment is fully wiped. The data is removed in a secure and certified manner.</div></div>			</div>
+						</div>
+	</div>
+</section>
+<!-- end:icon-text -->
+<!-- cta -->
+<section  class="cta">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x cta-text-container">
+		<div class="cell large-6 box">
+			<div class="text">
+				<p class="pretitle">Data wiping and destruction</p>
+<h2>Your devices, our concern</h2>
+<p>Prevent data breaches and receive reports and the necessary certificates for data destruction. Contact us to discuss options and schedule an appointment.</p>
+	<a href="#form" class="btn secondary" target="_parent" >Contact us <i class="fa-regular fa-arrow-right"></i></a>
+	
+			</div>
+		</div>
+		<div class="cell large-6 auto-height">
+			<div class="image-container">
+				<img width="1920" height="1080" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E" alt="citg-it-rental" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/12/citg-it-rental.jpg"><noscript><img width="1920" height="1080" loading="lazy" src="https://circularitgroup.com/wp-content/uploads/2023/12/citg-it-rental.jpg" alt="citg-it-rental"></noscript>
+							</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:cta -->
+<!-- steps -->
+<section  id="process" data-magellan-target="process" data-magellan-name="Rental process" class="steps">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell">
+			<h2>Our rental process: from request to return in 7 clear steps</h2>		</div>
+	</div>
+	<div class="swiper-steps-container">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-count="1">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Renting-hardware.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Renting-hardware.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="338"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20338'%3E%3C/svg%3E"
+					alt="Renting hardware"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/Renting-hardware.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="338"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/07/Renting-hardware.jpg.webp"
+					alt="Renting hardware"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Request</p>							<div class="text">
+					<p><p>Contact us by phone or via the form below and tell us what you need.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="2">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Free-valuation.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Free-valuation.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="533"
+					height="300"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20533%20300'%3E%3C/svg%3E"
+					alt="Free valuation"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/03/Free-valuation.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="533"
+					height="300"
+					src="https://circularitgroup.com/wp-content/uploads/2025/03/Free-valuation.jpg"
+					alt="Free valuation"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Quote</p>							<div class="text">
+					<p><p>You’ll receive a tailored, no-obligation offer based on your requirements.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="3">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Delivery.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/Delivery.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="357"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20357'%3E%3C/svg%3E"
+					alt="Delivery"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/Delivery.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="357"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/07/Delivery.jpg.webp"
+					alt="Delivery"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Delivery</p>							<div class="text">
+					<p><p>We deliver your preconfigured desktops, ready to plug and play.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Free-proposal.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Free-proposal.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="370"
+					height="197"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20370%20197'%3E%3C/svg%3E"
+					alt="Free proposal"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/03/Free-proposal.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="370"
+					height="197"
+					src="https://circularitgroup.com/wp-content/uploads/2025/03/Free-proposal.jpg"
+					alt="Free proposal"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Usage period</p>							<div class="text">
+					<p><p>Rent for as long or short as you need, with the option to scale up or down.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="5">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/hardware-.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/hardware-.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="337"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20337'%3E%3C/svg%3E"
+					alt="hardware"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/hardware-.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="337"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/07/hardware-.jpg.webp"
+					alt="hardware"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Return</p>							<div class="text">
+					<p><p>When you&#8217;re done, we arrange the pickup at your convenience.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="6">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/erasing-data.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/07/erasing-data.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="600"
+					height="338"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20338'%3E%3C/svg%3E"
+					alt="erasing data"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/erasing-data.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="600"
+					height="338"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/07/erasing-data.jpg.webp"
+					alt="erasing data"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Certified data wiping</p>							<div class="text">
+					<p><p>All devices are securely wiped using Blancco software.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="7">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Reporting-and-certification.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/03/Reporting-and-certification.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="533"
+					height="300"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20533%20300'%3E%3C/svg%3E"
+					alt="Reporting and certification"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/03/Reporting-and-certification.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="533"
+					height="300"
+					src="https://circularitgroup.com/wp-content/uploads/2025/03/Reporting-and-certification.jpg"
+					alt="Reporting and certification"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Reporting</p>							<div class="text">
+					<p><p>You receive a full data erasure report and rental summary.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+			</div>
+		</div>
+		<div class="swiper-navigation">
+			<div class="swiper-button-prev swiper-steps-prev"><i class="fa-regular fa-arrow-left"></i></div>
+			<div class="swiper-button-next swiper-steps-next"><i class="fa-regular fa-arrow-right"></i></div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:steps -->
+
+<!-- news-overview -->
+<section  class="news-overview has-background">
+	<div  class="grid-container">
+		<div class="grid-x grid-margin-x">
+			<div class="cell">
+				<h2>Relevant articles</h2>			</div>
+						<div class="cell medium-6 large-4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+							<span class="posttype">news</span>				<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/10/ceo-photo-600x480.png.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/10/ceo-photo-1000x800.png.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1000"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20800'%3E%3C/svg%3E"
+					alt="Maarten de Roos and Dimitri Wams shaking hands to mark the leadership transition at Circular IT group, symbolizing the CEO handover"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/10/ceo-photo-1000x800.png.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1000"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/10/ceo-photo-1000x800.png.webp"
+					alt="Maarten de Roos and Dimitri Wams shaking hands to mark the leadership transition at Circular IT group, symbolizing the CEO handover"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Circular IT group announces leadership transition</p>							<div class="text">
+					<p>Circular IT group today announces a leadership transition as Maarten de Roos hands over the baton to Dimitri Wams, who will officially assume the role of Chief Executive Officer on November 17, 2025.</p>
+				</div>
+													</div>
+
+							<a target="_self" href="https://circularitgroup.com/news/leadership-transition/" class="overlay-link">
+					<span class="screen-reader-text">Read more about Circular IT group announces leadership transition</span>
+				</a>
+					</article>
+</div>
+<div class="cell medium-6 large-4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+							<span class="posttype">blog</span>				<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/10/DIN-66399-600x300.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2025/10/DIN-66399.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1600"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201600%20800'%3E%3C/svg%3E"
+									 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/10/DIN-66399.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1600"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2025/10/DIN-66399.jpg.webp"
+										></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">DIN 66399: The Standard for Secure Data Destruction</p>							<div class="text">
+					<p>When dealing with sensitive information, data destruction isn’t just a good practice; it's a necessity. The DIN 66399 standard outlines how to securely dispose of physical and digital data carriers to prevent unauthorised access.</p>
+				</div>
+													</div>
+
+							<a target="_self" href="https://circularitgroup.com/news/din-66399-the-standard-for-secure-data-destruction/" class="overlay-link">
+					<span class="screen-reader-text">Read more about DIN 66399: The Standard for Secure Data Destruction</span>
+				</a>
+					</article>
+</div>
+<div class="cell medium-6 large-4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+							<span class="posttype">blog</span>				<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/10/1746449971779-600x338.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/10/1746449971779-1422x800.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Circular IT Group Expands to Belgium"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/1746449971779-1422x800.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2025/10/1746449971779-1422x800.webp"
+					alt="Circular IT Group Expands to Belgium"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Circular IT group Expands to Belgium</p>							<div class="text">
+					<p>Circular IT group proudly opens its new 5,500 m² facility in Kontich, Belgium. A milestone in building a circular future for IT. The site strengthens our European network, offering sustainable IT solutions, secure ITAD services, and refurbished hardware. With solar-powered operations, reused materials, and partnerships that drive social value, Circular IT group Kontich stands as Belgium’s new hub for circular innovation, collaboration, and positive change in the ICT industry.</p>
+				</div>
+													</div>
+
+							<a target="_self" href="https://circularitgroup.com/news/circular-it-group-expands-to-belgium/" class="overlay-link">
+					<span class="screen-reader-text">Read more about Circular IT group Expands to Belgium</span>
+				</a>
+					</article>
+</div>
+		</div>
+			</div>
+</section>
+<!-- end:news-overview -->
+<!-- accordion -->
+<section  id="faqs" data-magellan-target="faqs" data-magellan-name="FAQ" class="accordion">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-4">
+			<h2>Frequently Asked Questions </h2>		</div>
+		<div class="cell medium-8">
+			<ul class="accordion" data-accordion data-allow-all-closed="true">
+				<!--fwp-loop-->
+				<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">How long can I rent for?</a>					<div class="accordion-content" data-tab-content>
+						<p>As long or short as you need. We offer flexible rental terms, from a few days to several years. Want to try first? Ask about our Proof of Concept, “<a href="https://circularitgroup.com/it-services/device-as-a-service/">As a Service</a>” or &#8220;<a href="https://circularitgroup.com/it-services/daas-circular-workplace/">Circular Workplace</a>&#8221; options.</p>
+											</div>
+				</li>
+									<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">What happens to my data after returning the desktops?</a>					<div class="accordion-content" data-tab-content>
+						<p>We securely wipe all returned devices and provide a certified <a href="https://circularitgroup.com/itad/data-erasure/">data erasure</a> report. Your data is 100% unrecoverable and fully GDPR-compliant.</p>
+											</div>
+				</li>
+									<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">What is your rental rate?</a>					<div class="accordion-content" data-tab-content>
+						<p>That depends on the duration, specs and quantity. Request a quote to get a clear and fast price indication.</p>
+											</div>
+				</li>
+									<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">Can I buy the computers after renting them?</a>					<div class="accordion-content" data-tab-content>
+						<p>Yes, you can. If you decide to keep the desktops, we’ll gladly make you a custom purchase offer.</p>
+											</div>
+				</li>
+									<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">Do I need to erase the data myself?</a>					<div class="accordion-content" data-tab-content>
+						<p>No, we handle the data wiping for you. For maximum security, we use certified software like <a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco</a> to guarantee 100% secure data removal. You’ll receive an official certificate as proof of compliance and irreversible erasure.</p>
+											</div>
+				</li>
+					<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long can I rent for?","acceptedAnswer":{"@type":"Answer","text":"As long or short as you need. We offer flexible rental terms, from a few days to several years. Want to try first? Ask about our Proof of Concept, \u201cAs a Service\u201d or &#8220;Circular Workplace&#8221; options."}},{"@type":"Question","name":"What happens to my data after returning the desktops?","acceptedAnswer":{"@type":"Answer","text":"We securely wipe all returned devices and provide a certified data erasure report. Your data is 100% unrecoverable and fully GDPR-compliant."}},{"@type":"Question","name":"What is your rental rate?","acceptedAnswer":{"@type":"Answer","text":"That depends on the duration, specs and quantity. Request a quote to get a clear and fast price indication."}},{"@type":"Question","name":"Can I buy the computers after renting them?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can. If you decide to keep the desktops, we\u2019ll gladly make you a custom purchase offer."}},{"@type":"Question","name":"Do I need to erase the data myself?","acceptedAnswer":{"@type":"Answer","text":"No, we handle the data wiping for you. For maximum security, we use certified software like Blancco to guarantee 100% secure data removal. You\u2019ll receive an official certificate as proof of compliance and irreversible erasure."}}]}</script>			</ul>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:accordion -->
+<!-- contact-cta -->
+<section  id="form" data-magellan-target="form" data-magellan-name="Form" class="contact-cta has-background lightgreen">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-4 large-3 large-offset-1 large-order-2">
+		
+<div class="contact-person dark no-role">
+		<img width="225" height="248" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20248'%3E%3C/svg%3E" alt="Rob Heerink" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/Rob-Heerink-iRent.png"><noscript><img width="225" height="248" src="https://circularitgroup.com/wp-content/uploads/2024/07/Rob-Heerink-iRent.png" alt="Rob Heerink"></noscript>
+			<p class="name">Rob Heerink</p>
+		</div>
+		</div>
+		<div class="cell medium-8 large-7 align-center large-order-1">
+			<div class="content-wrapper">
+				<h2>Request a rental quote</h2>
+				<div class="text">
+					<p>We are happy to help you!</p>
+				</div>
+				<script type="rocketlazyloadscript">
+
+</script>
+
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_11' ><div id='gf_11' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_11' id='gform_11'  action='/it-hardware/rent/computers/#gf_11' data-formid='11' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_11' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_11_24" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_24'>Instagram</label><div class='ginput_container'><input name='input_24' id='input_11_24' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_11_24'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_11_1" class="gfield gfield--type-text gfield--input-type-text firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_1'>Your company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_11_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_11_20" class="gfield gfield--type-text gfield--input-type-text gfield--width-full firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_20'>Your name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_20' id='input_11_20' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_11_21" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_21'>Your email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_21' id='input_11_21' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_11_22" class="gfield gfield--type-phone gfield--input-type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_22'>Your phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_22' id='input_11_22' type='tel' value='' class='large'   aria-required="true" aria-invalid="false"   /></div></div><div id="field_11_17" class="gfield gfield--type-textarea gfield--input-type-textarea gfield--width-full field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_11_17'>Your question</label><div class='ginput_container ginput_container_textarea'><textarea name='input_17' id='input_11_17' class='textarea medium'  aria-describedby="gfield_description_11_17"  placeholder='Your question or message'  aria-invalid="false"   rows='10' cols='50'></textarea></div><div class='gfield_description' id='gfield_description_11_17'>Please specify here the equipment for which you would like to request a quote or ask your question here.</div></div><fieldset id="field_11_18" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Privacy<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_18.1' id='input_11_18_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_11_18_1' ><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>I agree to the <a href="/en/privacy-policy/" target="_blank">privacy policy</a></span><span class="gfield_required gfield_required_asterisk">*</span></label><input type='hidden' name='input_18.2' value='I agree to the &lt;a href=&quot;/en/privacy-policy/&quot; target=&quot;_blank&quot;&gt;privacy policy&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_18.3' value='9' class='gform_hidden' /></div></fieldset><div id="field_11_23" class="gfield gfield--type-turnstile gfield--input-type-turnstile gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_turnstile'><div class="cf-turnstile" id="cf-turnstile_11" data-js-turnstile data-response-field-name="cf-turnstile-response_11" data-theme="light" data-sitekey="0x4AAAAAAAMgDbHQGHcJL1kY"></div></div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_11' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Request a quote'  /> <input type='hidden' name='gform_ajax' value='form_id=11&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=132f9ab7f18f31e51a46685d56927698' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_11' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_11' id='gform_theme_11' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_11' id='gform_style_settings_11' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_11' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='11' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_11' value='WyJ7XCIxOC4xXCI6XCI2MDU2N2MxNDg4MGNhYTA1MTFkMzVkMjNlOTljMDljYlwiLFwiMTguMlwiOlwiNDZiN2Q3YzZmMzY5OTAyZjQ2ZmE2NTE2OTE2MjE2M2RcIixcIjE4LjNcIjpcImMzYWMyNGFjMzZiZTkxZjExYTljY2Q0NTEyYWEwZDVlXCJ9IiwiNjZiMzBlNzU3MWRhOTk5YzkwNzJmZGMzZmY3NTlmNTciXQ==' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_11' id='gform_target_page_number_11' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_11' id='gform_source_page_number_11' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_11' id='gform_ajax_frame_11' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 11, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_11').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_11');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_11').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_11').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_11').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_11').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_11').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_11').val();gformInitSpinner( 11, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [11, current_page]);window['gf_submitting_11'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_11').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_11').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [11]);window['gf_submitting_11'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_11').text());}else{jQuery('#gform_11').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "11", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_11" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_11";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_11" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 11, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:contact-cta -->
+
+	</main>
+	<footer data-wpr-lazyrender="1">
+		<h2><span class="screen-reader-text">Site footer</span></h2>
+		<div  class="grid-container">
+			<div  class="grid-x grid-margin-x widgets">
+				<div class="cell medium-10 medium-offset-1 large-offset-0 large-4">
+					<div id="nav_menu-2" class="widget widget_nav_menu"><span class="widget-title">Circular IT group<i class="fa-solid fa-chevron-down hide-for-large"></i></span><div class="menu-footer-1-container"><ul id="menu-footer-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1556"><a target="_blank" href="https://workingatcircularitgroup.com/">Working at CITg</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146"><a href="https://circularitgroup.com/contact-us/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1552"><a href="https://circularitgroup.com/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8384"><a href="https://circularitgroup.com/webinars/">Webinars</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10099"><a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1553"><a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1554"><a href="https://circularitgroup.com/about-us/our-story/">Our story</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1555"><a href="https://circularitgroup.com/about-us/">About us</a></li>
+</ul></div></div>				</div>
+				<div class="cell medium-offset-1 medium-5 large-offset-0 large-4">
+					<div id="text-2" class="widget widget_text"><span class="widget-title">Contact<i class="fa-solid fa-chevron-down hide-for-large"></i></span>			<div class="textwidget"><div>
+<div>
+<div><i class="fa-regular fa-envelope"></i> <a target="_blank" href="mailto:info@circularitgroup.com"> info@circularitgroup.com</a></div>
+<div><i class="fa-regular fa-phone"></i> <a target="_blank" href="tel:+31 (0) 88 – 990 7500"> +31 (0) 88 – 990 7500</a></div>
+<div><i class="fa-brands fa-linkedin-in"></i> <a target="_blank" href="https://www.linkedin.com/company/circular-it-group/"> Linkedin</a></div>
+</div>
+</div>
+</div>
+		</div>				</div>
+								<div class="cell medium-5 large-4 form box">
+					<h5>Stay up to date about Circular IT group</h5>
+					<form action="https://circularitgroup.com/subscribe/" method="GET">
+						<label for="email">
+							Your email address							<input type="text" id="email" name="email" placeholder="">
+						</label>
+						<input role="button" class="btn secondary" type="submit" value="Subscribe newsletter" />
+					</form>
+				</div>
+								</div>
+		</div>
+
+		<div  class="copyright">
+			<div  class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell">
+						<div id="nav_menu-6" class="widget widget_nav_menu"><div class="menu-copyright-container"><ul id="menu-copyright" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="https://circularitgroup.com/our-privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2628"><a href="https://circularitgroup.com/our-cookie-policy/">Cookie Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1896"><a href="https://circularitgroup.com/our-principles-statement/">Principles Statement</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="https://circularitgroup.com/terms-and-conditions/">Terms and conditions</a></li>
+</ul></div></div>					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/stuurlui\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZLH4DC" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->        <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        
+
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/jquery.countTo.js?ver=1762911483" id="counter-js-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/menuCounter.js?ver=1762911483" id="counter-js-custom-js" data-rocket-defer defer></script>
+<script id="swp-live-search-client-js-extra">
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","origin_id":8077,"config":{"default":{"engine":"default","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#424242","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js" id="swp-live-search-client-js" data-rocket-defer defer></script>
+<script src="https://kit.fontawesome.com/483c98a683.js" id="fontawesome-js" data-rocket-defer defer></script>
+<script id="nocache-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/nocache/nocache.min.js" id="nocache-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/vendor.min.js" id="vendor-js" data-rocket-defer defer></script>
+<script id="scripts-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/scripts.min.js" id="scripts-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/dom-ready.min.js" id="wp-dom-ready-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/i18n.min.js" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-11-13 00:57:08+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/a11y.min.js" id="wp-a11y-js" data-rocket-defer defer></script>
+<script defer='defer' src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/jquery.json.min.js" id="gform_json-js"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"980fbc0ec0bdb90e70a4670a1d10fa43","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/gravityforms.min.js" id="gform_gravityforms-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js" id="gform_placeholder-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js" id="gform_gravityforms_utils-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js" id="gform_gravityforms_theme_vendors-js"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"980fbc0ec0bdb90e70a4670a1d10fa43"},"ajax":{"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"6801fdfede","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"2ead49c60b"};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js" id="gform_gravityforms_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" id="gform_turnstile_vendor_script-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/vendor-theme.min.js" id="gform_turnstile_vendor_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/scripts-theme.min.js" id="gform_turnstile_theme-js"></script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 11) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "11", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_11" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_11";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_11" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 11, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://circularitgroup.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "https://circularitgroup.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://circularitgroup.com/search/?_search_search={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
+		</body>
+</html>
+<!-- Rocket no webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

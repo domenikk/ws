@@ -1,0 +1,1152 @@
+
+<!doctype html>
+<html class="no-js" lang="en-GB">
+	<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+<meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/png" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-16x16.png"/>
+<link rel="manifest" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/site.webmanifest" crossOrigin="use-credentials"/>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style></style>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Donating IT | Circular IT group</title>
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://plausible.io" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://kit.fontawesome.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://challenges.cloudflare.com" rel="dns-prefetch">
+<link crossorigin data-rocket-preload as="font" href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" rel="preload">
+<link crossorigin data-rocket-preload as="font" href="https://circularitgroup.com/wp-content/plugins/gravityforms/fonts/gform-icons-theme.woff2?o6rzdt" rel="preload">
+	
+    <link id="wpr-usedcss" rel="stylesheet" href="/css/donate-it.css" />
+    <meta name="description" content="ITdonations Foundation, an initiative of Circular IT group, makes donating IT easy, transparent and secure." />
+	<link rel="canonical" href="https://circularitgroup.com/it-services/donate-your-it/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Donating IT | Circular IT group" />
+	<meta property="og:description" content="ITdonations Foundation, an initiative of Circular IT group, makes donating IT easy, transparent and secure." />
+	<meta property="og:url" content="https://circularitgroup.com/it-services/donate-your-it/" />
+	<meta property="og:site_name" content="Circular IT group - EN" />
+	<meta property="article:modified_time" content="2025-08-13T14:38:04+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Estimated reading time" />
+	<meta name="twitter:data1" content="4 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://circularitgroup.com/it-services/donate-your-it/","url":"https://circularitgroup.com/it-services/donate-your-it/","name":"Donating IT | Circular IT group","isPartOf":{"@id":"https://circularitgroup.com/#website"},"datePublished":"2023-09-13T12:26:16+00:00","dateModified":"2025-08-13T14:38:04+00:00","description":"ITdonations Foundation, an initiative of Circular IT group, makes donating IT easy, transparent and secure.","breadcrumb":{"@id":"https://circularitgroup.com/it-services/donate-your-it/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://circularitgroup.com/it-services/donate-your-it/"]}]},{"@type":"BreadcrumbList","@id":"https://circularitgroup.com/it-services/donate-your-it/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://circularitgroup.com/"},{"@type":"ListItem","position":2,"name":"IT Services","item":"https://circularitgroup.com/it-services/"},{"@type":"ListItem","position":3,"name":"Donating IT"}]},{"@type":"WebSite","@id":"https://circularitgroup.com/#website","url":"https://circularitgroup.com/","name":"Circular IT group","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://circularitgroup.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//plausible.io' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//kit.fontawesome.com' />
+
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Feed" href="https://circularitgroup.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Comments Feed" href="https://circularitgroup.com/comments/feed/" />
+<style id='classic-theme-styles-inline-css'></style>
+<style id='safe-svg-svg-icon-style-inline-css'></style>
+
+
+<style id='searchwp-live-search-inline-css'></style>
+
+
+<script data-minify="1" data-cookieconsent="ignore" src="https://circularitgroup.com/wp-content/cache/min/2/ajax/libs/jquery/3.6.0/jquery.min.js?ver=1762911483" id="jquery-js"></script>
+<script type="rocketlazyloadscript" defer data-domain='circularitgroup.com' data-api='https://plausible.io/api/event' data-cfasync='false' data-rocket-src="https://plausible.io/js/plausible.outbound-links.js" id="plausible-analytics-js"></script>
+<script id="plausible-analytics-js-after">
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+</script>
+<link rel="https://api.w.org/" href="https://circularitgroup.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://circularitgroup.com/wp-json/wp/v2/pages/1698" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://circularitgroup.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://circularitgroup.com/?p=1698' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-services%2Fdonate-your-it%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-services%2Fdonate-your-it%2F&#038;format=xml" />
+<link rel="alternate" href="https://circularitgroup.com/it-services/donate-your-it/" hreflang="x-default" />
+<link rel="alternate" href="https://circularitgroup.com/nl/it-diensten/it-doneren/" hreflang="nl" />
+<link rel="alternate" href="https://circularitgroup.com/nl/it-diensten/it-doneren/" hreflang="nl-nl" />
+<link rel="alternate" href="https://circularitgroup.com/fr/services/it-donations/" hreflang="fr" />
+<link rel="alternate" href="https://circularitgroup.com/fr/services/it-donations/" hreflang="fr-fr" />
+<link rel="alternate" href="https://circularitgroup.com/de/it-dienstleistungen/it-spenden/" hreflang="de" />
+<link rel="alternate" href="https://circularitgroup.com/de/it-dienstleistungen/it-spenden/" hreflang="de-de" />
+<link rel="alternate" href="https://circularitgroup.com/it-services/donate-your-it/" hreflang="en" />
+<link rel="alternate" href="https://circularitgroup.com/it-services/donate-your-it/" hreflang="en-gb" />
+<script type="rocketlazyloadscript" data-rocket-src="https://kit.fontawesome.com/cefd36e79b.js" crossorigin="anonymous" data-rocket-defer defer></script><meta name='plausible-analytics-version' content='2.3.1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Lienke Lemmen"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZLH4DC');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		
+		<link rel="preload" fetchpriority="high" as="image" href="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITdonations-IT-doneren-1200x800.jpg.webp" type="image/jpeg">	<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.1.1" data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop" /></head>
+	<body class="wp-singular page-template-default page page-id-1698 page-child parent-pageid-1543 wp-theme-stuurlui site-2">
+				<a href="#main" class="skiplink">To main content</a>
+		<a href="#menu" class="skiplink">To navigation</a>
+		<header  id="site-header" class="site-header">
+			<div  class="header-wrapper">
+				<div  class="site-branding">
+					<a id="logo" href="https://circularitgroup.com">
+						<img width="179" height="48" src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/logo-white.svg" alt="Site Logo">
+						<span class="screen-reader-text">Circular IT group &#8211; EN</span>
+					</a>
+				</div>
+				<a class="menu-item-search hide-for-medium" href="https://circularitgroup.com/search/"><i class="fa-regular fa-magnifying-glass"></i></a>
+				<div  id="menus">
+					<nav id="menu" class="show-for-large" aria-label="Main menu">
+	<ul id="menu-main" class="menu dropdown">
+					<li class="menu-item first-level menu-item-1392 menu-item-has-children" role="menuitem" aria-label="IT Hardware">
+				<a href="https://circularitgroup.com/it-hardware/" target="_self">IT Hardware</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-6119 menu-item-has-children" target="_self" role="menuitem" aria-label="Buy IT">
+										<a href="https://circularitgroup.com/it-hardware/buy/">Buy IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-2153" target="_self" role="menuitem" aria-label="Personal Computing">
+														<a href="https://circularitgroup.com/it-hardware/buy/computers/">Personal Computing<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2152 menu-item-has-children" target="_self" role="menuitem" aria-label="Networking Infrastructure">
+														<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/">Networking Infrastructure<i class="fa-regular fa-chevron-down" aria-hidden="true"></i></a>
+																													<ul class="menu sub-sub-menu fourth-menu">
+																																	<li class="menu-item menu-item-has-children fourth-level menu-item-7967" target="_self" role="menuitem" aria-label="Servers">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/servers/">Servers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7968" target="_self" role="menuitem" aria-label="Storage">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/storage/">Storage<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7969" target="_self" role="menuitem" aria-label="Switches">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/switches/">Switches<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-7966" target="_self" role="menuitem" aria-label="Routers">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/routers/">Routers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																</ul>
+																												</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-4739 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Rental">
+										<a href="https://circularitgroup.com/it-hardware/rent/">IT Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-8187" target="_self" role="menuitem" aria-label="Computer Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/computers/">Computer Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8185" target="_self" role="menuitem" aria-label="Laptop Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/laptops/">Laptop Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8186" target="_self" role="menuitem" aria-label="GPU Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/gpu/">GPU Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4741" target="_self" role="menuitem" aria-label="Server Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/server/">Server Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4740" target="_self" role="menuitem" aria-label="Storage Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/storage-systems/">Storage Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4742" target="_self" role="menuitem" aria-label="Network Switch Rental">
+														<a href="https://circularitgroup.com/it-hardware/rent/switches/">Network Switch Rental<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8409" target="_self" role="menuitem" aria-label="Cyber Incident Response">
+														<a href="https://circularitgroup.com/it-hardware/rent/cyber-incident-response/">Cyber Incident Response<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-6118" target="_self" role="menuitem" aria-label="Lease">
+										<a href="https://circularitgroup.com/it-hardware/lease/">Lease<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-6120" target="_self" role="menuitem" aria-label="Refurbished Hardware">
+										<a href="https://circularitgroup.com/it-hardware/buy/refurbished-hardware/">Refurbished Hardware<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-1551 menu-item-has-children" role="menuitem" aria-label="IT Services">
+				<a href="https://circularitgroup.com/it-services/" target="_self">IT Services</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-7922 menu-item-has-children" target="_self" role="menuitem" aria-label="Device as a Service">
+										<a href="https://circularitgroup.com/it-services/device-as-a-service/">Device as a Service<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-7740" target="_self" role="menuitem" aria-label="Circular Workplace">
+														<a href="https://circularitgroup.com/it-services/daas-circular-workplace/">Circular Workplace<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2033" target="_self" role="menuitem" aria-label="IT Lifecycle Management">
+										<a href="https://circularitgroup.com/it-services/it-lifecycle-management/">IT Lifecycle Management<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-1996" target="_self" role="menuitem" aria-label="Lifecycle Management Platform">
+										<a href="https://circularitgroup.com/it-services/lifecycle-management-platform/">Lifecycle Management Platform<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																		<li class="menu-item second-level menu-item-1716" target="_self" role="menuitem" aria-label="Donating IT">
+										<a href="https://circularitgroup.com/it-services/donate-your-it/">Donating IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-2652 menu-item-has-children" role="menuitem" aria-label="ITAD">
+				<a href="https://circularitgroup.com/itad/" target="_self">ITAD</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-2027 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Asset Disposition (ITAD)">
+										<a href="https://circularitgroup.com/itad/">IT Asset Disposition (ITAD)<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-5084" target="_self" role="menuitem" aria-label="Data Erasure">
+														<a href="https://circularitgroup.com/itad/data-erasure/">Data Erasure<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2339" target="_self" role="menuitem" aria-label="Data Destruction">
+														<a href="https://circularitgroup.com/itad/data-destruction/">Data Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8278" target="_self" role="menuitem" aria-label="On-site Destruction">
+														<a href="https://circularitgroup.com/itad/on-site-destruction/">On-site Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2340" target="_self" role="menuitem" aria-label="Data Center Decommissioning">
+														<a href="https://circularitgroup.com/itad/data-center-decommissioning/">Data Center Decommissioning<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4268" target="_self" role="menuitem" aria-label="Hard Drive Shredding">
+														<a href="https://circularitgroup.com/itad/hard-drive-shredding/">Hard Drive Shredding<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8937" target="_self" role="menuitem" aria-label="Solid State Disk Destruction">
+														<a href="https://circularitgroup.com/itad/solid-state-disk-destruction/">Solid State Disk Destruction<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2341 menu-item-has-children" target="_self" role="menuitem" aria-label="IT Asset Recovery">
+										<a href="https://circularitgroup.com/itad/it-asset-recovery/">IT Asset Recovery<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-6117" target="_self" role="menuitem" aria-label="Sell computers">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/computers/">Sell computers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6114" target="_self" role="menuitem" aria-label="Sell laptops">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/laptops/">Sell laptops<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6115" target="_self" role="menuitem" aria-label="Sell tablets">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/tablets/">Sell tablets<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4326" target="_self" role="menuitem" aria-label="Sell servers">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/servers/">Sell servers<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-6116" target="_self" role="menuitem" aria-label="Sell storage systems">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/storage-systems/">Sell storage systems<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8346" target="_self" role="menuitem" aria-label="Sell network switches">
+														<a href="https://circularitgroup.com/itad/it-asset-recovery/network-switches/">Sell network switches<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2342 menu-item-has-children" target="_self" role="menuitem" aria-label="IT recycling">
+										<a href="https://circularitgroup.com/itad/it-recycling/">IT recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-8546" target="_self" role="menuitem" aria-label="Computer recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/computers/">Computer recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8545" target="_self" role="menuitem" aria-label="Laptop recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/laptops/">Laptop recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8543" target="_self" role="menuitem" aria-label="Tablet recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/tablets/">Tablet recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-8544" target="_self" role="menuitem" aria-label="Server recycling">
+														<a href="https://circularitgroup.com/itad/it-recycling/servers/">Server recycling<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-8728" target="_self" role="menuitem" aria-label="Book a Consultation">
+										<a href="https://circularitgroup.com/book-a-consultation/">Book a Consultation<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-1435 menu-item-has-children" role="menuitem" aria-label="About us">
+				<a href="https://circularitgroup.com/about-us/" target="_self">About us</a>
+									<ul class="megamenu-container">
+						<li class="sub-menu-wrap">
+							<ul class="menu sub-menu second-level">
+																	<li class="menu-item second-level menu-item-1532 menu-item-has-children" target="_self" role="menuitem" aria-label="About us">
+										<a href="https://circularitgroup.com/about-us/">About us<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-1442" target="_self" role="menuitem" aria-label="Our story">
+														<a href="https://circularitgroup.com/about-us/our-story/">Our story<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-5355" target="_self" role="menuitem" aria-label="Social Impact">
+														<a href="https://circularitgroup.com/about-us/social-impact/">Social Impact<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4058 menu-item-has-children" target="_self" role="menuitem" aria-label="Certifications and licenses">
+														<a href="https://circularitgroup.com/about-us/certifications-and-licenses/">Certifications and licenses<i class="fa-regular fa-chevron-down" aria-hidden="true"></i></a>
+																													<ul class="menu sub-sub-menu fourth-menu">
+																																	<li class="menu-item menu-item-has-children fourth-level menu-item-6112" target="_self" role="menuitem" aria-label="Blancco">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																		<li class="menu-item menu-item-has-children fourth-level menu-item-6113" target="_self" role="menuitem" aria-label="WEEELABEX">
+																		<i class="fa-regular fa-arrow-turn-down-right"></i>
+																		<a href="https://circularitgroup.com/about-us/certifications-and-licenses/weeelabex/">WEEELABEX<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																	</li>
+																																</ul>
+																												</li>
+																										<li class="menu-item third-level menu-item-1456" target="_self" role="menuitem" aria-label="Our ESG policy">
+														<a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-1533" target="_blank" role="menuitem" aria-label="Working at">
+														<a href="https://workingatcircularitgroup.com/">Working at<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-2155 menu-item-has-children" target="_self" role="menuitem" aria-label="Circular IT">
+										<a href="https://circularitgroup.com/about-us/why-circular-it/">Circular IT<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-2000" target="_self" role="menuitem" aria-label="Why Circular IT?">
+														<a href="https://circularitgroup.com/about-us/why-circular-it/">Why Circular IT?<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-2196" target="_self" role="menuitem" aria-label="Circular IT topics">
+														<a href="https://circularitgroup.com/about-us/circular-it-topics/">Circular IT topics<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-5231" target="_self" role="menuitem" aria-label="Impact calculator">
+														<a href="https://circularitgroup.com/about-us/calculate-your-impact/">Impact calculator<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-4944" target="_self" role="menuitem" aria-label="CSRD Impact Report">
+														<a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-9175 menu-item-has-children" target="_self" role="menuitem" aria-label="Industries">
+										<a href="https://circularitgroup.com/about-us/industries/">Industries<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																					<ul class="menu sub-sub-menu third-menu">
+																									<li class="menu-item third-level menu-item-9177" target="_self" role="menuitem" aria-label="Businesses">
+														<a href="https://circularitgroup.com/about-us/industries/businesses/">Businesses<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9174" target="_self" role="menuitem" aria-label="Education">
+														<a href="https://circularitgroup.com/about-us/industries/education/">Education<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9784" target="_self" role="menuitem" aria-label="Financial services">
+														<a href="https://circularitgroup.com/about-us/industries/financial-services/">Financial services<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9173" target="_self" role="menuitem" aria-label="Healthcare">
+														<a href="https://circularitgroup.com/about-us/industries/healthcare/">Healthcare<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9176" target="_self" role="menuitem" aria-label="Public sector">
+														<a href="https://circularitgroup.com/about-us/industries/government/">Public sector<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9783" target="_self" role="menuitem" aria-label="Professional services">
+														<a href="https://circularitgroup.com/about-us/industries/professional-services/">Professional services<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																										<li class="menu-item third-level menu-item-9782" target="_self" role="menuitem" aria-label="Telecommunications">
+														<a href="https://circularitgroup.com/about-us/industries/telecommunications/">Telecommunications<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																											</li>
+																								</ul>
+																				</li>
+																		<li class="menu-item second-level menu-item-1455" target="_self" role="menuitem" aria-label="News">
+										<a href="https://circularitgroup.com/news/">News<i class="fa-regular fa-arrow-right" aria-hidden="true"></i></a>
+																			</li>
+																</ul>
+						</li>
+					</ul>
+								</li>
+						<li class="menu-item first-level menu-item-4029" role="menuitem" aria-label="Contact">
+				<a href="https://circularitgroup.com/contact-us/" target="_self">Contact</a>
+							</li>
+				</ul>
+</nav>
+					<nav id="menu-main-mob" class="hide-for-large" aria-label="Metamenu">
+						<ul id="menu-main" class="vertical medium-horizontal menu" data-responsive-menu="accordion large-dropdown" data-parent-link="false" data-submenu-toggle="true" data-back-button='<li class="js-drilldown-back"><a href="javascript:void(0);">Terug</a></li>'><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1392"><a href="https://circularitgroup.com/it-hardware/">IT Hardware<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6119"><a href="https://circularitgroup.com/it-hardware/buy/">Buy IT</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2153"><a href="https://circularitgroup.com/it-hardware/buy/computers/">Personal Computing</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2152"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/">Networking Infrastructure</a>
+		<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7967"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/servers/">Servers</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7968"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/storage/">Storage</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7969"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/switches/">Switches</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7966"><a href="https://circularitgroup.com/it-hardware/buy/networking-infrastructure/routers/">Routers</a></li>
+
+		</ul>
+</div>
+</li>
+</ul>
+</li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4739"><a href="https://circularitgroup.com/it-hardware/rent/">IT Rental</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8187"><a href="https://circularitgroup.com/it-hardware/rent/computers/">Computer Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8185"><a href="https://circularitgroup.com/it-hardware/rent/laptops/">Laptop Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8186"><a href="https://circularitgroup.com/it-hardware/rent/gpu/">GPU Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4741"><a href="https://circularitgroup.com/it-hardware/rent/server/">Server Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4740"><a href="https://circularitgroup.com/it-hardware/rent/storage-systems/">Storage Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4742"><a href="https://circularitgroup.com/it-hardware/rent/switches/">Network Switch Rental</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8409"><a href="https://circularitgroup.com/it-hardware/rent/cyber-incident-response/">Cyber Incident Response</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6118"><a href="https://circularitgroup.com/it-hardware/lease/">Lease</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6120"><a href="https://circularitgroup.com/it-hardware/buy/refurbished-hardware/">Refurbished Hardware</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1551 active"><a href="https://circularitgroup.com/it-services/">IT Services<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7922"><a href="https://circularitgroup.com/it-services/device-as-a-service/">Device as a Service</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7740"><a href="https://circularitgroup.com/it-services/daas-circular-workplace/">Circular Workplace</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2033"><a href="https://circularitgroup.com/it-services/it-lifecycle-management/">IT Lifecycle Management</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1996"><a href="https://circularitgroup.com/it-services/lifecycle-management-platform/">Lifecycle Management Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1698 current_page_item menu-item-1716"><a href="https://circularitgroup.com/it-services/donate-your-it/" aria-current="page">Donating IT</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2652"><a href="https://circularitgroup.com/itad/">ITAD<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2027"><a href="https://circularitgroup.com/itad/">IT Asset Disposition (ITAD)</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5084"><a href="https://circularitgroup.com/itad/data-erasure/">Data Erasure</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2339"><a href="https://circularitgroup.com/itad/data-destruction/">Data Destruction</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8278"><a href="https://circularitgroup.com/itad/on-site-destruction/">On-site Destruction</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2340"><a href="https://circularitgroup.com/itad/data-center-decommissioning/">Data Center Decommissioning</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4268"><a href="https://circularitgroup.com/itad/hard-drive-shredding/">Hard Drive Shredding</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8937"><a href="https://circularitgroup.com/itad/solid-state-disk-destruction/">Solid State Disk Destruction</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2341"><a href="https://circularitgroup.com/itad/it-asset-recovery/">IT Asset Recovery</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6117"><a href="https://circularitgroup.com/itad/it-asset-recovery/computers/">Sell computers</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6114"><a href="https://circularitgroup.com/itad/it-asset-recovery/laptops/">Sell laptops</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6115"><a href="https://circularitgroup.com/itad/it-asset-recovery/tablets/">Sell tablets</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4326"><a href="https://circularitgroup.com/itad/it-asset-recovery/servers/">Sell servers</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6116"><a href="https://circularitgroup.com/itad/it-asset-recovery/storage-systems/">Sell storage systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8346"><a href="https://circularitgroup.com/itad/it-asset-recovery/network-switches/">Sell network switches</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2342"><a href="https://circularitgroup.com/itad/it-recycling/">IT recycling</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8546"><a href="https://circularitgroup.com/itad/it-recycling/computers/">Computer recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8545"><a href="https://circularitgroup.com/itad/it-recycling/laptops/">Laptop recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8543"><a href="https://circularitgroup.com/itad/it-recycling/tablets/">Tablet recycling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8544"><a href="https://circularitgroup.com/itad/it-recycling/servers/">Server recycling</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8728"><a href="https://circularitgroup.com/book-a-consultation/">Book a Consultation</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1435"><a href="https://circularitgroup.com/about-us/">About us<i class="fa-regular fa-circle-chevron-down"></i></a>
+<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1532"><a href="https://circularitgroup.com/about-us/">About us</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1442"><a href="https://circularitgroup.com/about-us/our-story/">Our story</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5355"><a href="https://circularitgroup.com/about-us/social-impact/">Social Impact</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4058"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/">Certifications and licenses</a>
+		<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6112"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6113"><a href="https://circularitgroup.com/about-us/certifications-and-licenses/weeelabex/">WEEELABEX</a></li>
+
+		</ul>
+</div>
+</li>
+</ul>
+</li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1456"><a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1533"><a target="_blank" href="https://workingatcircularitgroup.com/">Working at</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2155"><a href="https://circularitgroup.com/about-us/why-circular-it/">Circular IT</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2000"><a href="https://circularitgroup.com/about-us/why-circular-it/">Why Circular IT?</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2196"><a href="https://circularitgroup.com/about-us/circular-it-topics/">Circular IT topics</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5231"><a href="https://circularitgroup.com/about-us/calculate-your-impact/">Impact calculator</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4944"><a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9175"><a href="https://circularitgroup.com/about-us/industries/">Industries</a>
+	<ul class="vertical menu">
+<li class="no-arrow">
+<div class="submenu-items-wrap">
+<ul class="vertical menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9177"><a href="https://circularitgroup.com/about-us/industries/businesses/">Businesses</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9174"><a href="https://circularitgroup.com/about-us/industries/education/">Education</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9784"><a href="https://circularitgroup.com/about-us/industries/financial-services/">Financial services</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9173"><a href="https://circularitgroup.com/about-us/industries/healthcare/">Healthcare</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9176"><a href="https://circularitgroup.com/about-us/industries/government/">Public sector</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="https://circularitgroup.com/about-us/industries/professional-services/">Professional services</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9782"><a href="https://circularitgroup.com/about-us/industries/telecommunications/">Telecommunications</a></li>
+
+	</ul>
+</div>
+</li>
+</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1455"><a href="https://circularitgroup.com/news/">News</a></li>
+
+</ul>
+</div>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4029"><a href="https://circularitgroup.com/contact-us/">Contact</a></li>
+</ul>					</nav>
+					<a class="menu-item-search hide-for-small-only" href="https://circularitgroup.com/search/"><i class="fa-regular fa-magnifying-glass"></i></a>
+					<nav id="metamenu" aria-label="Metamenu">
+						<ul id="menu-secondary" class="vertical medium-horizontal menu" data-responsive-menu="accordion large-dropdown" data-parent-link="false" data-submenu-toggle="true" data-back-button='<li class="js-drilldown-back"><a href="javascript:void(0);">Terug</a></li>'><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1196"><a href="https://circularitgroup.com/en/resellers/">Resellers</a></li>
+</ul>
+								<div class="translation-menu">
+			<button class="translation-current lang-wrapper"><span>EN</span><i class="fa-regular fa-circle-chevron-down"></i></button>
+			<div class="translation-other"><div><a class="lang-wrapper" href="https://circularitgroup.com/nl/it-diensten/it-doneren/" target="_self"><span>NL</span></a><a class="lang-wrapper" href="https://circularitgroup.com/fr/services/it-donations/" target="_self"><span>FR</span></a><a class="lang-wrapper" href="https://circularitgroup.com/de/it-dienstleistungen/it-spenden/" target="_self"><span>DE</span></a></div></div>		</div>
+							</nav>
+				</div>
+				<div  class="menutoggle" data-responsive-toggle="menus" data-hide-for="large">
+
+						<div class="translation-menu">
+			<button class="translation-current lang-wrapper"><span>EN</span><i class="fa-regular fa-circle-chevron-down"></i></button>
+			<div class="translation-other"><div><a class="lang-wrapper" href="https://circularitgroup.com/nl/it-diensten/it-doneren/" target="_self"><span>NL</span></a><a class="lang-wrapper" href="https://circularitgroup.com/fr/services/it-donations/" target="_self"><span>FR</span></a><a class="lang-wrapper" href="https://circularitgroup.com/de/it-dienstleistungen/it-spenden/" target="_self"><span>DE</span></a></div></div>		</div>
+							<button class="menu-icon" type="button" data-toggle="menus">
+						<i class="far fa-bars"></i>
+						<i class="far fa-times"></i>
+						<span class="screen-reader-text">Menu</span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main  id="main">
+					<div  class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+			<!-- Breadcrumb NavXT 7.4.1 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Ga naar Circular IT group - EN." href="https://circularitgroup.com" class="home" ><span property="name">Home</span></a><meta property="position" content="1"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to IT Services." href="https://circularitgroup.com/it-services/" class="post post-page" ><span property="name">IT Services</span></a><meta property="position" content="2"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">Donating IT</span><meta property="url" content="https://circularitgroup.com/it-services/donate-your-it/"><meta property="position" content="3"></span>		</div>
+		<!-- header -->
+<section  class="has-background no-animation header fullwidth-image ">
+			<div  class="header-image-wrapper">
+			<picture>
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITdonations-IT-doneren-600x400.jpg.webp" media="(max-width: 680px)" />
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITdonations-IT-doneren-1200x800.jpg.webp" media="(min-width: 680px)" />
+				<img
+				width="1200"
+				height="800"
+				loading="eager" fetchpriority="high"				src="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITdonations-IT-doneren-1200x800.jpg.webp"
+				class="header-image-round"
+				alt="Donate IT"				>
+			</picture>
+		</div>
+			<div  class="grid-container">
+		<div class="grid-x grid-margin-y grid-margin-x">
+			<div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
+				<p class="pretitle">Circular IT group</p><h1 class="hero">Donating IT</h1><div class="text"><p>Need to replace or get rid of excess IT equipment? Then donate the residual value of your old company hardware to a charity of your choice.</p>
+<p>The ITdonations Foundation is an initiative of Circular IT group and makes donating easy, transparent and secure.</p>
+	<a href="https://www.itdonations.nl/en/" class="btn secondary" target="_blank" >Donate your hardware <i class="fa-regular fa-arrow-right"></i></a>
+	
+</div>			</div>
+					</div>
+	</div>
+	</section>
+<!-- end:header -->
+<!-- textmedia -->
+<section  class="textmedia fullwidth">
+	<div  class="grid-container">
+		<div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+			<div class="cell medium-6 small-order-2 imagefirst">
+				<div class="text text-column">
+					<h2>Donate your company hardware and close the circle</h2>
+<p>Get involved and donate</p>
+<ul>
+<li>Choose your own charity</li>
+<li>Complete guidance throughout the process</li>
+<li>Makes CSR easy</li>
+<li>Includes secure data deletion</li>
+</ul>
+<p>We are committed to a world where we make conscious decisions about how we use technology. Even after we no longer need it ourselves. We are breaking the vicious circle of treating IT like a disposable product. Instead, we are making IT truly circular.</p>
+	<a href="https://www.itdonations.nl/en/" class="btn " target="_blank" >Donate your hardware too </a>
+	
+				</div>
+			</div>
+			<div class="cell medium-6  small-order-1 imagefirst">
+				<div class="media-column">
+				<img width="1200" height="800" src="https://circularitgroup.com/wp-content/smush-webp/2023/09/ITdonations-cheque-uitreiking-1200x800.jpg.webp" class="attachment-strl-large size-strl-large" alt="ITdonations cheque" decoding="async" fetchpriority="high" srcset="https://circularitgroup.com/wp-content/uploads/2023/09/ITdonations-cheque-uitreiking-1200x800.jpg 1200w, https://circularitgroup.com/wp-content/uploads/2023/09/ITdonations-cheque-uitreiking-300x200.jpg 300w, https://circularitgroup.com/wp-content/uploads/2023/09/ITdonations-cheque-uitreiking-600x400.jpg 600w, https://circularitgroup.com/wp-content/uploads/2023/09/ITdonations-cheque-uitreiking-1620x1080.jpg 1620w, https://circularitgroup.com/wp-content/uploads/2023/09/ITdonations-cheque-uitreiking-e1702991664757.jpg 2000w" sizes="(max-width: 1200px) 100vw, 1200px" />				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end:textmedia -->
+<!-- steps -->
+<section  class="steps">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell">
+			<h2>Donate in 4 steps</h2>		</div>
+	</div>
+	<div class="swiper-steps-container">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-count="1">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/even-overleggen-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/even-overleggen-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="consult"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/even-overleggen-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/even-overleggen-1422x800.jpg.webp"
+					alt="consult"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Get in touch</p>							<div class="text">
+					<p><p>Fill in the form and ITdonations will contact you We then explain everything to you. Once agreed, we’ll get started.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="2">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/ophalen-en-inladen-1422x800.jpg-600x338.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/ophalen-en-inladen-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="donating it"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/05/ophalen-en-inladen-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2025/05/ophalen-en-inladen-1422x800.jpg.webp"
+					alt="donating it"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Pick up</p>							<div class="text">
+					<p><p>We arrange a time to pick up your hardware and carefully log all assets. We remove all data 100% securely, issuing you with a certificate, and then we take it from there.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="3">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/alles-netjes-op-papier-1422x800.jpg-600x338.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/alles-netjes-op-papier-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="donating it"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/05/alles-netjes-op-papier-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2025/05/alles-netjes-op-papier-1422x800.jpg.webp"
+					alt="donating it"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Hand over the documents</p>							<div class="text">
+					<p><p>You then receive a detailed report showing which equipment you donated and what its residual value is.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/cheque-overhandiging-toshiba-1200x800.jpg-600x400.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/05/cheque-overhandiging-toshiba-1200x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1200"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20800'%3E%3C/svg%3E"
+					alt="donating it"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/05/cheque-overhandiging-toshiba-1200x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1200"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2025/05/cheque-overhandiging-toshiba-1200x800.jpg.webp"
+					alt="donating it"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Donate to charity</p>							<div class="text">
+					<p><p>Finally, we arrange the payment to charity. You receive confirmation that your charity has received the donation.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+			</div>
+		</div>
+		<div class="swiper-navigation">
+			<div class="swiper-button-prev swiper-steps-prev"><i class="fa-regular fa-arrow-left"></i></div>
+			<div class="swiper-button-next swiper-steps-next"><i class="fa-regular fa-arrow-right"></i></div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:steps -->
+<!-- textmedia -->
+<section  class="textmedia boxed has-background bg-fullwidth">
+	<div  class="grid-container">
+		<div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+			<div class="cell medium-6 small-order-2 imagelast">
+				<div class="text text-column">
+					<h2>We have already donated more than 3 million euros to more than 200 charities through this scheme,</h2>
+<p>which is widely lauded in the business community. Organisations including Rituals, ING, TomTom and Aegon trust ITdonations to dispose of their IT equipment, while choosing which charity they would like to donate to.</p>
+<h3>Not for profit</h3>
+<p>ITdonations Foundation is a non-profit organisation with under Dutch tax law.</p>
+				</div>
+			</div>
+			<div class="cell medium-6  imagelast small-order-2 imagelast">
+				<div class="media-column">
+				<img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-strl-large size-strl-large" alt="Charities ITdonations Circular IT group" decoding="async" data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-800x800.webp 800w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-300x300.webp 300w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-600x600.webp 600w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1.webp 1080w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-800x800.webp" /><noscript><img width="800" height="800" src="https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-800x800.webp" class="attachment-strl-large size-strl-large" alt="Charities ITdonations Circular IT group" decoding="async" srcset="https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-800x800.webp 800w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-300x300.webp 300w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1-600x600.webp 600w, https://circularitgroup.com/wp-content/uploads/2023/10/goede-doelen-citg_Tekengebied-1.webp 1080w" sizes="(max-width: 800px) 100vw, 800px" /></noscript>				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end:textmedia -->
+<!-- testimonial -->
+<section  class="testimonial has-background">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell large-3 large-offset-1">
+							<div class="image-container">
+					<img width="1080" height="1080" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%201080'%3E%3C/svg%3E" class="attachment-full size-full" alt="donating it" decoding="async" data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations.png 1080w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-300x300.png 300w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-600x600.png 600w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-800x800.png 800w" data-lazy-sizes="(max-width: 1080px) 100vw, 1080px" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/04/Sandra-Mulder-ITdonations.png.webp" /><noscript><img width="1080" height="1080" src="https://circularitgroup.com/wp-content/smush-webp/2025/04/Sandra-Mulder-ITdonations.png.webp" class="attachment-full size-full" alt="donating it" decoding="async" srcset="https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations.png 1080w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-300x300.png 300w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-600x600.png 600w, https://circularitgroup.com/wp-content/uploads/2025/04/Sandra-Mulder-ITdonations-800x800.png 800w" sizes="(max-width: 1080px) 100vw, 1080px" /></noscript>				</div>
+						</div>
+		<div class="cell large-7">
+			<span class="h3">‘Donate your IT equipment and make a difference for your business, charity and the environment’</span><p>Sandra Mulder, ITdonations Ambassador</p>		</div>
+	</div>
+</div>
+</section>
+<!-- end:testimonial -->
+<!-- cta -->
+<section  class="cta">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x cta-text-container">
+		<div class="cell large-6 box">
+			<div class="text">
+				<h2>100% secure data deletion</h2>
+<p>Security is crucial for ITdonations when disposing of your excess hardware. 100% secure data deletion is guaranteed. We use Blancco software, a certified method with a host of advantages:</p>
+<ul>
+<li>GDPR compliant</li>
+<li>Report and certificate issued</li>
+<li>Approved by the Dutch General Intelligence and Security Service</li>
+<li>Procedure to prevent data breaches</li>
+</ul>
+	<a href="https://www.itdonations.nl/en/" class="btn secondary" target="_parent" >All about ITdonations <i class="fa-regular fa-arrow-right"></i></a>
+	
+			</div>
+		</div>
+		<div class="cell large-6 auto-height">
+			<div class="image-container">
+				<img width="620" height="349" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20620%20349'%3E%3C/svg%3E" alt="data erasure" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-e1758546599403.jpg"><noscript><img width="620" height="349" loading="lazy" src="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-e1758546599403.jpg" alt="data erasure"></noscript>
+							</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:cta -->
+<!-- brands -->
+<section  class="brands">
+			<div  class="grid-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell text-center">
+					<h2>Companies that have donated through ITdonations</h2>
+				</div>
+			</div>
+		</div>
+				<div  class="grid-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell slider">
+					<div class="swiper-brands-container">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+															<div class="swiper-slide">
+									<img width="600" height="113" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20113'%3E%3C/svg%3E" alt="Action-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Action-logo-600x113.png.webp" /><noscript><img width="600" height="113" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Action-logo-600x113.png.webp" alt="Action-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="240" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20240'%3E%3C/svg%3E" alt="AEGON-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/AEGON-logo-600x240.png.webp" /><noscript><img width="600" height="240" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/AEGON-logo-600x240.png.webp" alt="AEGON-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="316" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20316'%3E%3C/svg%3E" alt="ANWB-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/ANWB-logo-600x316.png.webp" /><noscript><img width="600" height="316" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/ANWB-logo-600x316.png.webp" alt="ANWB-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="211" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20211'%3E%3C/svg%3E" alt="asics-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/asics-logo-600x211.png.webp" /><noscript><img width="600" height="211" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/asics-logo-600x211.png.webp" alt="asics-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="300" height="127" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20127'%3E%3C/svg%3E" alt="frieslandcampina-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/frieslandcampina-logo.png.webp" /><noscript><img width="300" height="127" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/frieslandcampina-logo.png.webp" alt="frieslandcampina-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="152" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20152'%3E%3C/svg%3E" alt="ING-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/ING-logo-600x152.png.webp" /><noscript><img width="600" height="152" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/ING-logo-600x152.png.webp" alt="ING-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="568" height="155" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20568%20155'%3E%3C/svg%3E" alt="kamer-van-koophandel-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/kamer-van-koophandel-logo.png.webp" /><noscript><img width="568" height="155" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/kamer-van-koophandel-logo.png.webp" alt="kamer-van-koophandel-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" alt="Lidl-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Lidl-logo-600x600.png.webp" /><noscript><img width="600" height="600" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Lidl-logo-600x600.png.webp" alt="Lidl-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20195'%3E%3C/svg%3E" alt="Port-of-rotterdam-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Port-of-rotterdam-600x195.png.webp" /><noscript><img width="600" height="195" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Port-of-rotterdam-600x195.png.webp" alt="Port-of-rotterdam-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="158" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20158'%3E%3C/svg%3E" alt="Schiphol-group-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Schiphol-logo-600x158.png.webp" /><noscript><img width="600" height="158" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Schiphol-logo-600x158.png.webp" alt="Schiphol-group-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="338" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20338'%3E%3C/svg%3E" alt="TomTom-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Tomtom-logo-600x338.png.webp" /><noscript><img width="600" height="338" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Tomtom-logo-600x338.png.webp" alt="TomTom-logo" /></noscript>
+								</div>
+																<div class="swiper-slide">
+									<img width="600" height="92" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%2092'%3E%3C/svg%3E" alt="Toshiba-logo" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Toshiba-logo-600x92.png.webp" /><noscript><img width="600" height="92" loading="lazy" src="https://circularitgroup.com/wp-content/smush-webp/2023/10/Toshiba-logo-600x92.png.webp" alt="Toshiba-logo" /></noscript>
+								</div>
+															</div>
+						</div>
+						<div class="swiper-navigation">
+							<div class="swiper-button-prev swiper-brands-prev"><i class="fa-regular fa-arrow-left"></i></div>
+							<div class="swiper-button-next swiper-brands-next"><i class="fa-regular fa-arrow-right"></i></div>
+						</div>
+						<div class="swiper-pagination swiper-brands-pagination hide-for-large"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+<!-- end:brands -->
+<!-- contact-cta -->
+<section  class="contact-cta has-background lightgreen">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-4 large-3 large-offset-1">
+		
+<div class="contact-person dark no-role">
+		<img width="200" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20220'%3E%3C/svg%3E" alt="Sandra Mulder" data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/Sandra-Mulder-e1728477274253.png"><noscript><img width="200" height="220" src="https://circularitgroup.com/wp-content/uploads/2024/07/Sandra-Mulder-e1728477274253.png" alt="Sandra Mulder"></noscript>
+			<p class="name">Sandra Mulder</p>
+		</div>
+		</div>
+		<div class="cell medium-8 large-7 align-center">
+			<div class="content-wrapper">
+				<h2>Contact us</h2>
+				<div class="text">
+									</div>
+				<script type="rocketlazyloadscript">
+
+</script>
+
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_30' style='display:none'><div id='gf_30' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_30' id='gform_30'  action='/it-services/donate-your-it/#gf_30' data-formid='30' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_30' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_30_29" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_29'>LinkedIn</label><div class='ginput_container'><input name='input_29' id='input_30_29' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_30_29'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_30_25" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_30_25'>Taal</label><div class='ginput_container ginput_container_text'><input name='input_25' id='input_30_25' type='text' value='en-GB' class='large'    placeholder='en-GB'  aria-invalid="false"   /></div></div><div id="field_30_26" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_30_26'>Bron url</label><div class='ginput_container ginput_container_text'><input name='input_26' id='input_30_26' type='text' value='https://circularitgroup.com/it-services/donate-your-it/' class='large'      aria-invalid="false"   /></div></div><div id="field_30_27" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_30_27'>Datum van inzending</label><div class='ginput_container ginput_container_text'><input name='input_27' id='input_30_27' type='text' value='16/11/2025' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_30_16" class="gfield gfield--type-radio gfield--type-choice gfield--input-type-radio gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label' >I would like to<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_30_16'>
+			<div class='gchoice gchoice_30_16_0'>
+					<input class='gfield-choice-input' name='input_16' type='radio' value='Ask a question' checked='checked' id='choice_30_16_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_30_16_0' id='label_30_16_0' class='gform-field-label gform-field-label--type-inline'><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>Ask a question</span></label>
+			</div>
+			<div class='gchoice gchoice_30_16_1'>
+					<input class='gfield-choice-input' name='input_16' type='radio' value='Be called back'  id='choice_30_16_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_30_16_1' id='label_30_16_1' class='gform-field-label gform-field-label--type-inline'><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>Be called back</span></label>
+			</div></div></div></fieldset><div id="field_30_22" class="gfield gfield--type-text gfield--input-type-text gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_22'>Your company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_22' id='input_30_22' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_30_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_1'>Your first name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_30_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"  autocomplete="given-name" /></div></div><div id="field_30_28" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_28'>Last name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_28' id='input_30_28' type='text' value='' class='large'     aria-required="true" aria-invalid="false"  autocomplete="family-name" /></div></div><div id="field_30_20" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_20'>Your email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_20' id='input_30_20' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_30_21" class="gfield gfield--type-phone gfield--input-type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_21'>Your phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_21' id='input_30_21' type='tel' value='' class='large'   aria-required="true" aria-invalid="false"   /></div></div><div id="field_30_17" class="gfield gfield--type-textarea gfield--input-type-textarea gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_30_17'>What is your question?</label><div class='ginput_container ginput_container_textarea'><textarea name='input_17' id='input_30_17' class='textarea medium'    placeholder='Your question or message'  aria-invalid="false"   rows='10' cols='50'></textarea></div></div><fieldset id="field_30_24" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Newsletter</legend><div class='ginput_container ginput_container_consent'><input name='input_24.1' id='input_30_24_1' type='checkbox' value='1'    aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_30_24_1' ><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>Yes, keep me posted about the latest news updates.</span></label><input type='hidden' name='input_24.2' value='Yes, keep me posted about the latest news updates.' class='gform_hidden' /><input type='hidden' name='input_24.3' value='26' class='gform_hidden' /></div></fieldset><fieldset id="field_30_18" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Privacy<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_18.1' id='input_30_18_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_30_18_1' ><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>I agree to the <a href="/en/privacy-policy/" target="_blank">privacy policy</a></span><span class="gfield_required gfield_required_asterisk">*</span></label><input type='hidden' name='input_18.2' value='I agree to the &lt;a href=&quot;/en/privacy-policy/&quot; target=&quot;_blank&quot;&gt;privacy policy&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_18.3' value='26' class='gform_hidden' /></div></fieldset><div id="field_30_23" class="gfield gfield--type-turnstile gfield--input-type-turnstile gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_turnstile'><div class="cf-turnstile" id="cf-turnstile_30" data-js-turnstile data-response-field-name="cf-turnstile-response_30" data-theme="light" data-sitekey="0x4AAAAAAAMgDbHQGHcJL1kY"></div></div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_30' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Send request'  /> <input type='hidden' name='gform_ajax' value='form_id=30&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=26b1dd2d402efb5ceee2783c3801bd5a' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_30' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_30' id='gform_theme_30' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_30' id='gform_style_settings_30' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_30' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='30' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_30' value='WyJ7XCIxNlwiOltcIjhlYTA2ZWJjMGE3YmIyOTU4ZTIxMWEzYzU3MTI1NmIxXCIsXCI5MDExYzI4MWQ5NDc4YTJmNDlmYjQzMDQ4MzhiZWRkZVwiXSxcIjI0LjFcIjpcIjYwNTY3YzE0ODgwY2FhMDUxMWQzNWQyM2U5OWMwOWNiXCIsXCIyNC4yXCI6XCJmNTBjYmU5MmQxNDc0Yzg4NWMwYWJjYTcyMjJhNDU5ZFwiLFwiMjQuM1wiOlwiYjc3NjQxZjNmNmMyNjU3ODVjYjVmZDVjNGRlYTU5MDNcIixcIjE4LjFcIjpcIjYwNTY3YzE0ODgwY2FhMDUxMWQzNWQyM2U5OWMwOWNiXCIsXCIxOC4yXCI6XCI0NmI3ZDdjNmYzNjk5MDJmNDZmYTY1MTY5MTYyMTYzZFwiLFwiMTguM1wiOlwiYjc3NjQxZjNmNmMyNjU3ODVjYjVmZDVjNGRlYTU5MDNcIn0iLCI0NWYzZDk1NGZlZTQ3N2U3OGMwNTU1Y2IyYmZhYjQxYiJd' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_30' id='gform_target_page_number_30' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_30' id='gform_source_page_number_30' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_30' id='gform_ajax_frame_30' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 30, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_30').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_30');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_30').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){form_content.find('form').css('opacity', 0);jQuery('#gform_wrapper_30').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_30').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_30').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_30').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_30').val();gformInitSpinner( 30, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [30, current_page]);window['gf_submitting_30'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_30').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_30').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [30]);window['gf_submitting_30'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_30').text());}else{jQuery('#gform_30').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "30", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_30" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_30";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_30" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 30, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:contact-cta -->
+
+	</main>
+	<footer data-wpr-lazyrender="1">
+		<h2><span class="screen-reader-text">Site footer</span></h2>
+		<div  class="grid-container">
+			<div  class="grid-x grid-margin-x widgets">
+				<div class="cell medium-10 medium-offset-1 large-offset-0 large-4">
+					<div id="nav_menu-2" class="widget widget_nav_menu"><span class="widget-title">Circular IT group<i class="fa-solid fa-chevron-down hide-for-large"></i></span><div class="menu-footer-1-container"><ul id="menu-footer-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1556"><a target="_blank" href="https://workingatcircularitgroup.com/">Working at CITg</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146"><a href="https://circularitgroup.com/contact-us/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1552"><a href="https://circularitgroup.com/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8384"><a href="https://circularitgroup.com/webinars/">Webinars</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10099"><a href="https://circularitgroup.com/about-us/csrd-impact-report/">CSRD Impact Report</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1553"><a href="https://circularitgroup.com/about-us/esg-policy/">Our ESG policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1554"><a href="https://circularitgroup.com/about-us/our-story/">Our story</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1555"><a href="https://circularitgroup.com/about-us/">About us</a></li>
+</ul></div></div>				</div>
+				<div class="cell medium-offset-1 medium-5 large-offset-0 large-4">
+					<div id="text-2" class="widget widget_text"><span class="widget-title">Contact<i class="fa-solid fa-chevron-down hide-for-large"></i></span>			<div class="textwidget"><div>
+<div>
+<div><i class="fa-regular fa-envelope"></i> <a target="_blank" href="mailto:info@circularitgroup.com"> info@circularitgroup.com</a></div>
+<div><i class="fa-regular fa-phone"></i> <a target="_blank" href="tel:+31 (0) 88 – 990 7500"> +31 (0) 88 – 990 7500</a></div>
+<div><i class="fa-brands fa-linkedin-in"></i> <a target="_blank" href="https://www.linkedin.com/company/circular-it-group/"> Linkedin</a></div>
+</div>
+</div>
+</div>
+		</div>				</div>
+								<div class="cell medium-5 large-4 form box">
+					<h5>Stay up to date about Circular IT group</h5>
+					<form action="https://circularitgroup.com/subscribe/" method="GET">
+						<label for="email">
+							Your email address							<input type="text" id="email" name="email" placeholder="">
+						</label>
+						<input role="button" class="btn secondary" type="submit" value="Subscribe newsletter" />
+					</form>
+				</div>
+								</div>
+		</div>
+
+		<div  class="copyright">
+			<div  class="grid-container">
+				<div class="grid-x grid-margin-x">
+					<div class="cell">
+						<div id="nav_menu-6" class="widget widget_nav_menu"><div class="menu-copyright-container"><ul id="menu-copyright" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="https://circularitgroup.com/our-privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2628"><a href="https://circularitgroup.com/our-cookie-policy/">Cookie Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1896"><a href="https://circularitgroup.com/our-principles-statement/">Principles Statement</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="https://circularitgroup.com/terms-and-conditions/">Terms and conditions</a></li>
+</ul></div></div>					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/stuurlui\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZLH4DC" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->        <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        
+
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/jquery.countTo.js?ver=1762911483" id="counter-js-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/menuCounter.js?ver=1762911483" id="counter-js-custom-js" data-rocket-defer defer></script>
+<script id="swp-live-search-client-js-extra">
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","origin_id":1698,"config":{"default":{"engine":"default","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#424242","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js" id="swp-live-search-client-js" data-rocket-defer defer></script>
+<script src="https://kit.fontawesome.com/483c98a683.js" id="fontawesome-js" data-rocket-defer defer></script>
+<script id="nocache-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/nocache/nocache.min.js" id="nocache-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/vendor.min.js" id="vendor-js" data-rocket-defer defer></script>
+<script id="scripts-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/scripts.min.js" id="scripts-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/dom-ready.min.js" id="wp-dom-ready-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/i18n.min.js" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-11-13 00:57:08+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/a11y.min.js" id="wp-a11y-js" data-rocket-defer defer></script>
+<script defer='defer' src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/jquery.json.min.js" id="gform_json-js"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"980fbc0ec0bdb90e70a4670a1d10fa43","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/gravityforms.min.js" id="gform_gravityforms-js"></script>
+<script id="gform_conditional_logic-js-extra">
+var gf_legacy = {"is_legacy":""};
+</script>
+<script defer='defer' src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/conditional_logic.min.js" id="gform_conditional_logic-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js" id="gform_placeholder-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js" id="gform_gravityforms_utils-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js" id="gform_gravityforms_theme_vendors-js"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"980fbc0ec0bdb90e70a4670a1d10fa43"},"ajax":{"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"6801fdfede","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"2ead49c60b"};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js" id="gform_gravityforms_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" id="gform_turnstile_vendor_script-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/vendor-theme.min.js" id="gform_turnstile_vendor_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/scripts-theme.min.js" id="gform_turnstile_theme-js"></script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 30) {gf_global["number_formats"][30] = {"25":{"price":false,"value":false},"26":{"price":false,"value":false},"27":{"price":false,"value":false},"16":{"price":false,"value":false},"22":{"price":false,"value":false},"1":{"price":false,"value":false},"28":{"price":false,"value":false},"20":{"price":false,"value":false},"21":{"price":false,"value":false},"17":{"price":false,"value":false},"24":{"price":false,"value":false},"18":{"price":false,"value":false},"23":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][30] = { logic: { 21: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"16","operator":"is","value":"Be called back"}]},"nextButton":null,"section":null} }, dependents: { 21: [21] }, animation: 0, defaults: {"25":"en-GB","26":"https:\/\/circularitgroup.com\/it-services\/donate-your-it\/","27":"16\/11\/2025","16":["choice_30_16_0"]}, fields: {"25":[],"26":[],"27":[],"16":[21],"22":[],"1":[],"28":[],"20":[],"21":[],"17":[],"24":[],"18":[],"23":[]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){gform.utils.trigger({ event: 'gform/conditionalLogic/init/start', native: false, data: { formId: 30, fields: null, isInit: true } });window['gformInitPriceFields']();gf_apply_rules(30, [21], true);jQuery('#gform_wrapper_30').show();jQuery('#gform_wrapper_30 form').css('opacity', '');jQuery(document).trigger('gform_post_conditional_logic', [30, null, true]);gform.utils.trigger({ event: 'gform/conditionalLogic/init/end', native: false, data: { formId: 30, fields: null, isInit: true } });} );} if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "30", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_30" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_30";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_30" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 30, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://circularitgroup.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "https://circularitgroup.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://circularitgroup.com/search/?_search_search={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
+		</body>
+</html>
+<!-- Rocket no webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
