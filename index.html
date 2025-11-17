@@ -28,11 +28,11 @@
         {% include 'rocket-script' %}
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" type="image/png" href="/img/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
-        <link rel="manifest" href="/img/site.webmanifest" crossorigin="use-credentials" />
+        <link rel="shortcut icon" type="image/png" href="{{ '/img/favicon.ico' | url }}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/favicon-32x32.png' | url }}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ '/img/favicon-16x16.png' | url }}" />
+        <link rel="manifest" href="{{ '/img/site.webmanifest' | url }}" crossorigin="use-credentials" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
         <!-- Google Tag Manager for WordPress by gtm4wp.com -->
@@ -56,7 +56,7 @@
             rel="preload"
         />
 
-        <link id="wpr-usedcss" rel="stylesheet" href="/bundle.css" />
+        <link id="wpr-usedcss" rel="stylesheet" href="{{ '/bundle.css' | url }}" />
         <meta
             name="description"
             content="We make IT Circular and reduce your footprint. With our smart Lifecycle Management services we help you extend the lifecycle of IT-hardware."
@@ -148,7 +148,7 @@
         <script
             data-minify="1"
             data-cookieconsent="ignore"
-            src="/js/jquery.min.js"
+            src="{{ '/js/jquery.min.js' | url }}"
             id="jquery-js"
         ></script>
         <script
@@ -237,7 +237,7 @@
             rel="preload"
             fetchpriority="high"
             as="image"
-            href="/uploads/CITgH3.jpg"
+            href="{{ '/uploads/CITgH3.jpg' | url }}"
             type="image/jpeg"
         />
         <style id="rocket-lazyrender-inline-css">
@@ -260,14 +260,14 @@
             <section class="has-background no-animation header fullwidth-image">
                 <div class="header-image-wrapper">
                     <picture>
-                        <source srcset="/uploads/CITgH3-600x338.webp" media="(max-width: 680px)" />
-                        <source srcset="/uploads/CITgH3.jpg" media="(min-width: 680px)" />
+                        <source srcset="{{ '/uploads/CITgH3-600x338.webp' | url }}" media="(max-width: 680px)" />
+                        <source srcset="{{ '/uploads/CITgH3.jpg' | url }}" media="(min-width: 680px)" />
                         <img
                             width="1420"
                             height="799"
                             loading="eager"
                             fetchpriority="high"
-                            src="/uploads/CITgH3.jpg"
+                            src="{{ '/uploads/CITgH3.jpg' | url }}"
                             class="header-image-round"
                             alt="Circular IT group"
                         />
@@ -278,7 +278,7 @@
                         <div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
                             <p class="pretitle">Circular IT group</p>
                             <h1 class="hero">We make IT circular</h1>
-                            <a href="/why-circular-it/" target="_self" class="btn secondary"
+                            <a href="{{ '/why-circular-it/' | url }}" target="_self" class="btn secondary"
                                 >Discover how!</a
                             >
                         </div>
@@ -321,10 +321,7 @@
                                     With our innovative and sustainable IT Lifecycle Management, you can procure,
                                     deploy, manage and replace your IT equipment.
                                 </p>
-                                <a
-                                    href="/it-lifecycle-management/"
-                                    class="btn ghost"
-                                    target="_parent"
+                                <a href="{{ '/it-lifecycle-management/' | url }}" class="btn ghost" target="_parent"
                                     >Learn how
                                 </a>
                             </div>
@@ -339,24 +336,24 @@
                                     alt="Lifecycle Management Circular"
                                     decoding="async"
                                     fetchpriority="high"
-                                    data-lazy-srcset="/uploads/image-circle-1-1052x800.png 1052w, /uploads/image-circle-1-300x228.png 300w, /uploads/image-circle-1-600x456.png 600w, /uploads/image-circle-1-1420x1080.png 1420w, /uploads/image-circle-1.png 1920w"
+                                    data-lazy-srcset="{{ '/uploads/image-circle-1-1052x800.png' | url }} 1052w, {{ '/uploads/image-circle-1-300x228.png' | url }} 300w, {{ '/uploads/image-circle-1-600x456.png' | url }} 600w, {{ '/uploads/image-circle-1-1420x1080.png' | url }} 1420w, {{ '/uploads/image-circle-1.png' | url }} 1920w"
                                     data-lazy-sizes="(max-width: 1052px) 100vw, 1052px"
-                                    data-lazy-src="/uploads/image-circle-1-1052x800.png"
+                                    data-lazy-src="{{ '/uploads/image-circle-1-1052x800.png' | url }}"
                                 /><noscript
                                     ><img
                                         width="1052"
                                         height="800"
-                                        src="/uploads/image-circle-1-1052x800.png"
+                                        src="{{ '/uploads/image-circle-1-1052x800.png' | url }}"
                                         class="attachment-strl-large size-strl-large"
                                         alt="Lifecycle Management Circular"
                                         decoding="async"
                                         fetchpriority="high"
                                         srcset="
-                                            /uploads/image-circle-1-1052x800.png  1052w,
-                                            /uploads/image-circle-1-300x228.png    300w,
-                                            /uploads/image-circle-1-600x456.png    600w,
-                                            /uploads/image-circle-1-1420x1080.png 1420w,
-                                            /uploads/image-circle-1.png           1920w
+                                            {{ '/uploads/image-circle-1-1052x800.png' | url }}  1052w,
+                                            {{ '/uploads/image-circle-1-300x228.png' | url }}    300w,
+                                            {{ '/uploads/image-circle-1-600x456.png' | url }}    600w,
+                                            {{ '/uploads/image-circle-1-1420x1080.png' | url }} 1420w,
+                                            {{ '/uploads/image-circle-1.png' | url }}           1920w
                                         "
                                         sizes="(max-width: 1052px) 100vw, 1052px"
                                 /></noscript>
@@ -392,10 +389,7 @@
                                 managing all kinds of IT equipment efficiently throughout the journey, such as laptops,
                                 desktops, tablets, smartphones, servers, storage and networking equipment.
                             </p>
-                            <a
-                                href="/why-circular-it/"
-                                class="btn secondary"
-                                target="_parent"
+                            <a href="{{ '/why-circular-it/' | url }}" class="btn secondary" target="_parent"
                                 >Why Circular IT? <i class="fa-regular fa-arrow-right"></i
                             ></a>
                         </div>
@@ -406,11 +400,11 @@
                                         <header class="card-header default no-icon">
                                             <picture>
                                                 <source
-                                                    data-lazy-srcset="/uploads/solutions-circular-600x338.webp"
+                                                    data-lazy-srcset="{{ '/uploads/solutions-circular-600x338.webp' | url }}"
                                                     media="(max-width: 680px)"
                                                 />
                                                 <source
-                                                    data-lazy-srcset="/uploads/solutions-circular-1422x800.webp"
+                                                    data-lazy-srcset="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                     media="(min-width: 680px)"
                                                 />
                                                 <img
@@ -419,14 +413,14 @@
                                                     height="800"
                                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                     alt="Solutions circular IT - renting appliances"
-                                                    data-lazy-src="/uploads/solutions-circular-1422x800.webp"
+                                                    data-lazy-src="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                 /><noscript
                                                     ><img
                                                         class="image"
                                                         loading="lazy"
                                                         width="1422"
                                                         height="800"
-                                                        src="/uploads/solutions-circular-1422x800.webp"
+                                                        src="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                         alt="Solutions circular IT - renting appliances"
                                                 /></noscript>
                                             </picture>
@@ -435,11 +429,7 @@
                                             <p class="title">Lifecycle Management</p>
                                         </div>
 
-                                        <a
-                                            target="_self"
-                                            href="/it-services/"
-                                            class="overlay-link"
-                                        >
+                                        <a target="_self" href="{{ '/it-services/' | url }}" class="overlay-link">
                                             <span class="screen-reader-text">Read more about Lifecycle Management</span>
                                         </a>
                                     </article>
@@ -449,11 +439,11 @@
                                         <header class="card-header default no-icon">
                                             <picture>
                                                 <source
-                                                    data-lazy-srcset="/uploads/services-circulaire-it-citg-600x338.webp"
+                                                    data-lazy-srcset="{{ '/uploads/services-circulaire-it-citg-600x338.webp' | url }}"
                                                     media="(max-width: 680px)"
                                                 />
                                                 <source
-                                                    data-lazy-srcset="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                    data-lazy-srcset="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                     media="(min-width: 680px)"
                                                 />
                                                 <img
@@ -462,14 +452,14 @@
                                                     height="800"
                                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                     alt="it hardware Services circulaire it citg"
-                                                    data-lazy-src="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                    data-lazy-src="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                 /><noscript
                                                     ><img
                                                         class="image"
                                                         loading="lazy"
                                                         width="1422"
                                                         height="800"
-                                                        src="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                        src="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                         alt="it hardware Services circulaire it citg"
                                                 /></noscript>
                                             </picture>
@@ -478,7 +468,7 @@
                                             <p class="title">ITAD</p>
                                         </div>
 
-                                        <a target="_self" href="/itad/" class="overlay-link">
+                                        <a target="_self" href="{{ '/itad/' | url }}" class="overlay-link">
                                             <span class="screen-reader-text">Read more about ITAD</span>
                                         </a>
                                     </article>
@@ -488,11 +478,11 @@
                                         <header class="card-header default no-icon">
                                             <picture>
                                                 <source
-                                                    data-lazy-srcset="/uploads/hardware-circulaire-it-600x338.webp"
+                                                    data-lazy-srcset="{{ '/uploads/hardware-circulaire-it-600x338.webp' | url }}"
                                                     media="(max-width: 680px)"
                                                 />
                                                 <source
-                                                    data-lazy-srcset="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                    data-lazy-srcset="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                     media="(min-width: 680px)"
                                                 />
                                                 <img
@@ -501,14 +491,14 @@
                                                     height="800"
                                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                     alt="Circular IT hardware"
-                                                    data-lazy-src="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                    data-lazy-src="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                 /><noscript
                                                     ><img
                                                         class="image"
                                                         loading="lazy"
                                                         width="1422"
                                                         height="800"
-                                                        src="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                        src="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                         alt="Circular IT hardware"
                                                 /></noscript>
                                             </picture>
@@ -517,11 +507,7 @@
                                             <p class="title">Hardware Procurement</p>
                                         </div>
 
-                                        <a
-                                            target="_self"
-                                            href="/it-hardware/"
-                                            class="overlay-link"
-                                        >
+                                        <a target="_self" href="{{ '/it-hardware/' | url }}" class="overlay-link">
                                             <span class="screen-reader-text">Read more about Hardware Procurement</span>
                                         </a>
                                     </article>
@@ -531,11 +517,11 @@
                                         <header class="card-header default no-icon">
                                             <picture>
                                                 <source
-                                                    data-lazy-srcset="/uploads/Acquisition-options-circular-it-600x338.webp"
+                                                    data-lazy-srcset="{{ '/uploads/Acquisition-options-circular-it-600x338.webp' | url }}"
                                                     media="(max-width: 680px)"
                                                 />
                                                 <source
-                                                    data-lazy-srcset="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                    data-lazy-srcset="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                     media="(min-width: 680px)"
                                                 />
                                                 <img
@@ -544,14 +530,14 @@
                                                     height="800"
                                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                     alt="Acquisition options circular it"
-                                                    data-lazy-src="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                    data-lazy-src="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                 /><noscript
                                                     ><img
                                                         class="image"
                                                         loading="lazy"
                                                         width="1422"
                                                         height="800"
-                                                        src="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                        src="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                         alt="Acquisition options circular it"
                                                 /></noscript>
                                             </picture>
@@ -562,7 +548,7 @@
 
                                         <a
                                             target="_self"
-                                            href="/itad/it-asset-recovery/"
+                                            href="{{ '/itad/it-asset-recovery/' | url }}"
                                             class="overlay-link"
                                         >
                                             <span class="screen-reader-text">Read more about Re-Marketing</span>
@@ -578,11 +564,11 @@
                                                 <header class="card-header default no-icon">
                                                     <picture>
                                                         <source
-                                                            data-lazy-srcset="/uploads/solutions-circular-600x338.webp"
+                                                            data-lazy-srcset="{{ '/uploads/solutions-circular-600x338.webp' | url }}"
                                                             media="(max-width: 680px)"
                                                         />
                                                         <source
-                                                            data-lazy-srcset="/uploads/solutions-circular-1422x800.webp"
+                                                            data-lazy-srcset="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                             media="(min-width: 680px)"
                                                         />
                                                         <img
@@ -591,14 +577,14 @@
                                                             height="800"
                                                             src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                             alt="Solutions circular IT - renting appliances"
-                                                            data-lazy-src="/uploads/solutions-circular-1422x800.webp"
+                                                            data-lazy-src="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                         /><noscript
                                                             ><img
                                                                 class="image"
                                                                 loading="lazy"
                                                                 width="1422"
                                                                 height="800"
-                                                                src="/uploads/solutions-circular-1422x800.webp"
+                                                                src="{{ '/uploads/solutions-circular-1422x800.webp' | url }}"
                                                                 alt="Solutions circular IT - renting appliances"
                                                         /></noscript>
                                                     </picture>
@@ -609,7 +595,7 @@
 
                                                 <a
                                                     target="_self"
-                                                    href="/it-services/"
+                                                    href="{{ '/it-services/' | url }}"
                                                     class="overlay-link"
                                                 >
                                                     <span class="screen-reader-text"
@@ -623,11 +609,11 @@
                                                 <header class="card-header default no-icon">
                                                     <picture>
                                                         <source
-                                                            data-lazy-srcset="/uploads/services-circulaire-it-citg-600x338.webp"
+                                                            data-lazy-srcset="{{ '/uploads/services-circulaire-it-citg-600x338.webp' | url }}"
                                                             media="(max-width: 680px)"
                                                         />
                                                         <source
-                                                            data-lazy-srcset="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                            data-lazy-srcset="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                             media="(min-width: 680px)"
                                                         />
                                                         <img
@@ -636,14 +622,14 @@
                                                             height="800"
                                                             src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                             alt="it hardware Services circulaire it citg"
-                                                            data-lazy-src="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                            data-lazy-src="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                         /><noscript
                                                             ><img
                                                                 class="image"
                                                                 loading="lazy"
                                                                 width="1422"
                                                                 height="800"
-                                                                src="/uploads/services-circulaire-it-citg-1422x800.webp"
+                                                                src="{{ '/uploads/services-circulaire-it-citg-1422x800.webp' | url }}"
                                                                 alt="it hardware Services circulaire it citg"
                                                         /></noscript>
                                                     </picture>
@@ -652,11 +638,7 @@
                                                     <p class="title">ITAD</p>
                                                 </div>
 
-                                                <a
-                                                    target="_self"
-                                                    href="/itad/"
-                                                    class="overlay-link"
-                                                >
+                                                <a target="_self" href="{{ '/itad/' | url }}" class="overlay-link">
                                                     <span class="screen-reader-text">Read more about ITAD</span>
                                                 </a>
                                             </article>
@@ -666,11 +648,11 @@
                                                 <header class="card-header default no-icon">
                                                     <picture>
                                                         <source
-                                                            data-lazy-srcset="/uploads/hardware-circulaire-it-600x338.webp"
+                                                            data-lazy-srcset="{{ '/uploads/hardware-circulaire-it-600x338.webp' | url }}"
                                                             media="(max-width: 680px)"
                                                         />
                                                         <source
-                                                            data-lazy-srcset="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                            data-lazy-srcset="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                             media="(min-width: 680px)"
                                                         />
                                                         <img
@@ -679,14 +661,14 @@
                                                             height="800"
                                                             src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                             alt="Circular IT hardware"
-                                                            data-lazy-src="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                            data-lazy-src="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                         /><noscript
                                                             ><img
                                                                 class="image"
                                                                 loading="lazy"
                                                                 width="1422"
                                                                 height="800"
-                                                                src="/uploads/hardware-circulaire-it-1422x800.webp"
+                                                                src="{{ '/uploads/hardware-circulaire-it-1422x800.webp' | url }}"
                                                                 alt="Circular IT hardware"
                                                         /></noscript>
                                                     </picture>
@@ -697,7 +679,7 @@
 
                                                 <a
                                                     target="_self"
-                                                    href="/it-hardware/"
+                                                    href="{{ '/it-hardware/' | url }}"
                                                     class="overlay-link"
                                                 >
                                                     <span class="screen-reader-text"
@@ -711,11 +693,11 @@
                                                 <header class="card-header default no-icon">
                                                     <picture>
                                                         <source
-                                                            data-lazy-srcset="/uploads/Acquisition-options-circular-it-600x338.webp"
+                                                            data-lazy-srcset="{{ '/uploads/Acquisition-options-circular-it-600x338.webp' | url }}"
                                                             media="(max-width: 680px)"
                                                         />
                                                         <source
-                                                            data-lazy-srcset="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                            data-lazy-srcset="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                             media="(min-width: 680px)"
                                                         />
                                                         <img
@@ -724,14 +706,14 @@
                                                             height="800"
                                                             src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
                                                             alt="Acquisition options circular it"
-                                                            data-lazy-src="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                            data-lazy-src="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                         /><noscript
                                                             ><img
                                                                 class="image"
                                                                 loading="lazy"
                                                                 width="1422"
                                                                 height="800"
-                                                                src="/uploads/Acquisition-options-circular-it-1422x800.webp"
+                                                                src="{{ '/uploads/Acquisition-options-circular-it-1422x800.webp' | url }}"
                                                                 alt="Acquisition options circular it"
                                                         /></noscript>
                                                     </picture>
@@ -742,7 +724,7 @@
 
                                                 <a
                                                     target="_self"
-                                                    href="/itad/it-asset-recovery/"
+                                                    href="{{ '/itad/it-asset-recovery/' | url }}"
                                                     class="overlay-link"
                                                 >
                                                     <span class="screen-reader-text">Read more about Re-Marketing</span>
@@ -779,14 +761,14 @@
                                     class="attachment-full size-full"
                                     alt="Reinout van Tuyll"
                                     decoding="async"
-                                    data-lazy-srcset="/uploads/Reinout-van-Tuyll-1.png 1200w, /uploads/Reinout-van-Tuyll-1-300x300.png 300w, /uploads/Reinout-van-Tuyll-1-600x600.png 600w, /uploads/Reinout-van-Tuyll-1-800x800.png 800w, /uploads/Reinout-van-Tuyll-1-1080x1080.png 1080w"
+                                    data-lazy-srcset="{{ '/uploads/Reinout-van-Tuyll-1.png' | url }} 1200w, {{ '/uploads/Reinout-van-Tuyll-1-300x300.png' | url }} 300w, {{ '/uploads/Reinout-van-Tuyll-1-600x600.png' | url }} 600w, {{ '/uploads/Reinout-van-Tuyll-1-800x800.png' | url }} 800w, {{ '/uploads/Reinout-van-Tuyll-1-1080x1080.png' | url }} 1080w"
                                     data-lazy-sizes="(max-width: 1200px) 100vw, 1200px"
-                                    data-lazy-src="/uploads/Reinout-van-Tuyll-1.png"
+                                    data-lazy-src="{{ '/uploads/Reinout-van-Tuyll-1.png' | url }}"
                                 /><noscript
                                     ><img
                                         width="1200"
                                         height="1200"
-                                        src="/uploads/Reinout-van-Tuyll-1.png"
+                                        src="{{ '/uploads/Reinout-van-Tuyll-1.png' | url }}"
                                         class="attachment-full size-full"
                                         alt="Reinout van Tuyll"
                                         decoding="async"
@@ -850,13 +832,13 @@
                                     height="5464"
                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%208192%205464'%3E%3C/svg%3E"
                                     alt="Book a free consultation"
-                                    data-lazy-src="/uploads/CIT-Group-bib-0555-2.webp"
+                                    data-lazy-src="{{ '/uploads/CIT-Group-bib-0555-2.webp' | url }}"
                                 /><noscript
                                     ><img
                                         width="8192"
                                         height="5464"
                                         loading="lazy"
-                                        src="/uploads/CIT-Group-bib-0555-2.webp"
+                                        src="{{ '/uploads/CIT-Group-bib-0555-2.webp' | url }}"
                                         alt="Book a free consultation"
                                 /></noscript>
                             </div>
@@ -876,12 +858,12 @@
                                     height="600"
                                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
                                     alt="Reinout van Tuyll"
-                                    data-lazy-src="/uploads/Reinout-van-Tuyll-600x600.png"
+                                    data-lazy-src="{{ '/uploads/Reinout-van-Tuyll-600x600.png' | url }}"
                                 /><noscript
                                     ><img
                                         width="600"
                                         height="600"
-                                        src="/uploads/Reinout-van-Tuyll-600x600.png"
+                                        src="{{ '/uploads/Reinout-van-Tuyll-600x600.png' | url }}"
                                         alt="Reinout van Tuyll"
                                 /></noscript>
                                 <p class="name">Reinout van Tuyll</p>
@@ -894,10 +876,7 @@
                                 <div class="text">
                                     <p>We&#8217;re happy to help.</p>
                                     <p>Tel: <a href="tel:+310889907500">+31 (0) 88 – 990 7500</a></p>
-                                    <a
-                                        href="/contact-us/"
-                                        class="btn secondary"
-                                        target="_parent"
+                                    <a href="{{ '/contact-us/' | url }}" class="btn secondary" target="_parent"
                                         >Contact us <i class="fa-regular fa-arrow-right"></i
                                     ></a>
                                 </div>
