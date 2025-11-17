@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <script>
+            var gform;
+            gform ||
+                (document.addEventListener('gform_main_scripts_loaded', function () {
+                    gform.scriptsLoaded = !0;
+                }),
+                document.addEventListener('gform/theme/scripts_loaded', function () {
+                    gform.themeScriptsLoaded = !0;
+                }),
+                window.addEventListener('DOMContentLoaded', function () {
+                    gform.domLoaded = !0;
+                }),
+                (gform = {
+                    domLoaded: !1,
+                    scriptsLoaded: !1,
+                    themeScriptsLoaded: !1,
+                    isFormEditor: () => 'function' == typeof InitializeEditor,
+                    callIfLoaded: function (o) {
+                        return !(
+                            !gform.domLoaded ||
+                            !gform.scriptsLoaded ||
+                            (!gform.themeScriptsLoaded && !gform.isFormEditor()) ||
+                            (gform.isFormEditor() &&
+                                console.warn(
+                                    'The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1.',
+                                ),
+                            o(),
+                            0)
+                        );
+                    },
+                    initializeOnLoaded: function (o) {
+                        gform.callIfLoaded(o) ||
+                            (document.addEventListener('gform_main_scripts_loaded', () => {
+                                (gform.scriptsLoaded = !0), gform.callIfLoaded(o);
+                            }),
+                            document.addEventListener('gform/theme/scripts_loaded', () => {
+                                (gform.themeScriptsLoaded = !0), gform.callIfLoaded(o);
+                            }),
+                            window.addEventListener('DOMContentLoaded', () => {
+                                (gform.domLoaded = !0), gform.callIfLoaded(o);
+                            }));
+                    },
+                    hooks: { action: {}, filter: {} },
+                    addAction: function (o, r, e, t) {
+                        gform.addHook('action', o, r, e, t);
+                    },
+                    addFilter: function (o, r, e, t) {
+                        gform.addHook('filter', o, r, e, t);
+                    },
+                    doAction: function (o) {
+                        gform.doHook('action', o, arguments);
+                    },
+                    applyFilters: function (o) {
+                        return gform.doHook('filter', o, arguments);
+                    },
+                    removeAction: function (o, r) {
+                        gform.removeHook('action', o, r);
+                    },
+                    removeFilter: function (o, r, e) {
+                        gform.removeHook('filter', o, r, e);
+                    },
+                    addHook: function (o, r, e, t, n) {
+                        null == gform.hooks[o][r] && (gform.hooks[o][r] = []);
+                        var d = gform.hooks[o][r];
+                        null == n && (n = r + '_' + d.length),
+                            gform.hooks[o][r].push({ tag: n, callable: e, priority: (t = null == t ? 10 : t) });
+                    },
+                    doHook: function (r, o, e) {
+                        var t;
+                        if (
+                            ((e = Array.prototype.slice.call(e, 1)),
+                            null != gform.hooks[r][o] &&
+                                ((o = gform.hooks[r][o]).sort(function (o, r) {
+                                    return o.priority - r.priority;
+                                }),
+                                o.forEach(function (o) {
+                                    'function' != typeof (t = o.callable) && (t = window[t]),
+                                        'action' == r ? t.apply(null, e) : (e[0] = t.apply(null, e));
+                                })),
+                            'filter' == r)
+                        )
+                            return e[0];
+                    },
+                    removeHook: function (o, r, t, n) {
+                        var e;
+                        null != gform.hooks[o][r] &&
+                            ((e = (e = gform.hooks[o][r]).filter(function (o, r, e) {
+                                return !!((null != n && n != o.tag) || (null != t && t != o.priority));
+                            })),
+                            (gform.hooks[o][r] = e));
+                    },
+                }));
+        </script>
+        <meta charset="UTF-8" />
+        <script>
+            if (
+                navigator.userAgent.match(/MSIE|Internet Explorer/i) ||
+                navigator.userAgent.match(/Trident\/7\..*?rv:11/i)
+            ) {
+                var href = document.location.href;
+                if (!href.match(/[?&]nowprocket/)) {
+                    if (href.indexOf('?') == -1) {
+                        if (href.indexOf('#') == -1) {
+                            document.location.href = href + '?nowprocket=1';
+                        } else {
+                            document.location.href = href.replace('#', '?nowprocket=1#');
+                        }
+                    } else {
+                        if (href.indexOf('#') == -1) {
+                            document.location.href = href + '&nowprocket=1';
+                        } else {
+                            document.location.href = href.replace('#', '&nowprocket=1#');
+                        }
+                    }
+                }
+            }
+        </script>
+        {% include 'rocket-script' %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon.ico"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-16x16.png"
+        />
+        <link
+            rel="manifest"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/site.webmanifest"
+            crossorigin="use-credentials"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <style></style>
+
+        <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+        <script data-cfasync="false" data-pagespeed-no-defer>
+            var gtm4wp_datalayer_name = 'dataLayer';
+            var dataLayer = dataLayer || [];
+        </script>
+        <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+        <!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+        <title>Server Rental | Circular IT group</title>
+        <link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://plausible.io" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://kit.fontawesome.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://challenges.cloudflare.com" rel="dns-prefetch" />
+        <link
+            crossorigin
+            data-rocket-preload
+            as="font"
+            href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2"
+            rel="preload"
+        />
+
+        <link id="wpr-usedcss" rel="stylesheet" href="{{ '/bundle.css' | url }}" />
+        <meta
+            name="description"
+            content="Temporarily need extra server capacity? Renting a server is an easy and sustainable solution. Contact us for server rental solutions!"
+        />
+        <link rel="canonical" href="https://circularitgroup.com/it-hardware/rent/server/" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Server Rental | Circular IT group" />
+        <meta
+            property="og:description"
+            content="Temporarily need extra server capacity? Renting a server is an easy and sustainable solution. Contact us for server rental solutions!"
+        />
+        <meta property="og:url" content="https://circularitgroup.com/it-hardware/rent/server/" />
+        <meta property="og:site_name" content="Circular IT group - EN" />
+        <meta property="article:modified_time" content="2025-10-24T09:20:07+00:00" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:label1" content="Estimated reading time" />
+        <meta name="twitter:data1" content="4 minutes" />
+        <script type="application/ld+json" class="yoast-schema-graph">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://circularitgroup.com/it-hardware/rent/server/",
+                        "url": "https://circularitgroup.com/it-hardware/rent/server/",
+                        "name": "Server Rental | Circular IT group",
+                        "isPartOf": { "@id": "https://circularitgroup.com/#website" },
+                        "datePublished": "2024-04-18T13:38:56+00:00",
+                        "dateModified": "2025-10-24T09:20:07+00:00",
+                        "description": "Temporarily need extra server capacity? Renting a server is an easy and sustainable solution. Contact us for server rental solutions!",
+                        "breadcrumb": { "@id": "https://circularitgroup.com/it-hardware/rent/server/#breadcrumb" },
+                        "inLanguage": "en-GB",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": ["https://circularitgroup.com/it-hardware/rent/server/"]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://circularitgroup.com/it-hardware/rent/server/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://circularitgroup.com/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Hardware",
+                                "item": "https://circularitgroup.com/it-hardware/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "IT Rental",
+                                "item": "https://circularitgroup.com/it-hardware/rent/"
+                            },
+                            { "@type": "ListItem", "position": 4, "name": "Server Rental" }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://circularitgroup.com/#website",
+                        "url": "https://circularitgroup.com/",
+                        "name": "Circular IT group",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "https://circularitgroup.com/?s={search_term_string}"
+                                },
+                                "query-input": {
+                                    "@type": "PropertyValueSpecification",
+                                    "valueRequired": true,
+                                    "valueName": "search_term_string"
+                                }
+                            }
+                        ],
+                        "inLanguage": "en-GB"
+                    }
+                ]
+            }
+        </script>
+        <!-- / Yoast SEO plugin. -->
+
+        <link rel="dns-prefetch" href="//plausible.io" />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="//kit.fontawesome.com" />
+
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Circular IT group - EN &raquo; Feed"
+            href="https://circularitgroup.com/feed/"
+        />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Circular IT group - EN &raquo; Comments Feed"
+            href="https://circularitgroup.com/comments/feed/"
+        />
+        <style id="classic-theme-styles-inline-css"></style>
+        <style id="safe-svg-svg-icon-style-inline-css"></style>
+
+        <style id="searchwp-live-search-inline-css"></style>
+
+        <script
+            data-minify="1"
+            data-cookieconsent="ignore"
+            src="https://circularitgroup.com/wp-content/cache/min/2/ajax/libs/jquery/3.6.0/jquery.min.js?ver=1762911483"
+            id="jquery-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer
+            data-domain="circularitgroup.com"
+            data-api="https://plausible.io/api/event"
+            data-cfasync="false"
+            data-rocket-src="https://plausible.io/js/plausible.outbound-links.js"
+            id="plausible-analytics-js"
+        ></script>
+        <script id="plausible-analytics-js-after">
+            window.plausible =
+                window.plausible ||
+                function () {
+                    (window.plausible.q = window.plausible.q || []).push(arguments);
+                };
+        </script>
+        <link rel="https://api.w.org/" href="https://circularitgroup.com/wp-json/" />
+        <link
+            rel="alternate"
+            title="JSON"
+            type="application/json"
+            href="https://circularitgroup.com/wp-json/wp/v2/pages/4690"
+        />
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://circularitgroup.com/xmlrpc.php?rsd" />
+        <meta name="generator" content="WordPress 6.8.3" />
+        <link rel="shortlink" href="https://circularitgroup.com/?p=4690" />
+        <link
+            rel="alternate"
+            title="oEmbed (JSON)"
+            type="application/json+oembed"
+            href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-hardware%2Frent%2Fserver%2F"
+        />
+        <link
+            rel="alternate"
+            title="oEmbed (XML)"
+            type="text/xml+oembed"
+            href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-hardware%2Frent%2Fserver%2F&#038;format=xml"
+        />
+        <link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/server/" hreflang="x-default" />
+        <link rel="alternate" href="https://circularitgroup.com/nl/it-hardware/huren/servers/" hreflang="nl" />
+        <link rel="alternate" href="https://circularitgroup.com/nl/it-hardware/huren/servers/" hreflang="nl-nl" />
+        <link
+            rel="alternate"
+            href="https://circularitgroup.com/fr/materiel-informatique/location-it/serveurs/"
+            hreflang="fr"
+        />
+        <link
+            rel="alternate"
+            href="https://circularitgroup.com/fr/materiel-informatique/location-it/serveurs/"
+            hreflang="fr-fr"
+        />
+        <link rel="alternate" href="https://circularitgroup.com/de/it-hardware/mieten/servers/" hreflang="de" />
+        <link rel="alternate" href="https://circularitgroup.com/de/it-hardware/mieten/servers/" hreflang="de-de" />
+        <link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/server/" hreflang="en" />
+        <link rel="alternate" href="https://circularitgroup.com/it-hardware/rent/server/" hreflang="en-gb" />
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://kit.fontawesome.com/cefd36e79b.js"
+            crossorigin="anonymous"
+            data-rocket-defer
+            defer
+        ></script>
+        <meta name="plausible-analytics-version" content="2.3.1" />
+
+        <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+        <!-- GTM Container placement set to footer -->
+        <script data-cfasync="false" data-pagespeed-no-defer>
+            var dataLayer_content = {
+                pagePostType: 'page',
+                pagePostType2: 'single-page',
+                pagePostAuthor: 'Lienke Lemmen',
+            };
+            dataLayer.push(dataLayer_content);
+        </script>
+        <script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PZLH4DC');
+        </script>
+        <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+        <noscript
+            ><style id="rocket-lazyload-nojs-css">
+                .rll-youtube-player,
+                [data-lazy-src] {
+                    display: none !important;
+                }
+            </style></noscript
+        >
+        <link
+            rel="preload"
+            fetchpriority="high"
+            as="image"
+            href="https://circularitgroup.com/wp-content/uploads/2025/08/CITG-Zoet-27898-May-28-2025-1-1-1575x800.webp"
+            type="image/webp"
+        />
+        <style id="rocket-lazyrender-inline-css">
+            [data-wpr-lazyrender] {
+                content-visibility: auto;
+            }
+        </style>
+        <meta
+            name="generator"
+            content="WP Rocket 3.20.1.1"
+            data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop"
+        />
+    </head>
+    <body
+        class="wp-singular page-template-default page page-id-4690 page-parent page-child parent-pageid-2074 wp-theme-stuurlui site-2"
+    >
+        <a href="#main" class="skiplink">To main content</a>
+        <a href="#menu" class="skiplink">To navigation</a>
+        {% include 'header' %}
+        <main id="main">
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+                <!-- Breadcrumb NavXT 7.4.1 -->
+                <span property="itemListElement" typeof="ListItem"
+                    ><a
+                        property="item"
+                        typeof="WebPage"
+                        title="Ga naar Circular IT group - EN."
+                        href="https://circularitgroup.com"
+                        class="home"
+                        ><span property="name">Home</span></a
+                    ><meta property="position" content="1" /></span
+                ><i class="fa-thin fa-angle-right"></i
+                ><span property="itemListElement" typeof="ListItem"
+                    ><a
+                        property="item"
+                        typeof="WebPage"
+                        title="Go to Hardware."
+                        href="https://circularitgroup.com/it-hardware/"
+                        class="post post-page"
+                        ><span property="name">Hardware</span></a
+                    ><meta property="position" content="2" /></span
+                ><i class="fa-thin fa-angle-right"></i
+                ><span property="itemListElement" typeof="ListItem"
+                    ><a
+                        property="item"
+                        typeof="WebPage"
+                        title="Go to IT Rental."
+                        href="https://circularitgroup.com/it-hardware/rent/"
+                        class="post post-page"
+                        ><span property="name">IT Rental</span></a
+                    ><meta property="position" content="3" /></span
+                ><i class="fa-thin fa-angle-right"></i
+                ><span property="itemListElement" typeof="ListItem"
+                    ><span property="name" class="post post-page current-item">Server Rental</span
+                    ><meta property="url" content="https://circularitgroup.com/it-hardware/rent/server/" /><meta
+                        property="position"
+                        content="4"
+                /></span>
+            </div>
+            <!-- header -->
+            <section class="has-background no-animation header fullwidth-image no-padding-bottom">
+                <div class="header-image-wrapper">
+                    <picture>
+                        <source
+                            srcset="
+                                https://circularitgroup.com/wp-content/uploads/2025/08/CITG-Zoet-27898-May-28-2025-1-1-600x305.webp
+                            "
+                            media="(max-width: 680px)"
+                        />
+                        <source
+                            srcset="
+                                https://circularitgroup.com/wp-content/uploads/2025/08/CITG-Zoet-27898-May-28-2025-1-1-1575x800.webp
+                            "
+                            media="(min-width: 680px)"
+                        />
+                        <img
+                            width="1575"
+                            height="800"
+                            loading="eager"
+                            fetchpriority="high"
+                            src="https://circularitgroup.com/wp-content/uploads/2025/08/CITG-Zoet-27898-May-28-2025-1-1-1575x800.webp"
+                            class="header-image-round"
+                            alt="Server Rental"
+                        />
+                    </picture>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-y grid-margin-x">
+                        <div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
+                            <h1 class="hero">Server rental</h1>
+                            <div class="text">
+                                <p>
+                                    Need servers while upgrading your infrastructure, testing equipment before purchase,
+                                    or as a cyber security response? Renting servers from Circular IT group is flexible,
+                                    cost-effective, and environmentally responsible.
+                                </p>
+                                <p>
+                                    Your fully configured server setup can be delivered and ready to deploy in as little
+                                    as 2 hours.
+                                </p>
+                                <a href="#form" class="btn secondary" target="_parent"
+                                    >Request a quote <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container anchor-tabs">
+                    <ul data-magellan>
+                        <li class="anchor-intro">Quick to:</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- end:header -->
+            <!-- textmedia -->
+            <section class="textmedia boxed">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+                        <div class="cell medium-6 small-order-2 imagefirst">
+                            <div class="text text-column">
+                                <h2>Rent a server</h2>
+                                <p>
+                                    With a large stock of more than 1,000 servers, there is always a solution that suits
+                                    your organisation&#8217;s planned IT migration or cloud transition. You can rent a
+                                    temporary server to secure your processes. In the event of an emergency, we are
+                                    ready for you with a customised solution within hours.
+                                </p>
+                                <a href="#form" class="btn secondary" target="_parent"
+                                    >Request a quote <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="cell medium-6 small-order-1 imagefirst">
+                            <div class="media-column">
+                                <img
+                                    width="1422"
+                                    height="800"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+                                    class="attachment-strl-large size-strl-large"
+                                    alt="Solutions circular IT - renting appliances"
+                                    decoding="async"
+                                    fetchpriority="high"
+                                    data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-1422x800.jpg 1422w, https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-300x169.jpg 300w, https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-600x338.jpg 600w, https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular.jpg 1920w"
+                                    data-lazy-sizes="(max-width: 1422px) 100vw, 1422px"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/solutions-circular-1422x800.jpg.webp"
+                                /><noscript
+                                    ><img
+                                        width="1422"
+                                        height="800"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2023/12/solutions-circular-1422x800.jpg.webp"
+                                        class="attachment-strl-large size-strl-large"
+                                        alt="Solutions circular IT - renting appliances"
+                                        decoding="async"
+                                        fetchpriority="high"
+                                        srcset="
+                                            https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-1422x800.jpg 1422w,
+                                            https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-300x169.jpg   300w,
+                                            https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular-600x338.jpg   600w,
+                                            https://circularitgroup.com/wp-content/uploads/2023/12/solutions-circular.jpg          1920w
+                                        "
+                                        sizes="(max-width: 1422px) 100vw, 1422px"
+                                /></noscript>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:textmedia -->
+            <!-- flexible-cards -->
+            <section
+                id="Portfolio"
+                data-magellan-target="Portfolio"
+                data-magellan-name="Portfolio"
+                class="flexible-cards has-background blue"
+            >
+                <div class="grid-container wide">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell large-6 large-offset-3">
+                            <div class="intro-content text">
+                                <h2>Explore server rental solutions</h2>
+                                <p>
+                                    Choose from a wide range of enterprise-grade servers from Cisco, Dell EMC, HPE, IBM,
+                                    Lenovo, and NVIDIA, including racks, towers, and blades, all tested, configurable,
+                                    and ready for immediate deployment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-x grid-margin-x grid-margin-y large-up-4 small-up-1 medium-up-2">
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Cisco</h3>
+                                    <div class="text">
+                                        <p>
+                                            Get the performance you need with Cisco UCS C-Series Rack and B-Series Blade
+                                            Servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/cisco/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="Cisco"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/Cisco-1.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/Cisco-1.webp"
+                                            class="strl-medium"
+                                            alt="Cisco"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Dell EMC</h3>
+                                    <div class="text">
+                                        <p>
+                                            Power your infrastructure with Dell EMC PowerEdge, S2D Ready Node, and vSAN
+                                            Ready Node servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/dell-emc/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="Dell EMC"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-1.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-1.webp"
+                                            class="strl-medium"
+                                            alt="Dell EMC"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">HPE</h3>
+                                    <div class="text">
+                                        <p>
+                                            Accelerate your IT performance with HPE ProLiant servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/hpe/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="Hewlett Packard Enterprise"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/Hewlett-Packard-Enterprise.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/Hewlett-Packard-Enterprise.webp"
+                                            class="strl-medium"
+                                            alt="Hewlett Packard Enterprise"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">IBM</h3>
+                                    <div class="text">
+                                        <p>
+                                            Drive mission-critical workloads with IBM Power servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/ibm/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="IBM"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/IBM-1.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/IBM-1.webp"
+                                            class="strl-medium"
+                                            alt="IBM"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Lenovo</h3>
+                                    <div class="text">
+                                        <p>
+                                            Boost your IT performance with Lenovo ThinkSys.tem, ThinkAgile, Flex System,
+                                            and System X servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/lenovo/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="Lenovo"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/Lenovo-1.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/Lenovo-1.webp"
+                                            class="strl-medium"
+                                            alt="Lenovo"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-image">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">NVIDIA</h3>
+                                    <div class="text">
+                                        <p>
+                                            Enhance your AI and data workloads with NVIDIA DGX and GPU servers.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/server/nvidia/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >More Information <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="image-container small-order-1">
+                                    <img
+                                        width="400"
+                                        height="200"
+                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                        class="strl-medium"
+                                        alt="NVIDIA"
+                                        data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/NVIDIA-1.webp"
+                                    /><noscript
+                                        ><img
+                                            width="400"
+                                            height="200"
+                                            src="https://circularitgroup.com/wp-content/uploads/2025/10/NVIDIA-1.webp"
+                                            class="strl-medium"
+                                            alt="NVIDIA"
+                                    /></noscript>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:flexible-cards -->
+            <!-- textmedia -->
+            <section class="textmedia boxed">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+                        <div class="cell medium-6 small-order-2 imagelast">
+                            <div class="text text-column">
+                                <h2>Rent a server for as short or long as needed</h2>
+                                <p>
+                                    Is your need for server capacity growing, but investing in your own equipment not
+                                    the best option? Then opt for the customised solution, where scaling down during the
+                                    contract period is one of the unique options.
+                                </p>
+                                <a href="#form" class="btn secondary" target="_parent"
+                                    >Request a quote <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="cell medium-6 imagelast small-order-2 imagelast">
+                            <div class="media-column">
+                                <img
+                                    width="300"
+                                    height="300"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
+                                    class="attachment-strl-large size-strl-large"
+                                    alt="UCS-C Series rackservers"
+                                    decoding="async"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2024/04/UCS-C-Series-rackservers.png.webp"
+                                /><noscript
+                                    ><img
+                                        width="300"
+                                        height="300"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2024/04/UCS-C-Series-rackservers.png.webp"
+                                        class="attachment-strl-large size-strl-large"
+                                        alt="UCS-C Series rackservers"
+                                        decoding="async"
+                                /></noscript>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:textmedia -->
+            <!-- textmedia -->
+            <section class="textmedia boxed has-background bg-fullwidth">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+                        <div class="cell medium-6 small-order-2 imagefirst">
+                            <div class="text text-column">
+                                <h2>Secure Data Removal</h2>
+                                <p>
+                                    At the end of the rental period, all equipment is fully wiped. The data is removed
+                                    in a secure and certified manner.
+                                </p>
+                                <p>Safe, secure and compliant every time.</p>
+                                <a href="#form" class="btn secondary" target="_parent"
+                                    >Request a quote <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="cell medium-6 small-order-1 imagefirst">
+                            <div class="media-column">
+                                <img
+                                    width="400"
+                                    height="200"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20200'%3E%3C/svg%3E"
+                                    class="attachment-strl-large size-strl-large"
+                                    alt="Dell EMC PowerEdge R770"
+                                    decoding="async"
+                                    data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770.webp 400w, https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770-300x150.webp 300w"
+                                    data-lazy-sizes="(max-width: 400px) 100vw, 400px"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770.webp"
+                                /><noscript
+                                    ><img
+                                        width="400"
+                                        height="200"
+                                        src="https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770.webp"
+                                        class="attachment-strl-large size-strl-large"
+                                        alt="Dell EMC PowerEdge R770"
+                                        decoding="async"
+                                        srcset="
+                                            https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770.webp         400w,
+                                            https://circularitgroup.com/wp-content/uploads/2025/10/Dell-EMC-PowerEdge-R770-300x150.webp 300w
+                                        "
+                                        sizes="(max-width: 400px) 100vw, 400px"
+                                /></noscript>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:textmedia -->
+
+            <!-- icon-text -->
+            <section class="icon-text three-in-a-row">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium-6 large-4">
+                            <div class="icon">
+                                <i class="fa-classic fa-regular fa-truck-fast" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Express delivery possible</h3>
+                                <div class="text">
+                                    In the event of an escalation/calamity or ransomware, we will ensure you have a
+                                    replacement IT environment in place within hours.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <div class="icon">
+                                <i class="fa-classic fa-regular fa-puzzle-piece" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>A tailor-made solution</h3>
+                                <div class="text">
+                                    For as long and as much as you want. We offer temporary solutions that perfectly
+                                    match your needs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell medium-6 large-4">
+                            <div class="icon">
+                                <i class="fa-classic fa-regular fa-earth-europe" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Global delivery</h3>
+                                <div class="text">
+                                    Circular IT group takes that extra step to help you. Global delivery is no problem
+                                    for us.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:icon-text -->
+            <!-- contact-cta -->
+            <section
+                id="form"
+                data-magellan-target="form"
+                data-magellan-name="Quote"
+                class="contact-cta has-background lightgreen"
+            >
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium-4 large-3 large-offset-1 large-order-2">
+                            <div class="contact-person dark no-role">
+                                <img
+                                    width="600"
+                                    height="600"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                    alt="Laurens ten Klooster"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/09/Laurens-ten-Klooster-600x600.png.webp"
+                                /><noscript
+                                    ><img
+                                        width="600"
+                                        height="600"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2025/09/Laurens-ten-Klooster-600x600.png.webp"
+                                        alt="Laurens ten Klooster"
+                                /></noscript>
+                                <p class="name">Laurens ten Klooster</p>
+                            </div>
+                        </div>
+                        <div class="cell medium-8 large-7 align-center large-order-1">
+                            <div class="content-wrapper">
+                                <h2>Request a rental quote</h2>
+                                <div class="text">
+                                    <p>We are happy to help!</p>
+                                </div>
+                                <script type="rocketlazyloadscript"></script>
+
+                                <div
+                                    class="gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework"
+                                    data-form-theme="gravity-theme"
+                                    data-form-index="0"
+                                    id="gform_wrapper_11"
+                                >
+                                    <div id="gf_11" class="gform_anchor" tabindex="-1"></div>
+                                    <div class="gform_heading">
+                                        <p class="gform_description"></p>
+                                        <p class="gform_required_legend">
+                                            &quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot;
+                                            indicates required fields
+                                        </p>
+                                    </div>
+                                    <form
+                                        method="post"
+                                        enctype="multipart/form-data"
+                                        target="gform_ajax_frame_11"
+                                        id="gform_11"
+                                        action="/it-hardware/rent/server/#gf_11"
+                                        data-formid="11"
+                                        novalidate
+                                    >
+                                        <div class="gform-body gform_body">
+                                            <div
+                                                id="gform_fields_11"
+                                                class="gform_fields top_label form_sublabel_below description_below validation_below"
+                                            >
+                                                <div
+                                                    id="field_11_24"
+                                                    class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_24"
+                                                        >Email</label
+                                                    >
+                                                    <div class="ginput_container">
+                                                        <input
+                                                            name="input_24"
+                                                            id="input_11_24"
+                                                            type="text"
+                                                            value=""
+                                                            autocomplete="new-password"
+                                                        />
+                                                    </div>
+                                                    <div class="gfield_description" id="gfield_description_11_24">
+                                                        This field is for validation purposes and should be left
+                                                        unchanged.
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_11_1"
+                                                    class="gfield gfield--type-text gfield--input-type-text firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_1"
+                                                        >Your company name<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_text">
+                                                        <input
+                                                            name="input_1"
+                                                            id="input_11_1"
+                                                            type="text"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_11_20"
+                                                    class="gfield gfield--type-text gfield--input-type-text gfield--width-full firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_20"
+                                                        >Your name<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_text">
+                                                        <input
+                                                            name="input_20"
+                                                            id="input_11_20"
+                                                            type="text"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_11_21"
+                                                    class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_21"
+                                                        >Your email<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_email">
+                                                        <input
+                                                            name="input_21"
+                                                            id="input_11_21"
+                                                            type="email"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_11_22"
+                                                    class="gfield gfield--type-phone gfield--input-type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_22"
+                                                        >Your phone number<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_phone">
+                                                        <input
+                                                            name="input_22"
+                                                            id="input_11_22"
+                                                            type="tel"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_11_17"
+                                                    class="gfield gfield--type-textarea gfield--input-type-textarea gfield--width-full field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_11_17"
+                                                        >Your question</label
+                                                    >
+                                                    <div class="ginput_container ginput_container_textarea">
+                                                        <textarea
+                                                            name="input_17"
+                                                            id="input_11_17"
+                                                            class="textarea medium"
+                                                            aria-describedby="gfield_description_11_17"
+                                                            placeholder="Your question or message"
+                                                            aria-invalid="false"
+                                                            rows="10"
+                                                            cols="50"
+                                                        ></textarea>
+                                                    </div>
+                                                    <div class="gfield_description" id="gfield_description_11_17">
+                                                        Please specify here the equipment for which you would like to
+                                                        request a quote or ask your question here.
+                                                    </div>
+                                                </div>
+                                                <fieldset
+                                                    id="field_11_18"
+                                                    class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <legend
+                                                        class="gfield_label gform-field-label gfield_label_before_complex"
+                                                    >
+                                                        Privacy<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        >
+                                                    </legend>
+                                                    <div class="ginput_container ginput_container_consent">
+                                                        <input
+                                                            name="input_18.1"
+                                                            id="input_11_18_1"
+                                                            type="checkbox"
+                                                            value="1"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                        <label
+                                                            class="gform-field-label gform-field-label--type-inline gfield_consent_label"
+                                                            for="input_11_18_1"
+                                                            ><span class="input-replace"
+                                                                ><i class="check-icon fa-solid fa-check"></i></span
+                                                            ><span class="label-text"
+                                                                >I agree to the
+                                                                <a href="/en/privacy-policy/" target="_blank"
+                                                                    >privacy policy</a
+                                                                ></span
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></label
+                                                        ><input
+                                                            type="hidden"
+                                                            name="input_18.2"
+                                                            value='I agree to the &lt;a href="/en/privacy-policy/" target="_blank"&gt;privacy policy&lt;/a&gt;'
+                                                            class="gform_hidden"
+                                                        /><input
+                                                            type="hidden"
+                                                            name="input_18.3"
+                                                            value="9"
+                                                            class="gform_hidden"
+                                                        />
+                                                    </div>
+                                                </fieldset>
+                                                <div
+                                                    id="field_11_23"
+                                                    class="gfield gfield--type-turnstile gfield--input-type-turnstile gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <div class="ginput_container ginput_container_turnstile">
+                                                        <div
+                                                            class="cf-turnstile"
+                                                            id="cf-turnstile_11"
+                                                            data-js-turnstile
+                                                            data-response-field-name="cf-turnstile-response_11"
+                                                            data-theme="light"
+                                                            data-sitekey="0x4AAAAAAAMgDbHQGHcJL1kY"
+                                                        ></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gform-footer gform_footer top_label">
+                                            <input
+                                                type="submit"
+                                                id="gform_submit_button_11"
+                                                class="gform_button button"
+                                                onclick="gform.submission.handleButtonClick(this);"
+                                                data-submission-type="submit"
+                                                value="Request a quote"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                name="gform_ajax"
+                                                value="form_id=11&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=132f9ab7f18f31e51a46685d56927698"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_submission_method"
+                                                data-js="gform_submission_method_11"
+                                                value="iframe"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_theme"
+                                                data-js="gform_theme_11"
+                                                id="gform_theme_11"
+                                                value="gravity-theme"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_style_settings"
+                                                data-js="gform_style_settings_11"
+                                                id="gform_style_settings_11"
+                                                value="[]"
+                                            />
+                                            <input type="hidden" class="gform_hidden" name="is_submit_11" value="1" />
+                                            <input type="hidden" class="gform_hidden" name="gform_submit" value="11" />
+
+                                            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="" />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="state_11"
+                                                value="WyJ7XCIxOC4xXCI6XCI2MDU2N2MxNDg4MGNhYTA1MTFkMzVkMjNlOTljMDljYlwiLFwiMTguMlwiOlwiNDZiN2Q3YzZmMzY5OTAyZjQ2ZmE2NTE2OTE2MjE2M2RcIixcIjE4LjNcIjpcImMzYWMyNGFjMzZiZTkxZjExYTljY2Q0NTEyYWEwZDVlXCJ9IiwiNjZiMzBlNzU3MWRhOTk5YzkwNzJmZGMzZmY3NTlmNTciXQ=="
+                                            />
+                                            <input
+                                                type="hidden"
+                                                autocomplete="off"
+                                                class="gform_hidden"
+                                                name="gform_target_page_number_11"
+                                                id="gform_target_page_number_11"
+                                                value="0"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                autocomplete="off"
+                                                class="gform_hidden"
+                                                name="gform_source_page_number_11"
+                                                id="gform_source_page_number_11"
+                                                value="1"
+                                            />
+                                            <input type="hidden" name="gform_field_values" value="" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <iframe
+                                    style="display: none; width: 0px; height: 0px"
+                                    src="about:blank"
+                                    name="gform_ajax_frame_11"
+                                    id="gform_ajax_frame_11"
+                                    title="This iframe contains the logic required to handle Ajax powered Gravity Forms."
+                                ></iframe>
+                                <script type="rocketlazyloadscript">
+                                    gform.initializeOnLoaded( function() {gformInitSpinner( 11, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_11').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_11');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_11').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_11').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_11').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_11').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_11').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_11').val();gformInitSpinner( 11, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [11, current_page]);window['gf_submitting_11'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_11').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_11').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [11]);window['gf_submitting_11'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_11').text());}else{jQuery('#gform_11').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "11", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_11" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_11";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_11" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 11, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:contact-cta -->
+        </main>
+        {% include 'footer' %}
+        <script type="speculationrules">
+            {
+                "prefetch": [
+                    {
+                        "source": "document",
+                        "where": {
+                            "and": [
+                                { "href_matches": "\/*" },
+                                {
+                                    "not": {
+                                        "href_matches": [
+                                            "\/wp-*.php",
+                                            "\/wp-admin\/*",
+                                            "\/wp-content\/uploads\/*",
+                                            "\/wp-content\/*",
+                                            "\/wp-content\/plugins\/*",
+                                            "\/wp-content\/themes\/stuurlui\/*",
+                                            "\/*\\?(.+)"
+                                        ]
+                                    }
+                                },
+                                { "not": { "selector_matches": "a[rel~=\"nofollow\"]" } },
+                                { "not": { "selector_matches": ".no-prefetch, .no-prefetch a" } }
+                            ]
+                        },
+                        "eagerness": "conservative"
+                    }
+                ]
+            }
+        </script>
+
+        <!-- GTM Container placement set to footer -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-PZLH4DC"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+                aria-hidden="true"
+            ></iframe
+        ></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+
+        <script
+            type="rocketlazyloadscript"
+            data-minify="1"
+            data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/jquery.countTo.js?ver=1762911483"
+            id="counter-js-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-minify="1"
+            data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/menuCounter.js?ver=1762911483"
+            id="counter-js-custom-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script id="swp-live-search-client-js-extra">
+            var searchwp_live_search_params = [];
+            searchwp_live_search_params = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                origin_id: 4690,
+                config: {
+                    default: {
+                        engine: 'default',
+                        input: { delay: 300, min_chars: 3 },
+                        results: { position: 'bottom', width: 'auto', offset: { x: 0, y: 5 } },
+                        spinner: {
+                            lines: 12,
+                            length: 8,
+                            width: 3,
+                            radius: 8,
+                            scale: 1,
+                            corners: 1,
+                            color: '#424242',
+                            fadeColor: 'transparent',
+                            speed: 1,
+                            rotate: 0,
+                            animation: 'searchwp-spinner-line-fade-quick',
+                            direction: 1,
+                            zIndex: 2000000000,
+                            className: 'spinner',
+                            top: '50%',
+                            left: '50%',
+                            shadow: '0 0 1px transparent',
+                            position: 'absolute',
+                        },
+                    },
+                },
+                msg_no_config_found: 'No valid SearchWP Live Search configuration found!',
+                aria_instructions:
+                    'When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures.',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js"
+            id="swp-live-search-client-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script src="https://kit.fontawesome.com/483c98a683.js" id="fontawesome-js" data-rocket-defer defer></script>
+        <script id="nocache-js-extra">
+            var strl_vars = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                stylesheet_directory: 'https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui',
+            };
+        </script>
+        <script
+            src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/nocache/nocache.min.js"
+            id="nocache-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-cookieconsent="ignore"
+            data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/vendor.min.js"
+            id="vendor-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script id="scripts-js-extra">
+            var strl_vars = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                stylesheet_directory: 'https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-cookieconsent="ignore"
+            data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/scripts.min.js"
+            id="scripts-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/dom-ready.min.js"
+            id="wp-dom-ready-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/hooks.min.js"
+            id="wp-hooks-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/i18n.min.js"
+            id="wp-i18n-js"
+        ></script>
+        <script type="rocketlazyloadscript" id="wp-i18n-js-after">
+            wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+        </script>
+        <script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+            ( function( domain, translations ) {
+            	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+            	localeData[""].domain = domain;
+            	wp.i18n.setLocaleData( localeData, domain );
+            } )( "default", {"translation-revision-date":"2025-11-13 00:57:08+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/a11y.min.js"
+            id="wp-a11y-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            defer="defer"
+            src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/jquery.json.min.js"
+            id="gform_json-js"
+        ></script>
+        <script id="gform_gravityforms-js-extra">
+            var gform_i18n = {
+                datepicker: {
+                    days: {
+                        monday: 'Mo',
+                        tuesday: 'Tu',
+                        wednesday: 'We',
+                        thursday: 'Th',
+                        friday: 'Fr',
+                        saturday: 'Sa',
+                        sunday: 'Su',
+                    },
+                    months: {
+                        january: 'January',
+                        february: 'February',
+                        march: 'March',
+                        april: 'April',
+                        may: 'May',
+                        june: 'June',
+                        july: 'July',
+                        august: 'August',
+                        september: 'September',
+                        october: 'October',
+                        november: 'November',
+                        december: 'December',
+                    },
+                    firstDay: 1,
+                    iconText: 'Select date',
+                },
+            };
+            var gf_legacy_multi = [];
+            var gform_gravityforms = {
+                strings: {
+                    invalid_file_extension: 'This type of file is not allowed. Must be one of the following:',
+                    delete_file: 'Delete this file',
+                    in_progress: 'in progress',
+                    file_exceeds_limit: 'File exceeds size limit',
+                    illegal_extension: 'This type of file is not allowed.',
+                    max_reached: 'Maximum number of files reached',
+                    unknown_error: 'There was a problem while saving the file on the server',
+                    currently_uploading: 'Please wait for the uploading to complete',
+                    cancel: 'Cancel',
+                    cancel_upload: 'Cancel this upload',
+                    cancelled: 'Cancelled',
+                    error: 'Error',
+                    message: 'Message',
+                },
+                vars: { images_url: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images' },
+            };
+            var gf_global = {
+                gf_currency_config: {
+                    name: 'Euro',
+                    symbol_left: '',
+                    symbol_right: '&#8364;',
+                    symbol_padding: ' ',
+                    thousand_separator: '.',
+                    decimal_separator: ',',
+                    decimals: 2,
+                    code: 'EUR',
+                },
+                base_url: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms',
+                number_formats: [],
+                spinnerUrl: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg',
+                version_hash: '980fbc0ec0bdb90e70a4670a1d10fa43',
+                strings: {
+                    newRowAdded: 'New row added.',
+                    rowRemoved: 'Row removed',
+                    formSaved:
+                        'The form has been saved.  The content contains the link to return and complete the form.',
+                },
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/gravityforms.min.js"
+            id="gform_gravityforms-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js"
+            id="gform_placeholder-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js"
+            id="gform_gravityforms_utils-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js"
+            id="gform_gravityforms_theme_vendors-js"
+        ></script>
+        <script id="gform_gravityforms_theme-js-extra">
+            var gform_theme_config = {
+                common: {
+                    form: {
+                        honeypot: { version_hash: '980fbc0ec0bdb90e70a4670a1d10fa43' },
+                        ajax: {
+                            ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                            ajax_submission_nonce: '6801fdfede',
+                            i18n: {
+                                step_announcement: 'Step %1$s of %2$s, %3$s',
+                                unknown_error: 'There was an unknown error processing your request. Please try again.',
+                            },
+                        },
+                    },
+                },
+                hmr_dev: '',
+                public_path: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/',
+                config_nonce: '2ead49c60b',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js"
+            id="gform_gravityforms_theme-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+            id="gform_turnstile_vendor_script-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/vendor-theme.min.js"
+            id="gform_turnstile_vendor_theme-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/scripts-theme.min.js"
+            id="gform_turnstile_theme-js"
+        ></script>
+        <script type="rocketlazyloadscript">
+            gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 11) {if(typeof Placeholders != 'undefined'){
+                                    Placeholders.enable();
+                                }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+        </script>
+        <script type="rocketlazyloadscript">
+            gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "11", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_11" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_11";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_11" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 11, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+        </script>
+        <script>
+            window.lazyLoadOptions = [
+                {
+                    elements_selector: 'img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]',
+                    data_src: 'lazy-src',
+                    data_srcset: 'lazy-srcset',
+                    data_sizes: 'lazy-sizes',
+                    class_loading: 'lazyloading',
+                    class_loaded: 'lazyloaded',
+                    threshold: 300,
+                    callback_loaded: function (element) {
+                        if (element.tagName === 'IFRAME' && element.dataset.rocketLazyload == 'fitvidscompatible') {
+                            if (element.classList.contains('lazyloaded')) {
+                                if (typeof window.jQuery != 'undefined') {
+                                    if (jQuery.fn.fitVids) {
+                                        jQuery(element).parent().fitVids();
+                                    }
+                                }
+                            }
+                        }
+                    },
+                },
+                {
+                    elements_selector: '.rocket-lazyload',
+                    data_src: 'lazy-src',
+                    data_srcset: 'lazy-srcset',
+                    data_sizes: 'lazy-sizes',
+                    class_loading: 'lazyloading',
+                    class_loaded: 'lazyloaded',
+                    threshold: 300,
+                },
+            ];
+            window.addEventListener(
+                'LazyLoad::Initialized',
+                function (e) {
+                    var lazyLoadInstance = e.detail.instance;
+                    if (window.MutationObserver) {
+                        var observer = new MutationObserver(function (mutations) {
+                            var image_count = 0;
+                            var iframe_count = 0;
+                            var rocketlazy_count = 0;
+                            mutations.forEach(function (mutation) {
+                                for (var i = 0; i < mutation.addedNodes.length; i++) {
+                                    if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                        continue;
+                                    }
+                                    if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                        continue;
+                                    }
+                                    images = mutation.addedNodes[i].getElementsByTagName('img');
+                                    is_image = mutation.addedNodes[i].tagName == 'IMG';
+                                    iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                                    is_iframe = mutation.addedNodes[i].tagName == 'IFRAME';
+                                    rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+                                    image_count += images.length;
+                                    iframe_count += iframes.length;
+                                    rocketlazy_count += rocket_lazy.length;
+                                    if (is_image) {
+                                        image_count += 1;
+                                    }
+                                    if (is_iframe) {
+                                        iframe_count += 1;
+                                    }
+                                }
+                            });
+                            if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) {
+                                lazyLoadInstance.update();
+                            }
+                        });
+                        var b = document.getElementsByTagName('body')[0];
+                        var config = { childList: !0, subtree: !0 };
+                        observer.observe(b, config);
+                    }
+                },
+                !1,
+            );
+        </script>
+        <script
+            data-no-minify="1"
+            async
+            src="https://circularitgroup.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"
+        ></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://circularitgroup.com",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://circularitgroup.com/search/?_search_search={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+    </body>
+</html>
+<!-- Rocket no webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
