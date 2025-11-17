@@ -1,0 +1,21 @@
+{
+  "name": "ws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "devDependencies": {
+    "11ty.ts": "^0.0.6",
+    "cssnano": "^7.1.2",
+    "postcss": "^8.5.6"
+  }
+}
