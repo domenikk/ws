@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <script>
+            var gform;
+            gform ||
+                (document.addEventListener('gform_main_scripts_loaded', function () {
+                    gform.scriptsLoaded = !0;
+                }),
+                document.addEventListener('gform/theme/scripts_loaded', function () {
+                    gform.themeScriptsLoaded = !0;
+                }),
+                window.addEventListener('DOMContentLoaded', function () {
+                    gform.domLoaded = !0;
+                }),
+                (gform = {
+                    domLoaded: !1,
+                    scriptsLoaded: !1,
+                    themeScriptsLoaded: !1,
+                    isFormEditor: () => 'function' == typeof InitializeEditor,
+                    callIfLoaded: function (o) {
+                        return !(
+                            !gform.domLoaded ||
+                            !gform.scriptsLoaded ||
+                            (!gform.themeScriptsLoaded && !gform.isFormEditor()) ||
+                            (gform.isFormEditor() &&
+                                console.warn(
+                                    'The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1.',
+                                ),
+                            o(),
+                            0)
+                        );
+                    },
+                    initializeOnLoaded: function (o) {
+                        gform.callIfLoaded(o) ||
+                            (document.addEventListener('gform_main_scripts_loaded', () => {
+                                (gform.scriptsLoaded = !0), gform.callIfLoaded(o);
+                            }),
+                            document.addEventListener('gform/theme/scripts_loaded', () => {
+                                (gform.themeScriptsLoaded = !0), gform.callIfLoaded(o);
+                            }),
+                            window.addEventListener('DOMContentLoaded', () => {
+                                (gform.domLoaded = !0), gform.callIfLoaded(o);
+                            }));
+                    },
+                    hooks: { action: {}, filter: {} },
+                    addAction: function (o, r, e, t) {
+                        gform.addHook('action', o, r, e, t);
+                    },
+                    addFilter: function (o, r, e, t) {
+                        gform.addHook('filter', o, r, e, t);
+                    },
+                    doAction: function (o) {
+                        gform.doHook('action', o, arguments);
+                    },
+                    applyFilters: function (o) {
+                        return gform.doHook('filter', o, arguments);
+                    },
+                    removeAction: function (o, r) {
+                        gform.removeHook('action', o, r);
+                    },
+                    removeFilter: function (o, r, e) {
+                        gform.removeHook('filter', o, r, e);
+                    },
+                    addHook: function (o, r, e, t, n) {
+                        null == gform.hooks[o][r] && (gform.hooks[o][r] = []);
+                        var d = gform.hooks[o][r];
+                        null == n && (n = r + '_' + d.length),
+                            gform.hooks[o][r].push({ tag: n, callable: e, priority: (t = null == t ? 10 : t) });
+                    },
+                    doHook: function (r, o, e) {
+                        var t;
+                        if (
+                            ((e = Array.prototype.slice.call(e, 1)),
+                            null != gform.hooks[r][o] &&
+                                ((o = gform.hooks[r][o]).sort(function (o, r) {
+                                    return o.priority - r.priority;
+                                }),
+                                o.forEach(function (o) {
+                                    'function' != typeof (t = o.callable) && (t = window[t]),
+                                        'action' == r ? t.apply(null, e) : (e[0] = t.apply(null, e));
+                                })),
+                            'filter' == r)
+                        )
+                            return e[0];
+                    },
+                    removeHook: function (o, r, t, n) {
+                        var e;
+                        null != gform.hooks[o][r] &&
+                            ((e = (e = gform.hooks[o][r]).filter(function (o, r, e) {
+                                return !!((null != n && n != o.tag) || (null != t && t != o.priority));
+                            })),
+                            (gform.hooks[o][r] = e));
+                    },
+                }));
+        </script>
+        <meta charset="UTF-8" />
+        <script>
+            if (
+                navigator.userAgent.match(/MSIE|Internet Explorer/i) ||
+                navigator.userAgent.match(/Trident\/7\..*?rv:11/i)
+            ) {
+                var href = document.location.href;
+                if (!href.match(/[?&]nowprocket/)) {
+                    if (href.indexOf('?') == -1) {
+                        if (href.indexOf('#') == -1) {
+                            document.location.href = href + '?nowprocket=1';
+                        } else {
+                            document.location.href = href.replace('#', '?nowprocket=1#');
+                        }
+                    } else {
+                        if (href.indexOf('#') == -1) {
+                            document.location.href = href + '&nowprocket=1';
+                        } else {
+                            document.location.href = href.replace('#', '&nowprocket=1#');
+                        }
+                    }
+                }
+            }
+        </script>
+        {% include 'rocket-script' %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon.ico"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-16x16.png"
+        />
+        <link
+            rel="manifest"
+            href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/site.webmanifest"
+            crossorigin="use-credentials"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <style></style>
+
+        <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+        <script data-cfasync="false" data-pagespeed-no-defer>
+            var gtm4wp_datalayer_name = 'dataLayer';
+            var dataLayer = dataLayer || [];
+        </script>
+        <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+        <!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+        <title>IT Services | Circular IT group</title>
+        <link data-rocket-prefetch href="https://bat.bing.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://snap.licdn.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://consent.cookiebot.com" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://plausible.io" rel="dns-prefetch" />
+        <link data-rocket-prefetch href="https://kit.fontawesome.com" rel="dns-prefetch" />
+        <link
+            crossorigin
+            data-rocket-preload
+            as="font"
+            href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2"
+            rel="preload"
+        />
+
+        <link id="wpr-usedcss" rel="stylesheet" href="{{ '/bundle.css' | url }}" />
+        <meta
+            name="description"
+            content="Our IT lifecycle services help you maximise the value and availability of your IT assets, from procurement to disposal. Contact us!"
+        />
+        <link rel="canonical" href="https://circularitgroup.com/it-services/" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="IT Services | Circular IT group" />
+        <meta
+            property="og:description"
+            content="Our IT lifecycle services help you maximise the value and availability of your IT assets, from procurement to disposal. Contact us!"
+        />
+        <meta property="og:url" content="https://circularitgroup.com/it-services/" />
+        <meta property="og:site_name" content="Circular IT group - EN" />
+        <meta property="article:modified_time" content="2025-11-04T15:47:41+00:00" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:label1" content="Estimated reading time" />
+        <meta name="twitter:data1" content="3 minutes" />
+        <script type="application/ld+json" class="yoast-schema-graph">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://circularitgroup.com/it-services/",
+                        "url": "https://circularitgroup.com/it-services/",
+                        "name": "IT Services | Circular IT group",
+                        "isPartOf": { "@id": "https://circularitgroup.com/#website" },
+                        "datePublished": "2023-09-07T12:34:11+00:00",
+                        "dateModified": "2025-11-04T15:47:41+00:00",
+                        "description": "Our IT lifecycle services help you maximise the value and availability of your IT assets, from procurement to disposal. Contact us!",
+                        "breadcrumb": { "@id": "https://circularitgroup.com/it-services/#breadcrumb" },
+                        "inLanguage": "en-GB",
+                        "potentialAction": [
+                            { "@type": "ReadAction", "target": ["https://circularitgroup.com/it-services/"] }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://circularitgroup.com/it-services/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://circularitgroup.com/"
+                            },
+                            { "@type": "ListItem", "position": 2, "name": "IT Services" }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://circularitgroup.com/#website",
+                        "url": "https://circularitgroup.com/",
+                        "name": "Circular IT group",
+                        "description": "",
+                        "potentialAction": [
+                            {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": "https://circularitgroup.com/?s={search_term_string}"
+                                },
+                                "query-input": {
+                                    "@type": "PropertyValueSpecification",
+                                    "valueRequired": true,
+                                    "valueName": "search_term_string"
+                                }
+                            }
+                        ],
+                        "inLanguage": "en-GB"
+                    }
+                ]
+            }
+        </script>
+        <!-- / Yoast SEO plugin. -->
+
+        <link rel="dns-prefetch" href="//plausible.io" />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="//kit.fontawesome.com" />
+
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Circular IT group - EN &raquo; Feed"
+            href="https://circularitgroup.com/feed/"
+        />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Circular IT group - EN &raquo; Comments Feed"
+            href="https://circularitgroup.com/comments/feed/"
+        />
+        <style id="classic-theme-styles-inline-css"></style>
+        <style id="safe-svg-svg-icon-style-inline-css"></style>
+
+        <style id="searchwp-live-search-inline-css"></style>
+
+        <script
+            data-minify="1"
+            data-cookieconsent="ignore"
+            src="https://circularitgroup.com/wp-content/cache/min/2/ajax/libs/jquery/3.6.0/jquery.min.js?ver=1762911483"
+            id="jquery-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer
+            data-domain="circularitgroup.com"
+            data-api="https://plausible.io/api/event"
+            data-cfasync="false"
+            data-rocket-src="https://plausible.io/js/plausible.outbound-links.js"
+            id="plausible-analytics-js"
+        ></script>
+        <script id="plausible-analytics-js-after">
+            window.plausible =
+                window.plausible ||
+                function () {
+                    (window.plausible.q = window.plausible.q || []).push(arguments);
+                };
+        </script>
+        <link rel="https://api.w.org/" href="https://circularitgroup.com/wp-json/" />
+        <link
+            rel="alternate"
+            title="JSON"
+            type="application/json"
+            href="https://circularitgroup.com/wp-json/wp/v2/pages/1543"
+        />
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://circularitgroup.com/xmlrpc.php?rsd" />
+        <meta name="generator" content="WordPress 6.8.3" />
+        <link rel="shortlink" href="https://circularitgroup.com/?p=1543" />
+        <link
+            rel="alternate"
+            title="oEmbed (JSON)"
+            type="application/json+oembed"
+            href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-services%2F"
+        />
+        <link
+            rel="alternate"
+            title="oEmbed (XML)"
+            type="text/xml+oembed"
+            href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fit-services%2F&#038;format=xml"
+        />
+        <link rel="alternate" href="https://circularitgroup.com/it-services/" hreflang="x-default" />
+        <link rel="alternate" href="https://circularitgroup.com/nl/it-diensten/" hreflang="nl" />
+        <link rel="alternate" href="https://circularitgroup.com/nl/it-diensten/" hreflang="nl-nl" />
+        <link rel="alternate" href="https://circularitgroup.com/fr/services/" hreflang="fr" />
+        <link rel="alternate" href="https://circularitgroup.com/fr/services/" hreflang="fr-fr" />
+        <link rel="alternate" href="https://circularitgroup.com/de/it-dienstleistungen/" hreflang="de" />
+        <link rel="alternate" href="https://circularitgroup.com/de/it-dienstleistungen/" hreflang="de-de" />
+        <link rel="alternate" href="https://circularitgroup.com/it-services/" hreflang="en" />
+        <link rel="alternate" href="https://circularitgroup.com/it-services/" hreflang="en-gb" />
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://kit.fontawesome.com/cefd36e79b.js"
+            crossorigin="anonymous"
+            data-rocket-defer
+            defer
+        ></script>
+        <meta name="plausible-analytics-version" content="2.3.1" />
+
+        <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+        <!-- GTM Container placement set to footer -->
+        <script data-cfasync="false" data-pagespeed-no-defer>
+            var dataLayer_content = {
+                pagePostType: 'page',
+                pagePostType2: 'single-page',
+                pagePostAuthor: 'Marcel van Ginkel',
+            };
+            dataLayer.push(dataLayer_content);
+        </script>
+        <script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PZLH4DC');
+        </script>
+        <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+        <noscript
+            ><style id="rocket-lazyload-nojs-css">
+                .rll-youtube-player,
+                [data-lazy-src] {
+                    display: none !important;
+                }
+            </style></noscript
+        >
+        <link
+            rel="preload"
+            fetchpriority="high"
+            as="image"
+            href="https://circularitgroup.com/wp-content/smush-webp/2023/12/it-lifecycle-services-citg-1422x800.jpg.webp"
+            type="image/jpeg"
+        />
+        <style id="rocket-lazyrender-inline-css">
+            [data-wpr-lazyrender] {
+                content-visibility: auto;
+            }
+        </style>
+        <meta
+            name="generator"
+            content="WP Rocket 3.20.1.1"
+            data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop"
+        />
+    </head>
+    <body class="wp-singular page-template-default page page-id-1543 page-parent wp-theme-stuurlui site-2">
+        <a href="#main" class="skiplink">To main content</a>
+        <a href="#menu" class="skiplink">To navigation</a>
+        {% include 'header' %}
+        <main id="main">
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+                <!-- Breadcrumb NavXT 7.4.1 -->
+                <span property="itemListElement" typeof="ListItem"
+                    ><a
+                        property="item"
+                        typeof="WebPage"
+                        title="Ga naar Circular IT group - EN."
+                        href="https://circularitgroup.com"
+                        class="home"
+                        ><span property="name">Home</span></a
+                    ><meta property="position" content="1" /></span
+                ><i class="fa-thin fa-angle-right"></i
+                ><span property="itemListElement" typeof="ListItem"
+                    ><span property="name" class="post post-page current-item">IT Services</span
+                    ><meta property="url" content="https://circularitgroup.com/it-services/" /><meta
+                        property="position"
+                        content="2"
+                /></span>
+            </div>
+            <!-- header -->
+            <section class="has-background no-animation header fullwidth-image">
+                <div class="header-image-wrapper">
+                    <picture>
+                        <source
+                            srcset="
+                                https://circularitgroup.com/wp-content/smush-webp/2023/12/it-lifecycle-services-citg-600x338.jpg.webp
+                            "
+                            media="(max-width: 680px)"
+                        />
+                        <source
+                            srcset="
+                                https://circularitgroup.com/wp-content/smush-webp/2023/12/it-lifecycle-services-citg-1422x800.jpg.webp
+                            "
+                            media="(min-width: 680px)"
+                        />
+                        <img
+                            width="1422"
+                            height="800"
+                            loading="eager"
+                            fetchpriority="high"
+                            src="https://circularitgroup.com/wp-content/smush-webp/2023/12/it-lifecycle-services-citg-1422x800.jpg.webp"
+                            class="header-image-round"
+                            alt="it lifecycle services citg"
+                        />
+                    </picture>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-y grid-margin-x">
+                        <div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
+                            <h1 class="hero">IT Lifecycle Services</h1>
+                            <div class="text">
+                                <p>
+                                    Our IT lifecycle services help you maximise the value and availability of your IT
+                                    assets, from procurement to disposal.
+                                </p>
+                                <p>
+                                    We offer advice and consultancy, logistics and pre-configuration, deployment,
+                                    maintenance and support, as well as IT asset disposition (ITAD) services.
+                                </p>
+                                <a href="#form" class="btn secondary" target="_parent"
+                                    >Contact us <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container anchor-tabs">
+                    <ul data-magellan>
+                        <li class="anchor-intro">Quick to:</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- end:header -->
+            <!-- tabs -->
+            <section
+                id="Services"
+                data-magellan-target="Services"
+                data-magellan-name="Services"
+                class="tabs-section vertical has-background"
+            >
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell large-4 hide-for-small-only">
+                            <h2>Our Services</h2>
+                            <ul class="vertical tabs" data-tabs id="tabs-564815011">
+                                <li class="tabs-title is-active">
+                                    <a href="#panel-1419231578" aria-selected="true">
+                                        <i class="fa-classic fa-regular fa-laptop" aria-hidden="true"></i> Advice and
+                                        consultancy <i class="fa-regular fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="tabs-title">
+                                    <a href="#panel-1771450861">
+                                        <i class="fa-classic fa-regular fa-screwdriver-wrench" aria-hidden="true"></i>
+                                        Logistics and configuration <i class="fa-regular fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="tabs-title">
+                                    <a href="#panel-1660518936">
+                                        <i class="fa-classic fa-regular fa-network-wired" aria-hidden="true"></i>
+                                        Deployment <i class="fa-regular fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="tabs-title">
+                                    <a href="#panel-22325975">
+                                        <i class="fa-classic fa-regular fa-toolbox" aria-hidden="true"></i> Maintenance
+                                        and support <i class="fa-regular fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                                <li class="tabs-title">
+                                    <a href="#panel-2111740359">
+                                        <i class="fa-classic fa-regular fa-truck" aria-hidden="true"></i> IT Asset
+                                        Disposition services <i class="fa-regular fa-arrow-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cell hide-for-medium">
+                            <ul class="accordion selectbox" data-accordion data-allow-all-closed="true">
+                                <li class="accordion-item" data-accordion-item>
+                                    <a href="#" class="accordion-title">Choose chapter</a>
+                                    <div class="accordion-content" data-tab-content>
+                                        <a data-target="#panel-1419231578" href="javascript:;"
+                                            >Advice and consultancy</a
+                                        >
+                                        <a data-target="#panel-1771450861" href="javascript:;"
+                                            >Logistics and configuration</a
+                                        >
+                                        <a data-target="#panel-1660518936" href="javascript:;">Deployment</a>
+                                        <a data-target="#panel-22325975" href="javascript:;">Maintenance and support</a>
+                                        <a data-target="#panel-2111740359" href="javascript:;"
+                                            >IT Asset Disposition services</a
+                                        >
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cell large-7 large-offset-1 box">
+                            <div class="tabs-content" data-tabs-content="tabs-564815011">
+                                <div class="tabs-panel is-active" id="panel-1419231578">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-margin-y">
+                                            <div class="cell">
+                                                <h3 class="h4">Advice and consultancy</h3>
+                                                <div class="text">
+                                                    <p>
+                                                        Unlock the full potential of your devices with our seasoned
+                                                        experts.
+                                                    </p>
+                                                    <p>
+                                                        We guide you through device selection, efficient deployment, and
+                                                        management, covering everything from logistics to onboarding and
+                                                        security.
+                                                    </p>
+                                                    <p>
+                                                        Why choose between sustainability and savings when you can have
+                                                        both?
+                                                    </p>
+                                                    <a
+                                                        href="https://circularitgroup.com/book-a-consultation/"
+                                                        class="btn secondary"
+                                                        target="_parent"
+                                                        >Request a consultation <i class="fa-regular fa-arrow-right"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-panel" id="panel-1771450861">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-margin-y">
+                                            <div class="cell">
+                                                <h3 class="h4">Logistics and configuration</h3>
+                                                <div class="text">
+                                                    <p>
+                                                        Streamline your device deployment and help new hires adapt fast
+                                                        with our end-to-end logistics and configuration services.
+                                                    </p>
+                                                    <p>
+                                                        Get teams up and running instantly, from warehousing,
+                                                        configuration and asset tagging to device registration (CMDB).
+                                                    </p>
+                                                    <a href="#form" class="btn secondary" target="_parent"
+                                                        >Contact us <i class="fa-regular fa-arrow-right"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-panel" id="panel-1660518936">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-margin-y">
+                                            <div class="cell">
+                                                <h3 class="h4">Deployment</h3>
+                                                <div class="text">
+                                                    <p>
+                                                        Ensure a flawless rollout with devices arriving ready to use,
+                                                        right in the hands of your end-users.
+                                                    </p>
+                                                    <p>
+                                                        From comprehensive planning to home delivery, onboarding support
+                                                        and equipment administration, we leave nothing to chance with
+                                                        our project and service management.
+                                                    </p>
+                                                    <a href="#form" class="btn secondary" target="_parent"
+                                                        >Contact us <i class="fa-regular fa-arrow-right"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-panel" id="panel-22325975">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-margin-y">
+                                            <div class="cell">
+                                                <h3 class="h4">Maintenance and support</h3>
+                                                <div class="text">
+                                                    <p>User productivity and satisfaction drive your success.</p>
+                                                    <p>
+                                                        Whether it&#8217;s rapid response to
+                                                        <a
+                                                            href="https://circularitgroup.com/it-services/daas-circular-workplace/"
+                                                            >workspace</a
+                                                        >
+                                                        issues with break/fix support, swapping devices already in
+                                                        stock, rapidly replacing devices through our
+                                                        <a
+                                                            href="https://circularitgroup.com/it-services/it-kiosk-and-it-locker/"
+                                                            >IT-Lockers</a
+                                                        >
+                                                        or reconditioning used devices for incoming talent, we optimise
+                                                        every asset.
+                                                    </p>
+                                                    <p>Cut costs and drive sustainability.</p>
+                                                    <a href="#form" class="btn secondary" target="_parent"
+                                                        >Contact us <i class="fa-regular fa-arrow-right"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-panel" id="panel-2111740359">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-margin-y">
+                                            <div class="cell">
+                                                <h3 class="h4">IT Asset Disposition services</h3>
+                                                <div class="text">
+                                                    <p>
+                                                        Streamline your IT lifecycle with our secure and eco-friendly IT
+                                                        Asset Disposition services.
+                                                    </p>
+                                                    <p>
+                                                        We prioritise sustainability,
+                                                        <a href="https://circularitgroup.com/itad/data-erasure/"
+                                                            >data security</a
+                                                        >
+                                                        and
+                                                        <a href="https://circularitgroup.com/itad/it-asset-recovery/"
+                                                            >value recovery</a
+                                                        >
+                                                        for end-of-life hardware.
+                                                    </p>
+                                                    <p>Make your IT safe, secure and compliant with us.</p>
+                                                    <p>We take care of everything.</p>
+                                                    <a
+                                                        href="https://circularitgroup.com/itad/"
+                                                        class="btn secondary"
+                                                        target="_parent"
+                                                        >Learn more <i class="fa-regular fa-arrow-right"></i
+                                                    ></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:tabs -->
+            <!-- flexible-cards -->
+            <section class="flexible-cards white">
+                <div class="grid-container wide">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell large-10 large-offset-1">
+                            <div class="intro-content text">
+                                <h2>Flexible IT acquisition options</h2>
+                                <p>
+                                    We offer the most flexible IT hardware ownership options, so you can always meet the
+                                    needs and budget of your organisation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-x grid-margin-x grid-margin-y large-up-4 small-up-1 medium-up-2">
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-icon">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Buy</h3>
+                                    <div class="text">
+                                        <p>
+                                            Take full ownership, without time limits or recurring costs. Buying IT
+                                            hardware reduces long-term costs, asset appreciation, and aids budget
+                                            certainty.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/buy/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >Buy IT <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-container small-order-1">
+                                    <i class="fa-classic fa-light fa-cart-shopping" aria-hidden="true"></i>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-icon">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">As a Service</h3>
+                                    <div class="text">
+                                        <p>
+                                            The best IT hardware for your organisation at a fixed price, with all
+                                            services included with audit-ready reports, under one clear monthly
+                                            subscription cost.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-services/daas-circular-workplace/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >As a Service <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-container small-order-1">
+                                    <i class="fa-classic fa-light fa-arrows-rotate" aria-hidden="true"></i>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-icon">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Rent</h3>
+                                    <div class="text">
+                                        <p>
+                                            Rent IT equipment temporarily to keep operations running during transitions,
+                                            projects, or emergencies. Stay agile with short and long-term IT rental.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/rent/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >Rent IT <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-container small-order-1">
+                                    <i class="fa-classic fa-light fa-plus" aria-hidden="true"></i>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="flexible-card-item cell">
+                            <article class="no-bg card-icon">
+                                <div class="card-content small-order-2">
+                                    <h3 class="h5">Lease</h3>
+                                    <div class="text">
+                                        <p>
+                                            Leasing IT hardware offers financial flexibility, improves cash flow and
+                                            potential tax benefits, and optimises financial management for your
+                                            business.<br />
+                                            <a
+                                                href="https://circularitgroup.com/it-hardware/lease/"
+                                                class="btn green-with-arrow"
+                                                target="_parent"
+                                                >Lease IT <i class="fa-regular fa-arrow-right"></i
+                                            ></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-container small-order-1">
+                                    <i class="fa-classic fa-light fa-hand-holding-box" aria-hidden="true"></i>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:flexible-cards -->
+            <!-- testimonial -->
+            <section class="testimonial has-background">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell large-3 large-offset-1">
+                            <div class="image-container">
+                                <img
+                                    width="640"
+                                    height="640"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E"
+                                    class="attachment-full size-full"
+                                    alt="Eneco"
+                                    decoding="async"
+                                    fetchpriority="high"
+                                    data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/11/Eneco.png 640w, https://circularitgroup.com/wp-content/uploads/2023/11/Eneco-300x300.png 300w, https://circularitgroup.com/wp-content/uploads/2023/11/Eneco-600x600.png 600w"
+                                    data-lazy-sizes="(max-width: 640px) 100vw, 640px"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/Eneco.png.webp"
+                                /><noscript
+                                    ><img
+                                        width="640"
+                                        height="640"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2023/11/Eneco.png.webp"
+                                        class="attachment-full size-full"
+                                        alt="Eneco"
+                                        decoding="async"
+                                        fetchpriority="high"
+                                        srcset="
+                                            https://circularitgroup.com/wp-content/uploads/2023/11/Eneco.png         640w,
+                                            https://circularitgroup.com/wp-content/uploads/2023/11/Eneco-300x300.png 300w,
+                                            https://circularitgroup.com/wp-content/uploads/2023/11/Eneco-600x600.png 600w
+                                        "
+                                        sizes="(max-width: 640px) 100vw, 640px"
+                                /></noscript>
+                            </div>
+                        </div>
+                        <div class="cell large-7">
+                            <span class="h3">"Everyone got up and running within half an hour"</span>
+                            <p>Ron Roozeboom, Eneco</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:testimonial -->
+            <!-- cta -->
+            <section class="cta">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x cta-text-container">
+                        <div class="cell large-6 box">
+                            <div class="text">
+                                <h2>
+                                    &#8220;When software is eating the world, hardware has to grow a conscious.&#8221;
+                                </h2>
+                                <p>
+                                    Marc Andreessen once wrote the visionary statement &#8220;software is eating the
+                                    world&#8221;. With the expansion and extensive use of artificial intelligence,
+                                    IT&#8217;s energy footprint is growing faster than ever before. As software rules
+                                    our world, we must ensure that hardware is used in a more energy-efficient and
+                                    environmentally friendly way.
+                                </p>
+                                <p>
+                                    That is the aim of the Circular IT group: to promote the sustainable use of laptops,
+                                    servers, networks and other hardware. We provide the answers for extended lifecycle
+                                    management of IT equipment.
+                                </p>
+                                <a href="/en/extended-lifecycle-management/" class="btn secondary" target="_parent"
+                                    >Discover how <i class="fa-regular fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="cell large-6 auto-height">
+                            <div class="image-container">
+                                <img
+                                    width="2000"
+                                    height="1500"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201500'%3E%3C/svg%3E"
+                                    alt="Circular IT AI"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Circular-it-AI.jpg.webp"
+                                /><noscript
+                                    ><img
+                                        width="2000"
+                                        height="1500"
+                                        loading="lazy"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Circular-it-AI.jpg.webp"
+                                        alt="Circular IT AI"
+                                /></noscript>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:cta -->
+            <!-- brands -->
+            <section
+                id="Certifications"
+                data-magellan-target="Certifications"
+                data-magellan-name="Certifications"
+                class="brands"
+            >
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell text-center">
+                            <h2>Our certifications, permits and accreditations</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell slider">
+                            <div class="swiper-brands-container">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="600"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                                alt=""
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/ADiSA-ITAD-Essentials-Certification-600x600.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2025/07/ADiSA-ITAD-Essentials-Certification-600x600.png.webp"
+                                                    alt=""
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="400"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E"
+                                                alt="B-Corporation-Certified"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/B-Corporation-Certified-2.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="400"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/B-Corporation-Certified-2.png.webp"
+                                                    alt="B-Corporation-Certified"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="359"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20359'%3E%3C/svg%3E"
+                                                alt="blancco-goldpartner-itad"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/11/blancco-goldpartner-itad-600x359.png"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="359"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/uploads/2023/11/blancco-goldpartner-itad-600x359.png"
+                                                    alt="blancco-goldpartner-itad"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="600"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                                alt="Ecovadis platinum"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/07/Ecovadismedal-CITg.png"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/uploads/2024/07/Ecovadismedal-CITg.png"
+                                                    alt="Ecovadis platinum"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="586"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20586'%3E%3C/svg%3E"
+                                                alt="ISO-14001"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-14001-1-600x586.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="586"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-14001-1-600x586.png.webp"
+                                                    alt="ISO-14001"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="566"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20566'%3E%3C/svg%3E"
+                                                alt="ISO-27001"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-27001-1-600x566.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="566"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-27001-1-600x566.png.webp"
+                                                    alt="ISO-27001"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="600"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                                alt="ISO 45001"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/09/ISO-45001-1-600x600.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2025/09/ISO-45001-1-600x600.png.webp"
+                                                    alt="ISO 45001"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="600"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                                alt="ISO 45001"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-45001-2-600x600.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/ISO-45001-2-600x600.png.webp"
+                                                    alt="ISO 45001"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="488"
+                                                height="464"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20488%20464'%3E%3C/svg%3E"
+                                                alt="NEN-7510"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/NEN-7510.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="488"
+                                                    height="464"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/NEN-7510.png.webp"
+                                                    alt="NEN-7510"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="361"
+                                                height="140"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20361%20140'%3E%3C/svg%3E"
+                                                alt="NIWO"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/11/NIWO.png.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="361"
+                                                    height="140"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/smush-webp/2023/11/NIWO.png.webp"
+                                                    alt="NIWO"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="371"
+                                                height="600"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20371%20600'%3E%3C/svg%3E"
+                                                alt="NWO Logo"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/uploads/2024/03/NWO-logo-zw-371x600.png"
+                                            /><noscript
+                                                ><img
+                                                    width="371"
+                                                    height="600"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/uploads/2024/03/NWO-logo-zw-371x600.png"
+                                                    alt="NWO Logo"
+                                            /></noscript>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img
+                                                width="600"
+                                                height="175"
+                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20175'%3E%3C/svg%3E"
+                                                alt="WEELABEX"
+                                                data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/11/WEELABEX-600x175.webp"
+                                            /><noscript
+                                                ><img
+                                                    width="600"
+                                                    height="175"
+                                                    loading="lazy"
+                                                    src="https://circularitgroup.com/wp-content/uploads/2023/11/WEELABEX-600x175.webp"
+                                                    alt="WEELABEX"
+                                            /></noscript>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-navigation">
+                                    <div class="swiper-button-prev swiper-brands-prev">
+                                        <i class="fa-regular fa-arrow-left"></i>
+                                    </div>
+                                    <div class="swiper-button-next swiper-brands-next">
+                                        <i class="fa-regular fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination swiper-brands-pagination hide-for-large"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:brands -->
+            <!-- contact-cta -->
+            <section
+                id="form"
+                data-magellan-target="form"
+                data-magellan-name="Contact"
+                class="contact-cta has-background lightgreen"
+            >
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium-4 large-3 large-offset-1">
+                            <div class="contact-person dark no-role">
+                                <img
+                                    width="600"
+                                    height="600"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+                                    alt="Jan-Dirk Krispijn"
+                                    data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2024/07/Meet-the-team-9.png.webp"
+                                /><noscript
+                                    ><img
+                                        width="600"
+                                        height="600"
+                                        src="https://circularitgroup.com/wp-content/smush-webp/2024/07/Meet-the-team-9.png.webp"
+                                        alt="Jan-Dirk Krispijn"
+                                /></noscript>
+                                <p class="name">Jan-Dirk Krispijn</p>
+                            </div>
+                        </div>
+                        <div class="cell medium-8 large-7 align-center">
+                            <div class="content-wrapper">
+                                <h2>Contact us</h2>
+                                <div class="text">
+                                    <p>Partner with Europe’s leading end-to-end IT lifecycle service provider.</p>
+                                </div>
+                                <script type="rocketlazyloadscript"></script>
+
+                                <div
+                                    class="gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework"
+                                    data-form-theme="gravity-theme"
+                                    data-form-index="0"
+                                    id="gform_wrapper_27"
+                                >
+                                    <div id="gf_27" class="gform_anchor" tabindex="-1"></div>
+                                    <div class="gform_heading">
+                                        <p class="gform_description"></p>
+                                        <p class="gform_required_legend">
+                                            &quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot;
+                                            indicates required fields
+                                        </p>
+                                    </div>
+                                    <form
+                                        method="post"
+                                        enctype="multipart/form-data"
+                                        target="gform_ajax_frame_27"
+                                        id="gform_27"
+                                        action="/it-services/#gf_27"
+                                        data-formid="27"
+                                        novalidate
+                                    >
+                                        <div class="gform-body gform_body">
+                                            <div
+                                                id="gform_fields_27"
+                                                class="gform_fields top_label form_sublabel_below description_below validation_below"
+                                            >
+                                                <div
+                                                    id="field_27_23"
+                                                    class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_23"
+                                                        >Email</label
+                                                    >
+                                                    <div class="ginput_container">
+                                                        <input
+                                                            name="input_23"
+                                                            id="input_27_23"
+                                                            type="text"
+                                                            value=""
+                                                            autocomplete="new-password"
+                                                        />
+                                                    </div>
+                                                    <div class="gfield_description" id="gfield_description_27_23">
+                                                        This field is for validation purposes and should be left
+                                                        unchanged.
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_27_1"
+                                                    class="gfield gfield--type-text firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_1"
+                                                        >Your company name<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_text">
+                                                        <input
+                                                            name="input_1"
+                                                            id="input_27_1"
+                                                            type="text"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_27_20"
+                                                    class="gfield gfield--type-text gfield--width-full firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_20"
+                                                        >Your name<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_text">
+                                                        <input
+                                                            name="input_20"
+                                                            id="input_27_20"
+                                                            type="text"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_27_21"
+                                                    class="gfield gfield--type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_21"
+                                                        >Your email<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_email">
+                                                        <input
+                                                            name="input_21"
+                                                            id="input_27_21"
+                                                            type="email"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_27_22"
+                                                    class="gfield gfield--type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_22"
+                                                        >Your phone number<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        ></label
+                                                    >
+                                                    <div class="ginput_container ginput_container_phone">
+                                                        <input
+                                                            name="input_22"
+                                                            id="input_27_22"
+                                                            type="tel"
+                                                            value=""
+                                                            class="large"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    id="field_27_17"
+                                                    class="gfield gfield--type-textarea gfield--width-full field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <label class="gfield_label gform-field-label" for="input_27_17"
+                                                        >Your question</label
+                                                    >
+                                                    <div class="ginput_container ginput_container_textarea">
+                                                        <textarea
+                                                            name="input_17"
+                                                            id="input_27_17"
+                                                            class="textarea medium"
+                                                            aria-describedby="gfield_description_27_17"
+                                                            placeholder="Your question or message"
+                                                            aria-invalid="false"
+                                                            rows="10"
+                                                            cols="50"
+                                                        ></textarea>
+                                                    </div>
+                                                    <div class="gfield_description" id="gfield_description_27_17">
+                                                        Please specify here the equipment or service for which you would
+                                                        like to request a quote or ask your question here.
+                                                    </div>
+                                                </div>
+                                                <fieldset
+                                                    id="field_27_18"
+                                                    class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"
+                                                >
+                                                    <legend
+                                                        class="gfield_label gform-field-label gfield_label_before_complex"
+                                                    >
+                                                        Privacy<span class="gfield_required"
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></span
+                                                        >
+                                                    </legend>
+                                                    <div class="ginput_container ginput_container_consent">
+                                                        <input
+                                                            name="input_18.1"
+                                                            id="input_27_18_1"
+                                                            type="checkbox"
+                                                            value="1"
+                                                            aria-required="true"
+                                                            aria-invalid="false"
+                                                        />
+                                                        <label
+                                                            class="gform-field-label gform-field-label--type-inline gfield_consent_label"
+                                                            for="input_27_18_1"
+                                                            ><span class="input-replace"
+                                                                ><i class="check-icon fa-solid fa-check"></i></span
+                                                            ><span class="label-text"
+                                                                >I agree to the
+                                                                <a href="/en/privacy-policy/" target="_blank"
+                                                                    >privacy policy</a
+                                                                ></span
+                                                            ><span class="gfield_required gfield_required_asterisk"
+                                                                >*</span
+                                                            ></label
+                                                        ><input
+                                                            type="hidden"
+                                                            name="input_18.2"
+                                                            value='I agree to the &lt;a href="/en/privacy-policy/" target="_blank"&gt;privacy policy&lt;/a&gt;'
+                                                            class="gform_hidden"
+                                                        /><input
+                                                            type="hidden"
+                                                            name="input_18.3"
+                                                            value="23"
+                                                            class="gform_hidden"
+                                                        />
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="gform-footer gform_footer top_label">
+                                            <input
+                                                type="submit"
+                                                id="gform_submit_button_27"
+                                                class="gform_button button"
+                                                onclick="gform.submission.handleButtonClick(this);"
+                                                data-submission-type="submit"
+                                                value="Request a quote"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                name="gform_ajax"
+                                                value="form_id=27&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=5db3f545276ece230c9a22129bc487cc"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_submission_method"
+                                                data-js="gform_submission_method_27"
+                                                value="iframe"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_theme"
+                                                data-js="gform_theme_27"
+                                                id="gform_theme_27"
+                                                value="gravity-theme"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="gform_style_settings"
+                                                data-js="gform_style_settings_27"
+                                                id="gform_style_settings_27"
+                                                value="[]"
+                                            />
+                                            <input type="hidden" class="gform_hidden" name="is_submit_27" value="1" />
+                                            <input type="hidden" class="gform_hidden" name="gform_submit" value="27" />
+
+                                            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="" />
+                                            <input
+                                                type="hidden"
+                                                class="gform_hidden"
+                                                name="state_27"
+                                                value="WyJ7XCIxOC4xXCI6XCI2MDU2N2MxNDg4MGNhYTA1MTFkMzVkMjNlOTljMDljYlwiLFwiMTguMlwiOlwiNDZiN2Q3YzZmMzY5OTAyZjQ2ZmE2NTE2OTE2MjE2M2RcIixcIjE4LjNcIjpcIjJhZjNjYzljN2FlYTQwYTQ5YmZjY2Q0NjQ2ZjQyYWU0XCJ9IiwiYmFmMzk1M2NjMTU1ZDBjNzhmNDgzNjgwNjMyODc2MjQiXQ=="
+                                            />
+                                            <input
+                                                type="hidden"
+                                                autocomplete="off"
+                                                class="gform_hidden"
+                                                name="gform_target_page_number_27"
+                                                id="gform_target_page_number_27"
+                                                value="0"
+                                            />
+                                            <input
+                                                type="hidden"
+                                                autocomplete="off"
+                                                class="gform_hidden"
+                                                name="gform_source_page_number_27"
+                                                id="gform_source_page_number_27"
+                                                value="1"
+                                            />
+                                            <input type="hidden" name="gform_field_values" value="" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <iframe
+                                    style="display: none; width: 0px; height: 0px"
+                                    src="about:blank"
+                                    name="gform_ajax_frame_27"
+                                    id="gform_ajax_frame_27"
+                                    title="This iframe contains the logic required to handle Ajax powered Gravity Forms."
+                                ></iframe>
+                                <script type="rocketlazyloadscript">
+                                    gform.initializeOnLoaded( function() {gformInitSpinner( 27, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_27').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_27');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_27').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_27').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_27').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_27').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_27').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_27').val();gformInitSpinner( 27, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [27, current_page]);window['gf_submitting_27'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_27').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_27').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [27]);window['gf_submitting_27'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_27').text());}else{jQuery('#gform_27').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "27", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_27" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_27";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_27" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 27, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end:contact-cta -->
+        </main>
+        {% include 'footer' %}
+        <script type="speculationrules">
+            {
+                "prefetch": [
+                    {
+                        "source": "document",
+                        "where": {
+                            "and": [
+                                { "href_matches": "\/*" },
+                                {
+                                    "not": {
+                                        "href_matches": [
+                                            "\/wp-*.php",
+                                            "\/wp-admin\/*",
+                                            "\/wp-content\/uploads\/*",
+                                            "\/wp-content\/*",
+                                            "\/wp-content\/plugins\/*",
+                                            "\/wp-content\/themes\/stuurlui\/*",
+                                            "\/*\\?(.+)"
+                                        ]
+                                    }
+                                },
+                                { "not": { "selector_matches": "a[rel~=\"nofollow\"]" } },
+                                { "not": { "selector_matches": ".no-prefetch, .no-prefetch a" } }
+                            ]
+                        },
+                        "eagerness": "conservative"
+                    }
+                ]
+            }
+        </script>
+
+        <!-- GTM Container placement set to footer -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-PZLH4DC"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+                aria-hidden="true"
+            ></iframe
+        ></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+
+        <script
+            type="rocketlazyloadscript"
+            data-minify="1"
+            data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/jquery.countTo.js?ver=1762911483"
+            id="counter-js-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-minify="1"
+            data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/menuCounter.js?ver=1762911483"
+            id="counter-js-custom-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script id="swp-live-search-client-js-extra">
+            var searchwp_live_search_params = [];
+            searchwp_live_search_params = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                origin_id: 1543,
+                config: {
+                    default: {
+                        engine: 'default',
+                        input: { delay: 300, min_chars: 3 },
+                        results: { position: 'bottom', width: 'auto', offset: { x: 0, y: 5 } },
+                        spinner: {
+                            lines: 12,
+                            length: 8,
+                            width: 3,
+                            radius: 8,
+                            scale: 1,
+                            corners: 1,
+                            color: '#424242',
+                            fadeColor: 'transparent',
+                            speed: 1,
+                            rotate: 0,
+                            animation: 'searchwp-spinner-line-fade-quick',
+                            direction: 1,
+                            zIndex: 2000000000,
+                            className: 'spinner',
+                            top: '50%',
+                            left: '50%',
+                            shadow: '0 0 1px transparent',
+                            position: 'absolute',
+                        },
+                    },
+                },
+                msg_no_config_found: 'No valid SearchWP Live Search configuration found!',
+                aria_instructions:
+                    'When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures.',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js"
+            id="swp-live-search-client-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script src="https://kit.fontawesome.com/483c98a683.js" id="fontawesome-js" data-rocket-defer defer></script>
+        <script id="nocache-js-extra">
+            var strl_vars = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                stylesheet_directory: 'https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui',
+            };
+        </script>
+        <script
+            src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/nocache/nocache.min.js"
+            id="nocache-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-cookieconsent="ignore"
+            data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/vendor.min.js"
+            id="vendor-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script id="scripts-js-extra">
+            var strl_vars = {
+                ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                stylesheet_directory: 'https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-cookieconsent="ignore"
+            data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/scripts.min.js"
+            id="scripts-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/dom-ready.min.js"
+            id="wp-dom-ready-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/hooks.min.js"
+            id="wp-hooks-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/i18n.min.js"
+            id="wp-i18n-js"
+        ></script>
+        <script type="rocketlazyloadscript" id="wp-i18n-js-after">
+            wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+        </script>
+        <script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+            ( function( domain, translations ) {
+            	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+            	localeData[""].domain = domain;
+            	wp.i18n.setLocaleData( localeData, domain );
+            } )( "default", {"translation-revision-date":"2025-11-13 00:57:08+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/a11y.min.js"
+            id="wp-a11y-js"
+            data-rocket-defer
+            defer
+        ></script>
+        <script
+            defer="defer"
+            src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/jquery.json.min.js"
+            id="gform_json-js"
+        ></script>
+        <script id="gform_gravityforms-js-extra">
+            var gform_i18n = {
+                datepicker: {
+                    days: {
+                        monday: 'Mo',
+                        tuesday: 'Tu',
+                        wednesday: 'We',
+                        thursday: 'Th',
+                        friday: 'Fr',
+                        saturday: 'Sa',
+                        sunday: 'Su',
+                    },
+                    months: {
+                        january: 'January',
+                        february: 'February',
+                        march: 'March',
+                        april: 'April',
+                        may: 'May',
+                        june: 'June',
+                        july: 'July',
+                        august: 'August',
+                        september: 'September',
+                        october: 'October',
+                        november: 'November',
+                        december: 'December',
+                    },
+                    firstDay: 1,
+                    iconText: 'Select date',
+                },
+            };
+            var gf_legacy_multi = [];
+            var gform_gravityforms = {
+                strings: {
+                    invalid_file_extension: 'This type of file is not allowed. Must be one of the following:',
+                    delete_file: 'Delete this file',
+                    in_progress: 'in progress',
+                    file_exceeds_limit: 'File exceeds size limit',
+                    illegal_extension: 'This type of file is not allowed.',
+                    max_reached: 'Maximum number of files reached',
+                    unknown_error: 'There was a problem while saving the file on the server',
+                    currently_uploading: 'Please wait for the uploading to complete',
+                    cancel: 'Cancel',
+                    cancel_upload: 'Cancel this upload',
+                    cancelled: 'Cancelled',
+                    error: 'Error',
+                    message: 'Message',
+                },
+                vars: { images_url: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images' },
+            };
+            var gf_global = {
+                gf_currency_config: {
+                    name: 'Euro',
+                    symbol_left: '',
+                    symbol_right: '&#8364;',
+                    symbol_padding: ' ',
+                    thousand_separator: '.',
+                    decimal_separator: ',',
+                    decimals: 2,
+                    code: 'EUR',
+                },
+                base_url: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms',
+                number_formats: [],
+                spinnerUrl: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg',
+                version_hash: '980fbc0ec0bdb90e70a4670a1d10fa43',
+                strings: {
+                    newRowAdded: 'New row added.',
+                    rowRemoved: 'Row removed',
+                    formSaved:
+                        'The form has been saved.  The content contains the link to return and complete the form.',
+                },
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/gravityforms.min.js"
+            id="gform_gravityforms-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js"
+            id="gform_placeholder-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js"
+            id="gform_gravityforms_utils-js"
+        ></script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js"
+            id="gform_gravityforms_theme_vendors-js"
+        ></script>
+        <script id="gform_gravityforms_theme-js-extra">
+            var gform_theme_config = {
+                common: {
+                    form: {
+                        honeypot: { version_hash: '980fbc0ec0bdb90e70a4670a1d10fa43' },
+                        ajax: {
+                            ajaxurl: 'https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php',
+                            ajax_submission_nonce: '6801fdfede',
+                            i18n: {
+                                step_announcement: 'Step %1$s of %2$s, %3$s',
+                                unknown_error: 'There was an unknown error processing your request. Please try again.',
+                            },
+                        },
+                    },
+                },
+                hmr_dev: '',
+                public_path: 'https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/',
+                config_nonce: '2ead49c60b',
+            };
+        </script>
+        <script
+            type="rocketlazyloadscript"
+            defer="defer"
+            data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js"
+            id="gform_gravityforms_theme-js"
+        ></script>
+        <script type="rocketlazyloadscript">
+            gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 27) {if(typeof Placeholders != 'undefined'){
+                                    Placeholders.enable();
+                                }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+        </script>
+        <script type="rocketlazyloadscript">
+            gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "27", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_27" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_27";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_27" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 27, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+        </script>
+        <script>
+            window.lazyLoadOptions = [
+                {
+                    elements_selector: 'img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]',
+                    data_src: 'lazy-src',
+                    data_srcset: 'lazy-srcset',
+                    data_sizes: 'lazy-sizes',
+                    class_loading: 'lazyloading',
+                    class_loaded: 'lazyloaded',
+                    threshold: 300,
+                    callback_loaded: function (element) {
+                        if (element.tagName === 'IFRAME' && element.dataset.rocketLazyload == 'fitvidscompatible') {
+                            if (element.classList.contains('lazyloaded')) {
+                                if (typeof window.jQuery != 'undefined') {
+                                    if (jQuery.fn.fitVids) {
+                                        jQuery(element).parent().fitVids();
+                                    }
+                                }
+                            }
+                        }
+                    },
+                },
+                {
+                    elements_selector: '.rocket-lazyload',
+                    data_src: 'lazy-src',
+                    data_srcset: 'lazy-srcset',
+                    data_sizes: 'lazy-sizes',
+                    class_loading: 'lazyloading',
+                    class_loaded: 'lazyloaded',
+                    threshold: 300,
+                },
+            ];
+            window.addEventListener(
+                'LazyLoad::Initialized',
+                function (e) {
+                    var lazyLoadInstance = e.detail.instance;
+                    if (window.MutationObserver) {
+                        var observer = new MutationObserver(function (mutations) {
+                            var image_count = 0;
+                            var iframe_count = 0;
+                            var rocketlazy_count = 0;
+                            mutations.forEach(function (mutation) {
+                                for (var i = 0; i < mutation.addedNodes.length; i++) {
+                                    if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                        continue;
+                                    }
+                                    if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                        continue;
+                                    }
+                                    images = mutation.addedNodes[i].getElementsByTagName('img');
+                                    is_image = mutation.addedNodes[i].tagName == 'IMG';
+                                    iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                                    is_iframe = mutation.addedNodes[i].tagName == 'IFRAME';
+                                    rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+                                    image_count += images.length;
+                                    iframe_count += iframes.length;
+                                    rocketlazy_count += rocket_lazy.length;
+                                    if (is_image) {
+                                        image_count += 1;
+                                    }
+                                    if (is_iframe) {
+                                        iframe_count += 1;
+                                    }
+                                }
+                            });
+                            if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) {
+                                lazyLoadInstance.update();
+                            }
+                        });
+                        var b = document.getElementsByTagName('body')[0];
+                        var config = { childList: !0, subtree: !0 };
+                        observer.observe(b, config);
+                    }
+                },
+                !1,
+            );
+        </script>
+        <script
+            data-no-minify="1"
+            async
+            src="https://circularitgroup.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"
+        ></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://circularitgroup.com",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://circularitgroup.com/search/?_search_search={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+    </body>
+</html>
+<!-- Rocket no webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
