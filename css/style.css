@@ -1088,7 +1088,7 @@ textarea:disabled {
     border: 0 !important;
     border-radius: 0 60px 60px;
     box-shadow: var(--shadow-sm);
-    color: var( --color-white);
+    color: var(--color-white);
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
@@ -1108,7 +1108,7 @@ textarea:disabled {
 }
 .btn:after,
 .text form input[type='submit']:after {
-    background: radial-gradient(var( --color-white), rgba(21, 175, 151, 0.2) 40%);
+    background: radial-gradient(var(--color-white), rgba(21, 175, 151, 0.2) 40%);
     content: '';
     height: 200px;
     left: calc(var(--x, 0) * 1px - 100px);
@@ -1123,7 +1123,7 @@ textarea:disabled {
 .text form input[type='submit']:focus,
 .text form input[type='submit']:hover {
     background: linear-gradient(137deg, var(--color-primary), var(--color-primary-light));
-    color: var( --color-white);
+    color: var(--color-white);
     text-decoration: none !important;
 }
 .btn:focus:after,
@@ -1139,14 +1139,14 @@ textarea:disabled {
 }
 .secondary.btn:after,
 .text form input.secondary[type='submit']:after {
-    background: radial-gradient(var( --color-white), rgba(219, 143, 27, 0.2) 40%);
+    background: radial-gradient(var(--color-white), rgba(219, 143, 27, 0.2) 40%);
 }
 .secondary.btn:focus,
 .secondary.btn:hover,
 .text form input.secondary[type='submit']:focus,
 .text form input.secondary[type='submit']:hover {
     background: linear-gradient(129deg, var(--color-secondary), var(--color-secondary-dark));
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .ghost.btn,
 .text form input.ghost[type='submit'] {
@@ -1160,7 +1160,7 @@ textarea:disabled {
 .text form input.ghost[type='submit']:focus,
 .text form input.ghost[type='submit']:hover {
     background: linear-gradient(304deg, var(--color-brand-green), #669d88);
-    color: var( --color-white);
+    color: var(--color-white);
 }
 @media print {
     *,
@@ -1468,7 +1468,7 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
 .eapps-widget-toolbar-panel {
     background-color: #222;
     border-radius: 6px;
-    color: var( --color-white);
+    color: var(--color-white);
     display: -ms-inline-flexbox;
     display: inline-flex;
     -ms-flex-align: center;
@@ -1524,7 +1524,7 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
     -ms-flex-align: center;
     align-items: center;
     border-right: 1px solid hsla(0, 0%, 100%, 0.2);
-    color: var( --color-white);
+    color: var(--color-white);
     padding: 9px;
     text-decoration: none;
 }
@@ -1535,7 +1535,7 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
 }
 .eapps-widget-toolbar-panel-edit-icon svg {
     display: block;
-    fill: var( --color-white);
+    fill: var(--color-white);
     height: 100%;
     width: 100%;
 }
@@ -1578,7 +1578,7 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
 .eapps-widget-toolbar-panel-views-get-more {
     background-color: #f93262;
     border-radius: 0 6px 6px 0;
-    color: var( --color-white);
+    color: var(--color-white);
     font-size: 12px;
     font-weight: 400;
     padding: 9px 16px;
@@ -1600,7 +1600,7 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
 .eapps-widget-toolbar-panel-share-button {
     background-color: #1c91ff;
     border-radius: 6px;
-    color: var( --color-white);
+    color: var(--color-white);
     cursor: default;
     display: -ms-flexbox;
     display: flex;
@@ -1617,13 +1617,13 @@ div.eapps-widget.eapps-widget-show-toolbar:before {
 }
 .eapps-widget-toolbar-panel-share-button svg {
     display: inline-block;
-    fill: var( --color-white);
+    fill: var(--color-white);
     margin-right: 6px;
     position: relative;
     top: -1px;
 }
 .eapps-widget-toolbar-panel-share-block {
-    background: var( --color-white);
+    background: var(--color-white);
     border: 1px solid hsla(0, 0%, 7%, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -2005,7 +2005,7 @@ h2 {
 .text form input.ghost[type='submit']:focus,
 .text form input.ghost[type='submit']:hover {
     background: linear-gradient(304deg, var(--color-brand-green), #669d88);
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .gform_wrapper .gform_body .gfield .ginput_container_radio .gchoice .gfield-choice-input {
     display: none;
@@ -2467,7 +2467,7 @@ h3 {
 }
 .contact-cta.white,
 .contact-cta.white:before {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
 }
 @media screen and (min-width: 64rem) {
     .contact-person {
@@ -2594,7 +2594,7 @@ h3 {
     background: 0 0;
 }
 .tabs-section .accordion .accordion-item {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-radius: 0 20px 20px;
 }
 .tabs-section .accordion .accordion-content {
@@ -2776,7 +2776,7 @@ h3 {
     color: var(--color-error);
 }
 .gform_wrapper.gravity-theme .validation_message {
-    background: var( --color-white)9f9;
+    background: var(--color-white)9f9;
     border: 1px solid var(--color-error);
     font-size: 14.992px;
     margin-block-start: 8px;
@@ -3195,7 +3195,7 @@ h5 {
     align-items: center;
     background-color: var(--color-primary);
     border-radius: 50%;
-    color: var( --color-white);
+    color: var(--color-white);
     cursor: pointer;
     display: flex;
     height: 2.5rem;
@@ -3305,7 +3305,7 @@ h5 {
     width: 368px;
 }
 .grid-card-image-cta .card-header .icon i:before {
-    color: var( --color-white);
+    color: var(--color-white);
     font-size: 112px;
 }
 .grid-card-image-cta .card-header .image {
@@ -3337,7 +3337,7 @@ h5 {
     z-index: 9999;
 }
 .grid-card-image-cta .content {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     padding: 1rem;
@@ -3393,7 +3393,7 @@ h5 {
     width: 368px;
 }
 .grid-card .card-header .icon i:before {
-    color: var( --color-white);
+    color: var(--color-white);
     font-size: 112px;
 }
 .grid-card .card-header .image {
@@ -3425,7 +3425,7 @@ h5 {
     z-index: 9999;
 }
 .grid-card .content {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     padding: 1rem;
@@ -3697,7 +3697,7 @@ h5 {
     align-items: center;
     background: var(--color-primary);
     border-radius: 50%;
-    color: var( --color-white);
+    color: var(--color-white);
     content: attr(data-count);
     display: flex;
     font-size: 2rem;
@@ -3801,14 +3801,14 @@ img:is([sizes='auto' i], [sizes^='auto,' i]) {
     width: 0;
 }
 .calc-nav-link {
-    color: var( --color-white);
+    color: var(--color-white);
     display: block;
     padding: 16px 20px;
     text-decoration: none;
     transition: 0.5s;
 }
 .calc-nav-submenu {
-    background: var( --color-white)0 !important;
+    background: var(--color-white)0 !important;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s;
@@ -3824,7 +3824,7 @@ img:is([sizes='auto' i], [sizes^='auto,' i]) {
 }
 span.calc-nav-link.active {
     background: #272f32 !important;
-    color: var( --color-white);
+    color: var(--color-white);
 }
 span.calc-nav-link {
     background: #a3bfcd;
@@ -3833,7 +3833,7 @@ span.calc-nav-link:hover {
     background: #7c96a3;
 }
 .searchwp-live-search-results {
-    background: var( --color-white);
+    background: var(--color-white);
     border-radius: 3px;
     -webkit-box-shadow: 0 0 2px 0 rgba(30, 30, 30, 0.4);
     box-shadow: 0 0 2px 0 rgba(30, 30, 30, 0.4);
@@ -6297,7 +6297,7 @@ button:focus [data-whatinput='touch'] a:focus {
     border: 0 !important;
     border-radius: 0 60px 60px;
     box-shadow: var(--shadow-sm);
-    color: var( --color-white);
+    color: var(--color-white);
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
@@ -6323,7 +6323,7 @@ button:focus [data-whatinput='touch'] a:focus {
 .gform_wrapper .gform_footer .gform_button:after,
 .gform_wrapper .gform_footer .gform_next_button:after,
 .text form input[type='submit']:after {
-    background: radial-gradient(var( --color-white), rgba(21, 175, 151, 0.2) 40%);
+    background: radial-gradient(var(--color-white), rgba(21, 175, 151, 0.2) 40%);
     content: '';
     height: 200px;
     left: calc(var(--x, 0) * 1px - 100px);
@@ -6344,7 +6344,7 @@ button:focus [data-whatinput='touch'] a:focus {
 .text form input[type='submit']:focus,
 .text form input[type='submit']:hover {
     background: linear-gradient(137deg, var(--color-primary), var(--color-primary-light));
-    color: var( --color-white);
+    color: var(--color-white);
     text-decoration: none !important;
 }
 .btn:focus:after,
@@ -6372,7 +6372,7 @@ button:focus [data-whatinput='touch'] a:focus {
 .gform_wrapper .gform_footer .secondary.gform_next_button:after,
 .secondary.btn:after,
 .text form input.secondary[type='submit']:after {
-    background: radial-gradient(var( --color-white), rgba(219, 143, 27, 0.2) 40%);
+    background: radial-gradient(var(--color-white), rgba(219, 143, 27, 0.2) 40%);
 }
 .gform_wrapper .gform_body .secondary.gform_button_select_files:focus,
 .gform_wrapper .gform_body .secondary.gform_button_select_files:hover,
@@ -6385,7 +6385,7 @@ button:focus [data-whatinput='touch'] a:focus {
 .text form input.secondary[type='submit']:focus,
 .text form input.secondary[type='submit']:hover {
     background: linear-gradient(129deg, var(--color-secondary), var(--color-secondary-dark));
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .gform_wrapper .gform_body .green-with-arrow.gform_button_select_files,
 .gform_wrapper .gform_footer .green-with-arrow.gform_button,
@@ -6478,7 +6478,7 @@ button::-moz-focus-inner {
     padding: 0;
 }
 .mfp-close {
-    color: var( --color-white);
+    color: var(--color-white);
     font-family: Arial, Baskerville, monospace;
     font-size: 28px;
     font-style: normal;
@@ -6613,7 +6613,7 @@ img.mfp-img {
     width: 100%;
 }
 .mfp-title {
-    color: var( --color-white);
+    color: var(--color-white);
     line-height: 18px;
     padding-right: 36px;
     text-align: left;
@@ -6745,7 +6745,7 @@ img.mfp-img {
     line-height: 1;
 }
 .gform_wrapper .gform_body .gfield .ginput_container_radio .gchoice .check-icon {
-    color: var( --color-white);
+    color: var(--color-white);
     display: none;
     font-size: 0.8rem;
     left: 50%;
@@ -6788,7 +6788,7 @@ img.mfp-img {
     line-height: 1;
 }
 .gform_wrapper .gform_body .gfield .ginput_container_consent .check-icon {
-    color: var( --color-white);
+    color: var(--color-white);
     display: none;
     font-size: 0.8rem;
     left: 50%;
@@ -6811,7 +6811,7 @@ img.mfp-img {
 .gform_wrapper .gform_footer .gform_next_button:focus,
 .gform_wrapper .gform_footer .gform_next_button:hover {
     background: linear-gradient(129deg, var(--color-secondary), var(--color-secondary-dark));
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .facetwp-page {
     cursor: pointer;
@@ -6934,11 +6934,11 @@ html {
 }
 html ::-moz-selection {
     background-color: var(--color-primary);
-    color: var( --color-white);
+    color: var(--color-white);
 }
 html ::selection {
     background-color: var(--color-primary);
-    color: var( --color-white);
+    color: var(--color-white);
 }
 html body {
     color: var(--color-black);
@@ -7010,7 +7010,7 @@ html body.megamenu-open {
 .text ul li:before {
     color: var(--color-primary);
     content: '\f00c';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     font-size: 14px;
     left: 0;
     margin-right: 0.5rem;
@@ -7034,7 +7034,7 @@ html body.megamenu-open {
     flex-direction: column;
 }
 .box {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: var(--shadow-md);
     padding: 1.5rem;
@@ -7224,13 +7224,13 @@ i[class^='fa'] {
 .accordion:not(.timeline) .accordion-item .accordion-title:before {
     color: var(--color-primary);
     content: '\f078';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     right: 1.5rem;
     transition: transform 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 .accordion:not(.timeline) .accordion-item .accordion-title:focus,
 .accordion:not(.timeline) .accordion-item .accordion-title:hover {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     color: var(--color-black);
     text-decoration: none !important;
 }
@@ -7254,7 +7254,7 @@ i[class^='fa'] {
 }
 a.skiplink {
     background-color: var(--color-black);
-    color: var( --color-white);
+    color: var(--color-white);
     display: block;
     font-size: 1.3em;
     left: -1000em;
@@ -7329,7 +7329,7 @@ iframe {
     top: 1.2rem;
 }
 .reveal.custom .inner {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     display: none;
     padding: 1rem 1.5rem;
     width: auto;
@@ -7373,7 +7373,7 @@ iframe {
 }
 #menus {
     align-items: center;
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     height: calc(100vh - 72px);
     left: 0;
     overflow: scroll;
@@ -7408,7 +7408,7 @@ iframe {
     }
 }
 #menus > a:hover {
-    color: #73cfc1;
+    color: var(--color-primary-light);
 }
 #menus .accordion-menu li {
     border-bottom: 1px solid var(--color-gray-100);
@@ -7463,7 +7463,7 @@ iframe {
     a:before {
     color: var(--color-primary);
     content: '\f105';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     font-size: 1rem;
     left: 0;
     position: absolute;
@@ -7503,7 +7503,7 @@ iframe {
     display: none;
 }
 .menu-item-search {
-    color: var( --color-white);
+    color: var(--color-white);
     font-size: 28px;
     margin-right: 0.75rem;
 }
@@ -7547,7 +7547,7 @@ ul.menu.dropdown > li.is-dropdown-submenu-parent:hover {
 }
 ul.menu.dropdown > li.is-dropdown-submenu-parent.is-active > a,
 ul.menu.dropdown > li.is-dropdown-submenu-parent:hover > a {
-    color: var( --color-white);
+    color: var(--color-white);
 }
 ul.menu.dropdown > li.is-dropdown-submenu-parent.is-active > a > .fa-circle-chevron-down,
 ul.menu.dropdown > li.is-dropdown-submenu-parent:hover > a > .fa-circle-chevron-down {
@@ -7559,21 +7559,21 @@ ul.menu.dropdown li {
 }
 ul.menu.dropdown li.is-active > a,
 ul.menu.dropdown li:hover > a {
-    color: var( --color-white);
+    color: var(--color-white);
 }
 ul.menu.dropdown li.is-active > a > .fa-circle-chevron-down,
 ul.menu.dropdown li:hover > a > .fa-circle-chevron-down {
     opacity: 1;
 }
 ul.menu.dropdown li a {
-    color: var( --color-white);
+    color: var(--color-white);
     font-weight: 700;
     padding: 0.7rem 1rem;
     position: relative;
     text-decoration: none;
 }
 ul.menu.dropdown li a:hover {
-    color: #73cfc1 !important;
+    color: var(--color-primary-light) !important;
 }
 ul.menu.dropdown li .fa-circle-chevron-down {
     font-size: 1.2rem;
@@ -7599,7 +7599,7 @@ ul.menu.dropdown li .submenu {
     }
 }
 ul.menu.dropdown li .submenu:before {
-    border-bottom: 15px solid var( --color-white);
+    border-bottom: 15px solid var(--color-white);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     content: '';
@@ -7656,7 +7656,7 @@ ul.menu.dropdown li .submenu .submenu-items-wrap li a:hover:after,
 ul.menu.dropdown li .submenu .submenu-items-wrap li.is-active a:after {
     border: 0;
     content: '\f178';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     height: auto;
     margin-left: 6px;
     right: 5px;
@@ -7738,7 +7738,7 @@ ul.menu.dropdown .fullwidth .is-dropdown-submenu .submenu-items-wrap .menu > li 
     content: none;
 }
 .menutoggle .menu-icon i {
-    color: var( --color-white);
+    color: var(--color-white);
     font-size: 2rem;
 }
 .menutoggle .menu-icon i.fa-times,
@@ -7749,7 +7749,7 @@ ul.menu.dropdown .fullwidth .is-dropdown-submenu .submenu-items-wrap .menu > li 
     display: block;
 }
 .megamenu-container {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-radius: 0 0 16px 16px;
     box-shadow: var(--shadow-lg);
     left: 0;
@@ -7879,14 +7879,14 @@ footer .menu {
     display: none;
 }
 footer .menu a {
-    color: var( --color-white);
+    color: var(--color-white);
     font-weight: 600;
     margin-bottom: 1rem;
     padding: 0;
 }
 footer .menu a:hover:after {
     content: '\f178';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     margin-left: 6px;
     position: absolute;
 }
@@ -7905,7 +7905,7 @@ footer .widget_text .widget-title i {
     }
     ul.menu.dropdown li.first-level.menu-item-has-children > a:after {
         content: '\f13a';
-        font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+        font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
         font-size: 1.2rem;
         font-weight: 400;
         margin-left: 0.5rem;
@@ -7933,7 +7933,7 @@ footer .widget_nav_menu .menu-footer-1-container .menu {
     margin-top: 1rem;
 }
 footer .widget_nav_menu .widget-title {
-    border-bottom: 1px solid var( --color-white);
+    border-bottom: 1px solid var(--color-white);
 }
 @media screen and (min-width: 64rem) {
     footer {
@@ -8004,7 +8004,7 @@ footer .widget_text .widget-title {
 }
 footer .widget_text a,
 footer .widget_text i {
-    color: var( --color-white);
+    color: var(--color-white);
 }
 footer .widget_text i {
     margin-right: 0.5rem;
@@ -8016,12 +8016,12 @@ footer .widget_text a {
 }
 footer .widget_text a:hover:after {
     content: '\f178';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     margin-left: 6px;
 }
 footer .widget_nav_menu .widget-title,
 footer .widget_text .widget-title {
-    color: var( --color-white);
+    color: var(--color-white);
     display: block;
     font-weight: 700;
     margin: 2rem 0;
@@ -8037,7 +8037,7 @@ footer .widget_text .widget-title .fa-chevron-down {
 footer .widget_nav_menu .widget-title .fa-chevron-down:before,
 footer .widget_text .widget-title .fa-chevron-down:before {
     content: '\f13a';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     font-weight: 400;
 }
 footer .widget_nav_menu .widget-title.active .fa-chevron-down,
@@ -8060,7 +8060,7 @@ footer .widget_text a {
 }
 .gform_wrapper .gform_body .gform_button_select_files:hover {
     background: linear-gradient(304deg, var(--color-brand-green), #669d88);
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .gform_wrapper .gform_body .input-replace {
     border-color: var(--color-gray-500) !important;
@@ -8149,7 +8149,7 @@ textarea::placeholder {
 }
 .translation-menu .translation-current {
     align-items: center;
-    color: var( --color-white);
+    color: var(--color-white);
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
@@ -8175,7 +8175,7 @@ textarea::placeholder {
 }
 .translation-menu .translation-current:before {
     content: '\f0ac';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     font-size: 1rem;
     font-weight: 300;
 }
@@ -8186,7 +8186,7 @@ textarea::placeholder {
     transition: transform 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 .translation-menu .translation-other {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border: 0;
     border-radius: 4px;
     box-shadow: var(--shadow-lg);
@@ -8202,7 +8202,7 @@ textarea::placeholder {
     gap: 0.5rem;
 }
 .translation-menu .translation-other:before {
-    border-bottom: 15px solid var( --color-white);
+    border-bottom: 15px solid var(--color-white);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     content: '';
@@ -8268,7 +8268,7 @@ textarea::placeholder {
     text-align: center;
 }
 .contact-person p.name {
-    color: var( --color-white);
+    color: var(--color-white);
     font-weight: 700;
     margin-bottom: 0.5rem;
     max-width: 69%;
@@ -8313,7 +8313,7 @@ textarea::placeholder {
     width: 100%;
 }
 .contact-cta .content-wrapper {
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: var(--shadow-md);
     padding: 1.5rem;
@@ -8516,14 +8516,14 @@ textarea::placeholder {
         max-width: 100vw;
     }
     .header.fullwidth-image .header-image-wrapper + .grid-container h1 {
-        color: var( --color-white);
+        color: var(--color-white);
         margin-bottom: 2rem;
     }
     .header.fullwidth-image .header-image-wrapper + .grid-container .text {
-        color: var( --color-white);
+        color: var(--color-white);
     }
     .header.fullwidth-image .header-image-wrapper:after {
-        background: linear-gradient(90deg, rgba(0, 92, 56, 0.95), rgba(0, 92, 56, 0.5) 45%, transparent 65%);
+        background: var(--image-bg-gradient);
         content: '';
         inset: 0;
         position: absolute;
@@ -8580,7 +8580,7 @@ textarea::placeholder {
 }
 .header .anchor-tabs ul li a:hover {
     background-color: var(--color-primary);
-    color: var( --color-white);
+    color: var(--color-white);
     text-decoration: none;
 }
 .icon-text .grid-x:not(.icon-header) {
@@ -8764,16 +8764,16 @@ textarea::placeholder {
 .time-line .accordion .accordion-item .accordion-title:hover {
     background-color: #05af97;
     border-color: #44bfac;
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .time-line .accordion .accordion-item .accordion-title:focus:before,
 .time-line .accordion .accordion-item .accordion-title:hover:before {
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .time-line .accordion .accordion-item .accordion-title:before {
     color: var(--color-brand-green);
     content: '\f078';
-    font-family: Font Awesome\6 Pro, Font Awesome\6 Brands;
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Pro";
     margin-top: 0;
     right: 1.5rem;
     top: 50%;
@@ -8824,11 +8824,11 @@ textarea::placeholder {
 }
 .time-line .accordion .accordion-item.is-active .accordion-title:before,
 .time-line .accordion .accordion-item.is-active .title {
-    color: var( --color-white);
+    color: var(--color-white);
 }
 .time-line .accordion .accordion-item.is-active .date {
     border-radius: 16px 16px 0 0;
-    color: var( --color-white);
+    color: var(--color-white);
 }
 @media screen and (min-width: 64rem) {
     .time-line .accordion .accordion-item.is-active .date {
@@ -9155,7 +9155,7 @@ html[dir='rtl']
     padding-top: 5px;
 }
 .gform_wrapper.gravity-theme .gform_validation_errors {
-    background: var( --color-white)9f9;
+    background: var(--color-white)9f9;
     border: 1.5px solid var(--color-error);
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.11), 0 0 4px rgba(18, 25, 97, 0.041);
@@ -9213,7 +9213,7 @@ html[dir='rtl']
 }
 .gform_wrapper.gravity-theme .gfield_validation_message,
 .gform_wrapper.gravity-theme .validation_message {
-    background: var( --color-white)9f9;
+    background: var(--color-white)9f9;
     border: 1px solid var(--color-error);
     font-size: 14.992px;
     margin-block-start: 8px;
@@ -9222,7 +9222,7 @@ html[dir='rtl']
 .gform_wrapper.gravity-theme .gform_previous_button.button,
 .gform_wrapper.gravity-theme .gform_save_link.button {
     -webkit-appearance: none !important;
-    background-color: var( --color-white);
+    background-color: var(--color-white);
     color: #6b7280;
     text-decoration: none;
 }

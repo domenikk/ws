@@ -1,13 +1,14 @@
 :root {
     /* Primary Colors */
-    --color-primary: #15af97;
-    --color-primary-light: #d0efea;
-    --color-primary-dark: #14a68f;
-    --color-secondary: #db8f1b;
-    --color-secondary-dark: #b47514;
+    --color-primary: #34919d;
+    --color-primary-light: #7ecfdd;
+    --color-primary-dark: #246a73;
+    --color-secondary: #a44d3b;
+    /* --color-secondary: #fbd87f; */
+    --color-secondary-dark: #813425;
 
     /* Brand Colors */
-    --color-brand-green: #005c38;
+    --color-brand-green: #15464c;
 
     /* Neutral Colors */
     --color-white: #fff;
@@ -20,7 +21,7 @@
     --color-gray-600: #6c6c6c;
 
     /* Background Colors */
-    --color-bg-teal-light: #e2f0f5;
+    --color-bg-teal-light: #d6f7fd;
     --color-bg-teal-lighter: #e8f7f5;
 
     /* Status Colors */
@@ -29,7 +30,9 @@
     --color-success: #3adb76;
 
     /* Shadows */
-    --shadow-sm: 0 4px 24px rgba(5, 175, 151, 0.322);
+    --shadow-sm: 0 4px 24px rgba(126, 207, 221, 0.322);
     --shadow-md: 0 8px 48px rgba(0, 0, 0, 0.078);
     --shadow-lg: 0 20px 99px rgba(0, 0, 0, 0.25);
+    /* Image Background Gradient */
+    --image-bg-gradient: linear-gradient(90deg, rgba(21, 70, 76, 0.95), rgba(21, 70, 76, 0.5) 45%, transparent 65%);
 }
