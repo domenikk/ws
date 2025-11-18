@@ -1,0 +1,35 @@
+:root {
+    /* Primary Colors */
+    --color-primary: #15af97;
+    --color-primary-light: #d0efea;
+    --color-primary-dark: #14a68f;
+    --color-secondary: #db8f1b;
+    --color-secondary-dark: #b47514;
+
+    /* Brand Colors */
+    --color-brand-green: #005c38;
+
+    /* Neutral Colors */
+    --color-white: #fff;
+    --color-black: #333;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #ebebeb;
+    --color-gray-300: #e6e6e6;
+    --color-gray-400: #cacaca;
+    --color-gray-500: #858585;
+    --color-gray-600: #6c6c6c;
+
+    /* Background Colors */
+    --color-bg-teal-light: #e2f0f5;
+    --color-bg-teal-lighter: #e8f7f5;
+
+    /* Status Colors */
+    --color-error: #c02b0a;
+    --color-error-light: #cc4b37;
+    --color-success: #3adb76;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 24px rgba(5, 175, 151, 0.322);
+    --shadow-md: 0 8px 48px rgba(0, 0, 0, 0.078);
+    --shadow-lg: 0 20px 99px rgba(0, 0, 0, 0.25);
+}
