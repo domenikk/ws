@@ -1,0 +1,680 @@
+
+<!doctype html>
+<html class="no-js" lang="en-GB">
+	<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+<meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script>
+		
+        {% include 'rocket-script' %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/png" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/favicon-16x16.png"/>
+<link rel="manifest" href="https://circularitgroup.com/wp-content/themes/stuurlui/assets/img/site.webmanifest" crossOrigin="use-credentials"/>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style></style>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v26.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>ITAD: IT Asset Disposition Service | The #1 ITAD Company</title>
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://cdnjs.cloudflare.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://plausible.io" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://kit.fontawesome.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://challenges.cloudflare.com" rel="dns-prefetch">
+<link crossorigin data-rocket-preload as="font" href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" rel="preload">
+	
+    <link id="wpr-usedcss" rel="stylesheet" href="{{ '/bundle.css' | url }}" />
+    <meta name="description" content="ITAD: secure IT asset disposition. Collection, data erasure, value recovery and recycling of retired IT. Ask for a free valuation!" />
+	<link rel="canonical" href="https://circularitgroup.com/itad/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="ITAD: IT Asset Disposition Service | The #1 ITAD Company" />
+	<meta property="og:description" content="ITAD: secure IT asset disposition. Collection, data erasure, value recovery and recycling of retired IT. Ask for a free valuation!" />
+	<meta property="og:url" content="https://circularitgroup.com/itad/" />
+	<meta property="og:site_name" content="Circular IT group - EN" />
+	<meta property="article:modified_time" content="2025-11-18T12:50:34+00:00" />
+	<meta property="og:image" content="https://circularitgroup.com/wp-content/uploads/2023/12/Reduce-Reuse-e1758546523850.jpg" />
+	<meta property="og:image:width" content="600" />
+	<meta property="og:image:height" content="300" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Estimated reading time" />
+	<meta name="twitter:data1" content="8 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://circularitgroup.com/itad/","url":"https://circularitgroup.com/itad/","name":"ITAD: IT Asset Disposition Service | The #1 ITAD Company","isPartOf":{"@id":"https://circularitgroup.com/#website"},"datePublished":"2023-09-13T14:30:58+00:00","dateModified":"2025-11-18T12:50:34+00:00","description":"ITAD: secure IT asset disposition. Collection, data erasure, value recovery and recycling of retired IT. Ask for a free valuation!","breadcrumb":{"@id":"https://circularitgroup.com/itad/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://circularitgroup.com/itad/"]}]},{"@type":"BreadcrumbList","@id":"https://circularitgroup.com/itad/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://circularitgroup.com/"},{"@type":"ListItem","position":2,"name":"IT Asset Disposition (ITAD)"}]},{"@type":"WebSite","@id":"https://circularitgroup.com/#website","url":"https://circularitgroup.com/","name":"Circular IT group","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://circularitgroup.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//plausible.io' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//kit.fontawesome.com' />
+
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Feed" href="https://circularitgroup.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Circular IT group - EN &raquo; Comments Feed" href="https://circularitgroup.com/comments/feed/" />
+<style id='classic-theme-styles-inline-css'></style>
+<style id='safe-svg-svg-icon-style-inline-css'></style>
+
+
+<style id='searchwp-live-search-inline-css'></style>
+
+
+<script data-minify="1" data-cookieconsent="ignore" src="https://circularitgroup.com/wp-content/cache/min/2/ajax/libs/jquery/3.6.0/jquery.min.js?ver=1763439373" id="jquery-js"></script>
+<script type="rocketlazyloadscript" defer data-domain='circularitgroup.com' data-api='https://plausible.io/api/event' data-cfasync='false' data-rocket-src="https://plausible.io/js/plausible.outbound-links.js" id="plausible-analytics-js"></script>
+<script id="plausible-analytics-js-after">
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+</script>
+<link rel="https://api.w.org/" href="https://circularitgroup.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://circularitgroup.com/wp-json/wp/v2/pages/1707" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://circularitgroup.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://circularitgroup.com/?p=1707' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fitad%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://circularitgroup.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcircularitgroup.com%2Fitad%2F&#038;format=xml" />
+<link rel="alternate" href="https://circularitgroup.com/itad/" hreflang="x-default" />
+<link rel="alternate" href="https://circularitgroup.com/nl/itad/" hreflang="nl" />
+<link rel="alternate" href="https://circularitgroup.com/nl/itad/" hreflang="nl-nl" />
+<link rel="alternate" href="https://circularitgroup.com/fr/itad/" hreflang="fr" />
+<link rel="alternate" href="https://circularitgroup.com/fr/itad/" hreflang="fr-fr" />
+<link rel="alternate" href="https://circularitgroup.com/de/itad/" hreflang="de" />
+<link rel="alternate" href="https://circularitgroup.com/de/itad/" hreflang="de-de" />
+<link rel="alternate" href="https://circularitgroup.com/itad/" hreflang="en" />
+<link rel="alternate" href="https://circularitgroup.com/itad/" hreflang="en-gb" />
+<script type="rocketlazyloadscript" data-rocket-src="https://kit.fontawesome.com/cefd36e79b.js" crossorigin="anonymous" data-rocket-defer defer></script><meta name='plausible-analytics-version' content='2.3.1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Lienke Lemmen"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZLH4DC');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		
+		<link rel="preload" fetchpriority="high" as="image" href="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-1424x800.jpg.webp" type="image/jpeg">	<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.1.2" data-wpr-features="wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop" /></head>
+	<body class="wp-singular page-template-default page page-id-1707 page-parent wp-theme-stuurlui site-2">
+				<a href="#main" class="skiplink">To main content</a>
+		<a href="#menu" class="skiplink">To navigation</a>
+		{% include 'header' %}
+		<main  id="main">
+					<div  class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+			<!-- Breadcrumb NavXT 7.4.1 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Ga naar Circular IT group - EN." href="https://circularitgroup.com" class="home" ><span property="name">Home</span></a><meta property="position" content="1"></span><i class="fa-thin fa-angle-right"></i><span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">IT Asset Disposition (ITAD)</span><meta property="url" content="https://circularitgroup.com/itad/"><meta property="position" content="2"></span>		</div>
+		<!-- header -->
+<section  class="has-background no-animation header fullwidth-image ">
+			<div  class="header-image-wrapper">
+			<picture>
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-600x337.jpg.webp" media="(max-width: 680px)" />
+				<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-1424x800.jpg.webp" media="(min-width: 680px)" />
+				<img
+				width="1424"
+				height="800"
+				loading="eager" fetchpriority="high"				src="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-1424x800.jpg.webp"
+				class="header-image-round"
+				alt="IT Asset Disposition (ITAD)"				>
+			</picture>
+		</div>
+			<div  class="grid-container">
+		<div class="grid-x grid-margin-y grid-margin-x">
+			<div class="cell medium-6 small-order-2 medium-order-1 text-center-mobile align-self-middle">
+				<p class="pretitle">Secure, compliant, and sustainable.</p><h1 class="hero">IT Asset Disposition (ITAD)</h1><div class="text"><p>Maximise the value of your surplus IT equipment by giving it a second life. As a trusted ITAD company, we help you showcase your sustainability commitment while strengthening data security and compliance.</p>
+	<a href="#form" class="btn secondary" target="_parent" >Get a free valuation <i class="fa-regular fa-arrow-right"></i></a>
+	
+</div>			</div>
+					</div>
+	</div>
+		</section>
+<!-- end:header -->
+<!-- textmedia -->
+<section  class="textmedia boxed">
+	<div  class="grid-container">
+		<div class="grid-x grid-margin-x grid-margin-y textmedia-section center-vertically">
+			<div class="cell medium-6 small-order-2 imagelast">
+				<div class="text text-column">
+					<h2>What is ITAD?</h2>
+<p>IT Asset Disposition (ITAD) is the <strong>process of securely disposing of outdated or unwanted IT hardware, </strong>including laptops, computers, servers, switches, routers, and mobile devices. The goal is to recycle or refurbish items responsibly, while ensuring data security. Compliance with legal regulations is key.</p>
+<p>As a <strong>leading ITAD company,</strong> Circular IT group ensures secure data wiping and environmentally friendly recycling. We also offer asset recovery, turning your old tech into value through buy-back schemes. Recover IT assets to safeguard data, meet ESG targets, and reduce total cost.</p>
+<p>Circular IT group specialises in ITAD services, including surplus IT equipment disposal, data centre dismantling, certified data erasure, and computer recycling. We handle global disposals for medium to large organisations and are trusted by more than 90 multinationals. We provide clear, audit-ready reports and certificates for GDPR  and sustainability targets.</p>
+<p>Discover everything about ITAD in <a href="https://circularitgroup.com/news/it-asset-disposition-itad/">our blog</a>.</p>
+	<a href="#form" class="btn secondary" target="_parent" >Get a free valuation <i class="fa-regular fa-arrow-right"></i></a>
+	
+				</div>
+			</div>
+			<div class="cell medium-6  imagelast small-order-2 imagelast">
+				<div class="media-column">
+				<img width="640" height="640" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E" class="attachment-strl-large size-strl-large" alt="ITAD IT Asset Disposition" decoding="async" fetchpriority="high" data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition.jpg 640w, https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition-300x300.jpg 300w, https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition-600x600.jpg 600w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITAD-IT-Asset-Disposition.jpg.webp" /><noscript><img width="640" height="640" src="https://circularitgroup.com/wp-content/smush-webp/2023/12/ITAD-IT-Asset-Disposition.jpg.webp" class="attachment-strl-large size-strl-large" alt="ITAD IT Asset Disposition" decoding="async" fetchpriority="high" srcset="https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition.jpg 640w, https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition-300x300.jpg 300w, https://circularitgroup.com/wp-content/uploads/2023/12/ITAD-IT-Asset-Disposition-600x600.jpg 600w" sizes="(max-width: 640px) 100vw, 640px" /></noscript>				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end:textmedia -->
+<!-- tabs -->
+<section  id="services" data-magellan-target="services" data-magellan-name="Services" class="tabs-section vertical has-background">
+<div  class="grid-container">
+		<div class="grid-x grid-margin-x">
+		<div class="cell large-4 hide-for-small-only">
+			<h2>Your IT hardware, our concern</h2>			<ul class="vertical tabs" data-tabs id="tabs-220867388">
+										<li class="tabs-title is-active">
+						<a href="#panel-1772690324">
+														Data wiping							<i class="fa-regular fa-arrow-right"></i>
+						</a>
+					</li>
+										<li class="tabs-title">
+						<a href="#panel-1986929452">
+														Data destruction							<i class="fa-regular fa-arrow-right"></i>
+						</a>
+					</li>
+                    <li class="tabs-title">
+						<a href="#panel-1527863612">
+														IT Recycling							<i class="fa-regular fa-arrow-right"></i>
+						</a>
+					</li>
+								</ul>
+		</div>
+				<div class="cell hide-for-medium">
+			<ul class="accordion selectbox" data-accordion data-allow-all-closed="true">
+				<li class="accordion-item" data-accordion-item>
+					<a href="#" class="accordion-title">Choose chapter</a>
+					<div class="accordion-content" data-tab-content>
+												<a data-target="#panel-1772690324" href="javascript:;">Data wiping</a>
+												<a data-target="#panel-1986929452" href="javascript:;">Data destruction</a>
+                                                <a data-target="#panel-1527863612" href="javascript:;">IT Recycling</a>
+											</div>
+				</li>
+			</ul>
+		</div>
+					<div class="cell large-7 large-offset-1 box">
+			<div class="tabs-content" data-tabs-content="tabs-220867388">
+										<div class="tabs-panel is-active" id="panel-1772690324">
+						<div  class="grid-container">
+							<div class="grid-x grid-margin-x grid-margin-y">
+								<div class="cell">
+									<h3 class="h4">Data wiping</h3>									<div class="text">
+										<p>Protect your organisation with certified data erasure. Avoid data leaks, reputational damage and penalties.</p>
+<p>We use <a href="https://circularitgroup.com/about-us/certifications-and-licenses/blancco/">Blancco software</a>, globally recognised for secure and permanent data erasure. Includes full reporting and responsible disposal of your IT hardware.</p>
+	<a href="https://circularitgroup.com/itad/data-erasure/" class="btn " target="_parent" >Data erasure  </a>
+	
+									</div>
+								</div>
+															</div>
+						</div>
+					</div>
+										<div class="tabs-panel" id="panel-1986929452">
+						<div  class="grid-container">
+							<div class="grid-x grid-margin-x grid-margin-y">
+								<div class="cell">
+									<h3 class="h4">Data destruction</h3>									<div class="text">
+										<p>Data destruction you can trust. Formatting doesn’t fully erase data. We physically destroy storage devices using industrial <a href="https://circularitgroup.com/itad/hard-drive-shredding/">shredders</a>, making data irretrievable.</p>
+<p>Circular IT group performs <a href="https://circularitgroup.com/itad/on-site-destruction/">destruction on-site</a> or at our secure facility, ensuring maximum control, security, and irreversible data removal.</p>
+	<a href="https://circularitgroup.com/itad/data-destruction/" class="btn " target="_parent" >Data destruction </a>
+	
+									</div>
+								</div>
+															</div>
+						</div>
+					</div>
+                    <div class="tabs-panel" id="panel-1527863612">
+						<div  class="grid-container">
+							<div class="grid-x grid-margin-x grid-margin-y">
+								<div class="cell">
+									<h3 class="h4">IT Recycling</h3>									<div class="text">
+										<p>We collect, process and dismantle outdated IT equipment, such as computers, laptops, printers, monitors, and networking equipment, to recover valuable materials and components.</p>
+<p>All recycling is carried out securely and in compliance with <a href="https://circularitgroup.com/about-us/certifications-and-licenses/weeelabex/">WEEELABEX</a> standards, with <strong>100% data security guaranteed</strong>.</p>
+	<a href="https://circularitgroup.com/itad/it-recycling/" class="btn " target="_parent" >IT recycling </a>
+	
+									</div>
+								</div>
+															</div>
+						</div>
+					</div>
+										
+								</div>
+		</div>
+	</div>
+</div>
+
+</section>
+<!-- end:tabs -->
+
+<!-- steps -->
+<section  id="Process" data-magellan-target="Process" data-magellan-name="Process" class="steps">
+<div  class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell">
+			<h2>ITAD process</h2>		</div>
+	</div>
+	<div class="swiper-steps-container">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-count="1">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/circulaire-it-apparatuur-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/circulaire-it-apparatuur-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Circular IT equipment"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/10/circulaire-it-apparatuur-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2023/10/circulaire-it-apparatuur-1422x800.jpg"
+					alt="Circular IT equipment"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Request</p>							<div class="text">
+					<p><p>Call <a href="tel:+31889907500">+31 (0) 88 – 990 7500</a> or fill in the form below to get started.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="2">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-600x337.jpg.webp" media="(max-width: 680px)" />
+					<source srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-1424x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+					
+					width="1424"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/storage-circular-1424x800.jpg.webp"
+					alt="IT Asset Disposition (ITAD)"					>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Pick-Up</p>							<div class="text">
+					<p><p>We collect your surplus hardware at your location.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="3">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/transport-600x400.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/transport-1200x800.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1200"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20800'%3E%3C/svg%3E"
+					alt="transport"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/10/transport-1200x800.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1200"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2023/10/transport-1200x800.webp"
+					alt="transport"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Transport</p>							<div class="text">
+					<p><p>We take your hardware away using our own secure transport.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="4">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/registratie-citg-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/registratie-citg-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Registratie citg"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/registratie-citg-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/registratie-citg-1422x800.jpg.webp"
+					alt="Registratie citg"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Registration</p>							<div class="text">
+					<p><p>All your hardware is registered upon arrival.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="5">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-600x338.jpg" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-1422x800.jpg" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="data erasure"				 data-lazy-src="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-1422x800.jpg"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/uploads/2023/10/veilige-dataverwijdering-1422x800.jpg"
+					alt="data erasure"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Certified Data Wiping</p>							<div class="text">
+					<p><p>All data is wiped from your hardware securely.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="6">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/refurbished-it-apparatuur-citg-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/refurbished-it-apparatuur-citg-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="refurbished it apparatuur citg"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/refurbished-it-apparatuur-citg-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/refurbished-it-apparatuur-citg-1422x800.jpg.webp"
+					alt="refurbished it apparatuur citg"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Preparation for a second life</p>							<div class="text">
+					<p><p>We give your old hardware a second life.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+<div class="swiper-slide" data-count="7">
+	<article class="grid-card">
+		<header class="card-header default no-icon">
+											<picture>
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/Acquisition-options-circular-it-600x338.jpg.webp" media="(max-width: 680px)" />
+					<source data-lazy-srcset="https://circularitgroup.com/wp-content/smush-webp/2023/12/Acquisition-options-circular-it-1422x800.jpg.webp" media="(min-width: 680px)" />
+					<img
+					class="image"
+				
+					width="1422"
+					height="800"
+				 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%3E%3C/svg%3E"
+					alt="Acquisition options circular it"				 data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Acquisition-options-circular-it-1422x800.jpg.webp"	><noscript><img
+					class="image"
+					loading="lazy"
+					width="1422"
+					height="800"
+					src="https://circularitgroup.com/wp-content/smush-webp/2023/12/Acquisition-options-circular-it-1422x800.jpg.webp"
+					alt="Acquisition options circular it"					></noscript>
+				</picture>
+
+						</header>
+				<div class="content default">
+						<p class="title">Reporting and payment</p>							<div class="text">
+					<p><p>You receive data wiping certificates, a detailed report and the agreed residual value.</p>
+</p>
+				</div>
+									</div>
+
+				</article>
+</div>
+			</div>
+		</div>
+		<div class="swiper-navigation">
+			<div class="swiper-button-prev swiper-steps-prev"><i class="fa-regular fa-arrow-left"></i></div>
+			<div class="swiper-button-next swiper-steps-next"><i class="fa-regular fa-arrow-right"></i></div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:steps -->
+
+<!-- contact-cta -->
+<section  id="form" data-magellan-target="form" data-magellan-name="Contact" class="contact-cta has-background lightgreen">
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div class="cell align-center">
+			<div class="content-wrapper">
+				<h2>Request a valuation</h2>
+				<div class="text">
+									</div>
+				<script type="rocketlazyloadscript">
+
+</script>
+
+                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_5' ><div id='gf_5' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_5' id='gform_5'  action='/itad/#gf_5' data-formid='5' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_5' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_5_28" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_28'>Company</label><div class='ginput_container'><input name='input_28' id='input_5_28' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_5_28'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_5_27" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><h6>Not intended for private individuals</h6></div><div id="field_5_1" class="gfield gfield--type-text gfield--input-type-text firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_1'>Your company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_5_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_5_20" class="gfield gfield--type-text gfield--input-type-text gfield--width-full firstname gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_20'>Your name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_20' id='input_5_20' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_5_24" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_24'>Your email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_24' id='input_5_24' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_5_25" class="gfield gfield--type-phone gfield--input-type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_25'>Your phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_25' id='input_5_25' type='tel' value='' class='large'   aria-required="true" aria-invalid="false"   /></div></div><div id="field_5_23" class="gfield gfield--type-select gfield--input-type-select gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_23'>Country<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_23' id='input_5_23' class='large gfield_select'    aria-required="true" aria-invalid="false" ><option value='Afghanistan' >Afghanistan</option><option value='Albania' >Albania</option><option value='Algeria' >Algeria</option><option value='American Samoa' >American Samoa</option><option value='Andorra' >Andorra</option><option value='Angola' >Angola</option><option value='Anguilla' >Anguilla</option><option value='Antarctica' >Antarctica</option><option value='Antigua and Barbuda' >Antigua and Barbuda</option><option value='Argentina' >Argentina</option><option value='Armenia' >Armenia</option><option value='Aruba' >Aruba</option><option value='Australia' >Australia</option><option value='Austria' >Austria</option><option value='Azerbaijan' >Azerbaijan</option><option value='Bahamas' >Bahamas</option><option value='Bahrain' >Bahrain</option><option value='Bangladesh' >Bangladesh</option><option value='Barbados' >Barbados</option><option value='Belarus' >Belarus</option><option value='Belgium' >Belgium</option><option value='Belize' >Belize</option><option value='Benin' >Benin</option><option value='Bermuda' >Bermuda</option><option value='Bhutan' >Bhutan</option><option value='Bolivia' >Bolivia</option><option value='Bonaire, Sint Eustatius and Saba' >Bonaire, Sint Eustatius and Saba</option><option value='Bosnia and Herzegovina' >Bosnia and Herzegovina</option><option value='Botswana' >Botswana</option><option value='Bouvet Island' >Bouvet Island</option><option value='Brazil' >Brazil</option><option value='British Indian Ocean Territory' >British Indian Ocean Territory</option><option value='Brunei Darussalam' >Brunei Darussalam</option><option value='Bulgaria' >Bulgaria</option><option value='Burkina Faso' >Burkina Faso</option><option value='Burundi' >Burundi</option><option value='Cambodia' >Cambodia</option><option value='Cameroon' >Cameroon</option><option value='Canada' >Canada</option><option value='Cape Verde' >Cape Verde</option><option value='Cayman Islands' >Cayman Islands</option><option value='Central African Republic' >Central African Republic</option><option value='Chad' >Chad</option><option value='Chile' >Chile</option><option value='China' >China</option><option value='Christmas Island' >Christmas Island</option><option value='Cocos Islands' >Cocos Islands</option><option value='Colombia' >Colombia</option><option value='Comoros' >Comoros</option><option value='Congo' >Congo</option><option value='Congo, Democratic Republic of the' >Congo, Democratic Republic of the</option><option value='Cook Islands' >Cook Islands</option><option value='Costa Rica' >Costa Rica</option><option value='Croatia' >Croatia</option><option value='Cuba' >Cuba</option><option value='Curaçao' >Curaçao</option><option value='Cyprus' >Cyprus</option><option value='Czechia' >Czechia</option><option value='Côte d&#039;Ivoire' >Côte d&#039;Ivoire</option><option value='Denmark' >Denmark</option><option value='Djibouti' >Djibouti</option><option value='Dominica' >Dominica</option><option value='Dominican Republic' >Dominican Republic</option><option value='Ecuador' >Ecuador</option><option value='Egypt' >Egypt</option><option value='El Salvador' >El Salvador</option><option value='Equatorial Guinea' >Equatorial Guinea</option><option value='Eritrea' >Eritrea</option><option value='Estonia' >Estonia</option><option value='Eswatini' >Eswatini</option><option value='Ethiopia' >Ethiopia</option><option value='Falkland Islands' >Falkland Islands</option><option value='Faroe Islands' >Faroe Islands</option><option value='Fiji' >Fiji</option><option value='Finland' >Finland</option><option value='France' >France</option><option value='French Guiana' >French Guiana</option><option value='French Polynesia' >French Polynesia</option><option value='French Southern Territories' >French Southern Territories</option><option value='Gabon' >Gabon</option><option value='Gambia' >Gambia</option><option value='Georgia' >Georgia</option><option value='Germany' >Germany</option><option value='Ghana' >Ghana</option><option value='Gibraltar' >Gibraltar</option><option value='Greece' >Greece</option><option value='Greenland' >Greenland</option><option value='Grenada' >Grenada</option><option value='Guadeloupe' >Guadeloupe</option><option value='Guam' >Guam</option><option value='Guatemala' >Guatemala</option><option value='Guernsey' >Guernsey</option><option value='Guinea' >Guinea</option><option value='Guinea-Bissau' >Guinea-Bissau</option><option value='Guyana' >Guyana</option><option value='Haiti' >Haiti</option><option value='Heard Island and McDonald Islands' >Heard Island and McDonald Islands</option><option value='Holy See' >Holy See</option><option value='Honduras' >Honduras</option><option value='Hong Kong' >Hong Kong</option><option value='Hungary' >Hungary</option><option value='Iceland' >Iceland</option><option value='India' >India</option><option value='Indonesia' >Indonesia</option><option value='Iran' >Iran</option><option value='Iraq' >Iraq</option><option value='Ireland' >Ireland</option><option value='Isle of Man' >Isle of Man</option><option value='Israel' >Israel</option><option value='Italy' >Italy</option><option value='Jamaica' >Jamaica</option><option value='Japan' >Japan</option><option value='Jersey' >Jersey</option><option value='Jordan' >Jordan</option><option value='Kazakhstan' >Kazakhstan</option><option value='Kenya' >Kenya</option><option value='Kiribati' >Kiribati</option><option value='Korea, Democratic People&#039;s Republic of' >Korea, Democratic People&#039;s Republic of</option><option value='Korea, Republic of' >Korea, Republic of</option><option value='Kuwait' >Kuwait</option><option value='Kyrgyzstan' >Kyrgyzstan</option><option value='Lao People&#039;s Democratic Republic' >Lao People&#039;s Democratic Republic</option><option value='Latvia' >Latvia</option><option value='Lebanon' >Lebanon</option><option value='Lesotho' >Lesotho</option><option value='Liberia' >Liberia</option><option value='Libya' >Libya</option><option value='Liechtenstein' >Liechtenstein</option><option value='Lithuania' >Lithuania</option><option value='Luxembourg' >Luxembourg</option><option value='Macao' >Macao</option><option value='Madagascar' >Madagascar</option><option value='Malawi' >Malawi</option><option value='Malaysia' >Malaysia</option><option value='Maldives' >Maldives</option><option value='Mali' >Mali</option><option value='Malta' >Malta</option><option value='Marshall Islands' >Marshall Islands</option><option value='Martinique' >Martinique</option><option value='Mauritania' >Mauritania</option><option value='Mauritius' >Mauritius</option><option value='Mayotte' >Mayotte</option><option value='Mexico' >Mexico</option><option value='Micronesia' >Micronesia</option><option value='Moldova' >Moldova</option><option value='Monaco' >Monaco</option><option value='Mongolia' >Mongolia</option><option value='Montenegro' >Montenegro</option><option value='Montserrat' >Montserrat</option><option value='Morocco' >Morocco</option><option value='Mozambique' >Mozambique</option><option value='Myanmar' >Myanmar</option><option value='Namibia' >Namibia</option><option value='Nauru' >Nauru</option><option value='Nepal' >Nepal</option><option value='Netherlands' >Netherlands</option><option value='New Caledonia' >New Caledonia</option><option value='New Zealand' >New Zealand</option><option value='Nicaragua' >Nicaragua</option><option value='Niger' >Niger</option><option value='Nigeria' >Nigeria</option><option value='Niue' >Niue</option><option value='Norfolk Island' >Norfolk Island</option><option value='North Macedonia' >North Macedonia</option><option value='Northern Mariana Islands' >Northern Mariana Islands</option><option value='Norway' >Norway</option><option value='Oman' >Oman</option><option value='Pakistan' >Pakistan</option><option value='Palau' >Palau</option><option value='Palestine, State of' >Palestine, State of</option><option value='Panama' >Panama</option><option value='Papua New Guinea' >Papua New Guinea</option><option value='Paraguay' >Paraguay</option><option value='Peru' >Peru</option><option value='Philippines' >Philippines</option><option value='Pitcairn' >Pitcairn</option><option value='Poland' >Poland</option><option value='Portugal' >Portugal</option><option value='Puerto Rico' >Puerto Rico</option><option value='Qatar' >Qatar</option><option value='Romania' >Romania</option><option value='Russian Federation' >Russian Federation</option><option value='Rwanda' >Rwanda</option><option value='Réunion' >Réunion</option><option value='Saint Barthélemy' >Saint Barthélemy</option><option value='Saint Helena, Ascension and Tristan da Cunha' >Saint Helena, Ascension and Tristan da Cunha</option><option value='Saint Kitts and Nevis' >Saint Kitts and Nevis</option><option value='Saint Lucia' >Saint Lucia</option><option value='Saint Martin' >Saint Martin</option><option value='Saint Pierre and Miquelon' >Saint Pierre and Miquelon</option><option value='Saint Vincent and the Grenadines' >Saint Vincent and the Grenadines</option><option value='Samoa' >Samoa</option><option value='San Marino' >San Marino</option><option value='Sao Tome and Principe' >Sao Tome and Principe</option><option value='Saudi Arabia' >Saudi Arabia</option><option value='Senegal' >Senegal</option><option value='Serbia' >Serbia</option><option value='Seychelles' >Seychelles</option><option value='Sierra Leone' >Sierra Leone</option><option value='Singapore' >Singapore</option><option value='Sint Maarten' >Sint Maarten</option><option value='Slovakia' >Slovakia</option><option value='Slovenia' >Slovenia</option><option value='Solomon Islands' >Solomon Islands</option><option value='Somalia' >Somalia</option><option value='South Africa' >South Africa</option><option value='South Georgia and the South Sandwich Islands' >South Georgia and the South Sandwich Islands</option><option value='South Sudan' >South Sudan</option><option value='Spain' >Spain</option><option value='Sri Lanka' >Sri Lanka</option><option value='Sudan' >Sudan</option><option value='Suriname' >Suriname</option><option value='Svalbard and Jan Mayen' >Svalbard and Jan Mayen</option><option value='Sweden' >Sweden</option><option value='Switzerland' >Switzerland</option><option value='Syria Arab Republic' >Syria Arab Republic</option><option value='Taiwan' >Taiwan</option><option value='Tajikistan' >Tajikistan</option><option value='Tanzania, the United Republic of' >Tanzania, the United Republic of</option><option value='Thailand' >Thailand</option><option value='Timor-Leste' >Timor-Leste</option><option value='Togo' >Togo</option><option value='Tokelau' >Tokelau</option><option value='Tonga' >Tonga</option><option value='Trinidad and Tobago' >Trinidad and Tobago</option><option value='Tunisia' >Tunisia</option><option value='Turkmenistan' >Turkmenistan</option><option value='Turks and Caicos Islands' >Turks and Caicos Islands</option><option value='Tuvalu' >Tuvalu</option><option value='Türkiye' >Türkiye</option><option value='US Minor Outlying Islands' >US Minor Outlying Islands</option><option value='Uganda' >Uganda</option><option value='Ukraine' >Ukraine</option><option value='United Arab Emirates' >United Arab Emirates</option><option value='United Kingdom' selected='selected'>United Kingdom</option><option value='United States' >United States</option><option value='Uruguay' >Uruguay</option><option value='Uzbekistan' >Uzbekistan</option><option value='Vanuatu' >Vanuatu</option><option value='Venezuela' >Venezuela</option><option value='Viet Nam' >Viet Nam</option><option value='Virgin Islands, British' >Virgin Islands, British</option><option value='Virgin Islands, U.S.' >Virgin Islands, U.S.</option><option value='Wallis and Futuna' >Wallis and Futuna</option><option value='Western Sahara' >Western Sahara</option><option value='Yemen' >Yemen</option><option value='Zambia' >Zambia</option><option value='Zimbabwe' >Zimbabwe</option><option value='Åland Islands' >Åland Islands</option></select><i class="dropdown-icon fa-solid fa-chevron-down"></i></div></div><div id="field_5_17" class="gfield gfield--type-textarea gfield--input-type-textarea gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_5_17'>Your specification</label><div class='ginput_container ginput_container_textarea'><textarea name='input_17' id='input_5_17' class='textarea medium'    placeholder='Specify the amount, brand and model of your equipment.'  aria-invalid="false"   rows='10' cols='50'></textarea></div></div><div id="field_5_21" class="gfield gfield--type-fileupload gfield--input-type-fileupload gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='gform_browse_button_5_21'>Upload specification</label><div class='ginput_container ginput_container_fileupload'><div id='gform_multifile_upload_5_21' data-settings='{&quot;runtimes&quot;:&quot;html5,flash,html4&quot;,&quot;browse_button&quot;:&quot;gform_browse_button_5_21&quot;,&quot;container&quot;:&quot;gform_multifile_upload_5_21&quot;,&quot;drop_element&quot;:&quot;gform_drag_drop_area_5_21&quot;,&quot;filelist&quot;:&quot;gform_preview_5_21&quot;,&quot;unique_names&quot;:true,&quot;file_data_name&quot;:&quot;file&quot;,&quot;url&quot;:&quot;https:\/\/circularitgroup.com\/?gf_page=212123417cd717e&quot;,&quot;flash_swf_url&quot;:&quot;https:\/\/circularitgroup.com\/wp-includes\/js\/plupload\/plupload.flash.swf&quot;,&quot;silverlight_xap_url&quot;:&quot;https:\/\/circularitgroup.com\/wp-includes\/js\/plupload\/plupload.silverlight.xap&quot;,&quot;filters&quot;:{&quot;mime_types&quot;:[{&quot;title&quot;:&quot;Allowed Files&quot;,&quot;extensions&quot;:&quot;*&quot;}],&quot;max_file_size&quot;:&quot;4194304b&quot;},&quot;multipart&quot;:true,&quot;urlstream_upload&quot;:false,&quot;multipart_params&quot;:{&quot;form_id&quot;:5,&quot;field_id&quot;:21},&quot;gf_vars&quot;:{&quot;max_files&quot;:0,&quot;message_id&quot;:&quot;gform_multifile_messages_5_21&quot;,&quot;disallowed_extensions&quot;:[&quot;php&quot;,&quot;asp&quot;,&quot;aspx&quot;,&quot;cmd&quot;,&quot;csh&quot;,&quot;bat&quot;,&quot;html&quot;,&quot;htm&quot;,&quot;hta&quot;,&quot;jar&quot;,&quot;exe&quot;,&quot;com&quot;,&quot;js&quot;,&quot;lnk&quot;,&quot;htaccess&quot;,&quot;phar&quot;,&quot;phtml&quot;,&quot;ps1&quot;,&quot;ps2&quot;,&quot;php3&quot;,&quot;php4&quot;,&quot;php5&quot;,&quot;php6&quot;,&quot;py&quot;,&quot;rb&quot;,&quot;tmp&quot;]}}' class='gform_fileupload_multifile'>
+										<div id='gform_drag_drop_area_5_21' class='gform_drop_area gform-theme-field-control'>
+											<span class='gform_drop_instructions'>Drop files here or </span>
+											<button type='button' id='gform_browse_button_5_21' class='button gform_button_select_files gform-theme-button gform-theme-button--control' aria-describedby="gfield_upload_rules_5_21"  >Select files</button>
+										</div>
+									</div><span class='gfield_description gform_fileupload_rules' id='gfield_upload_rules_5_21'>Max. file size: 4 MB.</span><ul class='validation_message--hidden-on-empty gform-ul-reset' id='gform_multifile_messages_5_21'></ul> <div id='gform_preview_5_21' class='ginput_preview_list'></div></div></div><fieldset id="field_5_18" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Privacy<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_18.1' id='input_5_18_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_5_18_1' ><span class='input-replace'><i class='check-icon fa-solid fa-check'></i></span><span class='label-text'>I agree to the <a href="/en/privacy-policy/" target="_blank">privacy policy</a></span><span class="gfield_required gfield_required_asterisk">*</span></label><input type='hidden' name='input_18.2' value='I agree to the &lt;a href=&quot;/en/privacy-policy/&quot; target=&quot;_blank&quot;&gt;privacy policy&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_18.3' value='3' class='gform_hidden' /></div></fieldset><div id="field_5_26" class="gfield gfield--type-turnstile gfield--input-type-turnstile gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div class='ginput_container ginput_container_turnstile'><div class="cf-turnstile" id="cf-turnstile_5" data-js-turnstile data-response-field-name="cf-turnstile-response_5" data-theme="light" data-sitekey="0x4AAAAAAAMgDbHQGHcJL1kY"></div></div></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_5' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Request valuation'  /> <input type='hidden' name='gform_ajax' value='form_id=5&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=be367a0ba9dd66e2bfe88215377966c2' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_5' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_5' id='gform_theme_5' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_5' id='gform_style_settings_5' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_5' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='5' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_5' value='WyJ7XCIyM1wiOltcImQ1MWQ3NTRmMzdhMmEwYmI3M2Y5ZDhlNWQwYzhkMmEzXCIsXCI4NjFjOTczY2ZiMzZlMjI5YWE1MTc4NTdiMDgwYTYzYlwiLFwiMWNkODcyNDZmNmNkYzA1MjE1MjE2ZDAyMDY1NDQ0NjVcIixcImE3NTUzZWIzN2JlZTRmMTlkZWIzOTUwN2Q1NDdhMjMyXCIsXCI4ZmVmZmQ2MGYxOGE1ZDBiMjgyMzNmYjBkODBjOWJjOVwiLFwiNThlMDBkYmU0MDUxYzMwZmQ3M2NhZGQxMjdhMjY4ZDJcIixcIjk1MjYzMmY5M2IyZDljYjlhMDc0YzA3NjFkMmZmYmUyXCIsXCI4YWI4ZTEyYmFkOTdkOTkwOGQ2MmY0ZWVhNzU2MzNkNVwiLFwiNmVjMjk1ZmNlY2MyNzhhNjZiMjZjZDViMTQ0ZmIyMGVcIixcImM3ODM3NWI0N2VhOTgxODEzZmNlNTJkZWZlZDM5OTlmXCIsXCJjZmE0Njk3YjRkMGNlYmQzMDgxZjEyM2I0M2QwOGVhZVwiLFwiY2NiYmJjMjhmODhhMzA5MzZmNTcyZjAzMjJiYjE4OGRcIixcImExZTYwNzE1NTQ3NzhhOTkxNjQ1M2I1MDA1Mzk1MTMzXCIsXCI3NDIzYzdkNGQ4YjdlYTQwOTAwNmYxMGEzOTkyYzVkN1wiLFwiMWMwNGFjMDVjZjVmODQ1ZTFhNzg4NTNkMmVhYjQwMjhcIixcIjA4YmM5YWMyNTliYjc2YTQ1OWJlYjRiNmFkNmE2MzliXCIsXCJjOWIwODU3NWY3NmJkNmYyZDQ2NmI3ZDZiY2E5MDAxZFwiLFwiYThlNjUzYzkyOGE4Mjc4ODJmZDA3MmY1YmM5NWNiNzRcIixcImIyN2QwNjc0NGVkNTg0ZDljZDY0ZWY2NjFkZGI5N2Y3XCIsXCIzNWEyMTk3ZGQyM2UxMjFhOGYwOTNiY2U1NjNlMGZhMFwiLFwiZTMzNzJiMzhlNDAzNGEzOTAyN2Q2NTgzNzM0NjJlZTNcIixcIjBmZTRlMzJjODljYWFkNWVhZWYwZWVjOGYxNzhiMGY5XCIsXCI4ZmMxZGRhNmM1NmYyNTMzM2I3YTU1ZDBkY2FjZGViZlwiLFwiNzAyYjhiZThkMDhhYjQ2ODQwOTIxYWU5MGY3NzNjNGNcIixcIjAxNzlkODdhYWY0NTg0ZjlmZjg0ZjgyY2M4MDQ3ZWExXCIsXCI0MjJmM2IyYmZhNzRmOGIwZGI4YmE2YjRkMTQwOGVhN1wiLFwiNmEyZDU4ZGVkMTI1ZDhlYmNhMzYwNTcwMmQ1YmFlZWFcIixcImE1YjhjZDllZDY1MjI5YWQ3OWFiNDI2Mjc2ZmMxM2Y0XCIsXCJjOGRiYTVmNTliNmU1ODM4YWU0OTI5NzllMjQxYTI1N1wiLFwiZGYzYzc5NTk0MDEyNWY2ZWNjM2Q4OWI5NzNlMTA2ZjFcIixcIjZhYTk1MzdlNmRhODIzYjNiZjRkYmRlNDM5ODgzMDMyXCIsXCI4MjM5YzRiNGU4ODNjY2Y1MTJiNjE1ZmNhYzg4YjJiMlwiLFwiZjQyMTEwNWUxODJjMzJjNzk1ZWUxODJlYWM2ZjYyZmZcIixcIjlmODlkZjJiZmQ4OGZiNzIwN2VlOTQwZjg3M2Y4YTk3XCIsXCI2MzZkM2MwOTFlOGQ1NTkwMTFlMjU1MzA0ZTMyNDRlYlwiLFwiODkxOTQ0MzEzYWVlNDdhMjJiN2EyNTg5MjkwNGE1NjBcIixcIjkzMjc2NTgwOWZjNmNhMDdkYTNiYWQ5MjJkNTdiNjE3XCIsXCIyNTQxNWIwOWM3MmJiMGQ3NTZlYWEwNjVmMWUzZWM2NVwiLFwiNzU3ZDY2YjQ5YTRkNGM3NjQ1NmE3ZGI2N2FkYzE2YTlcIixcImQyN2FjNWViMmJjMTM2ZTgzNmU2ZTYwZDM3M2JkNzZmXCIsXCI1MDg3YjMwYzliMGMzM2MzZmFkOGZjYmRhOTQ3M2Q3NVwiLFwiNzYwZTk5N2MwYTNkM2JmMTIyYWFjMzJlMDViYjAzN2ZcIixcIjFmOWFlOWE5ZThkYmY4MjNkMjZkM2Y1ZTQ1ZDBkZGFmXCIsXCJkNzYxOTU2NGY2MTI2MGIxMzU1OGUyMTE5M2FlMDRjM1wiLFwiNTJiNTJlYjJkZDUyMDQxMzJkMzcwMmRjMmFhZTg3YzFcIixcIjBkMDJiM2U0NGJiYmYyMDA1YjU4NmQxMzMyNmU0OGVjXCIsXCIwMzdkNWNkYTFhNTM2OWQzN2UxNDNlZWU5NGRhNzU4N1wiLFwiMjY0NzZjN2EzY2ZhMzg1MGFjYTJjM2Y2YTc5MDFhNDFcIixcImE3MGFkMGJlNGNhNDFhMzJkYmFjYWM5NGQyYmQ1OWIxXCIsXCIyMGY1MWYzNWE0YzUyNTI0MWUzNjUwOGMxYmRhMzI0Y1wiLFwiYjUwMTQ3NjNlZDdjY2NjNjJkMTVhMWZiMjlmYWM4ODVcIixcIjJjMzU3NDZhNzNjOTYyZWQ4NDlhMmU1OWRmMTYyYTZjXCIsXCI3Y2ViYzQ0NjEwYjFhYjI5ZjRhMDk3MTlkZGJkN2QxN1wiLFwiZjc3YjkzZGI3NGZlMGE3MzdkNDc1Y2ExYmRkYzk0MTRcIixcIjk0NWU2YWVlODBhZTkwZmFmNGYwNzE3MmYxZDQ4ZmU3XCIsXCIwNDk0NGZkZTI3MjE0MTkxNzI5ODY2ODM4Yzc4MTdlMlwiLFwiMGZhZjY2YmM4YmMxM2ZkZGNiNmIxODk5ZGI1MzBkZDNcIixcIjBkNjFjOTRiYjU5NDJkMWU3ZDJmZGEwNDU5OGVmNWY4XCIsXCJjMmQxODdmYmNjYzZkZjUxZjFmYzZhMzcwZDM4MzgwNVwiLFwiZjViOGM3MDMwMjYwN2UxYjU5MzI4YjliMDBkZmMzMDRcIixcImMwMDQxNzlhNWM3ZWM4YjEwM2E2ZWZmN2ZhNGY3OWY4XCIsXCI0ZjkwZGFmOGMzMWFkODg5Y2NmZWVkNzVkNmEyOWUyNFwiLFwiZGRjNGExM2Y1ZjY1ODRhM2M0MTI4Y2ZkNWY5Yjc3YjdcIixcImY5MjFmNDc0ZDlhOTcxYjUxOTg4M2M5YzMxZjcyNjJjXCIsXCIxNjAyNDdiNjQzOTgyMjkwZTA2NDM3ZjU2OTNlNTYwMFwiLFwiOWVmNDQyMTczM2NlN2EyYzU0NTk4OWE2NDMxNGNjYzRcIixcIjg0NzZmOTliMDg3MjNkZGYyNmUwZGIyZTE3YzYxZTE5XCIsXCJjODcwNzkxZTk2NzRkNGYzNTVmNmRmMjE1ZTNiOTA1MlwiLFwiMmRkYzI0NWQ0NTg2NzE0YjAyNDE0M2YwNjE5YmZiYWFcIixcIjZiYTI2OGZhMjY5NzEwMmUwNjg5ZTMzYTNlZmM1YWZiXCIsXCJlODBkZWYyYzA4YzMwN2QxN2Q1YWMxNWY5ZTMwNTk4N1wiLFwiZWQ5ZWU0NWE0MzYzMGQ4YTdhOWFlMTZjNmJlNDY5MTVcIixcIjE2NjBmODU0NGY5YzA1OGUwYzZjN2E4MzM0ODIzNTI2XCIsXCI1N2RkNmZhOGE0YWZmNjRjYWRmYzkwOGIxZTM0ODgzMFwiLFwiNGU0ZGQzZDM4YjEyZjQyY2VkODlmZmRlY2JhMjlkNGVcIixcImE4NzlmMDBhYzViMmM5MWNiNTQ5ZTI4ZWMyZTM0MjE0XCIsXCI2NGVlMGU0YWVmMDQyZjUwOWUxZTA1NDhkMWFkNDY4ZVwiLFwiZmM2MDI3MDM2Y2UwMzVlZDUwNGExYzUxYzkxYTUwMDhcIixcIjQxZDg3ZWRjYzFiYmE4OTMyYzZkMzg4MjlhN2Q0OWYzXCIsXCJkZWZhYjgxMDU5MDY5ZTA2MjVhNDE2OWZkNWUwZjJmMVwiLFwiM2NlZjNhZGM4MjM5NmVmNjI2NjJjMzYwMmIwODY5YjNcIixcIjdkNjFhODJkMmM5NmNjZjM5Y2UwMWZiNzcyYWIyZmRlXCIsXCJlNmI0YmZlZmUyOTNmNjdlNjcyZjAzMjViMTE3OWIwY1wiLFwiOTgzYmJiNjJkOTczYTA5ZjA0NTNmMGZmN2JiOTJmYzVcIixcImM1MDAyNjkyYTk3Nzc4ZDhiYjczOTRiZDBkZjYwNmRiXCIsXCI2ZTgzYzU0N2VmNTU2YzdkNjZhMmIxODhmNmIwNGM4ZFwiLFwiNWI4ZWM3ZTgwNDhmYzRkZTA4NjFhZGRhYjM0NzdlMGRcIixcIjVjNzRhMzIxYTJmZDU4ZmRmM2IyOGQ0Yjg0NzNiNzMxXCIsXCIyNTY3N2E2MWY4NzUyN2YyYmE0ZWUyZjYxYzA3MjE0MVwiLFwiMzViMGUzNzY3ZTAyNmI3M2JkOTdiMDQ0ZDg5OTNiNDhcIixcImE3MTI1MjhhMmU2ODRkNTc0MWI3NmI1OWQ1NWVjMDczXCIsXCIxMzRlZjBhOGFkYzBlYTBiMWM5MmFmYmRjM2I4YTI3YlwiLFwiNTAwMDczZGE4NTI0YWQ1NzA0ZmI3NzVlZGI1Zjg1MmFcIixcIjRmNzVlODYwMjA3NTJmYzc0OGQ0MDg4YjcyZmYxZmNlXCIsXCI3OWRjYWMwYWI0ZDVkODNlMDlhNDc0M2ZkNGUxM2ZjMVwiLFwiYjA0NWVmMDlmMDI2NzU5MGQ2YmQ4YWVmYzQ3ODcwMzNcIixcIjQwYzRiNmIxMjk4OGQ5Zjk3NzIyZjM0NDFmMmU5OGUxXCIsXCI4MzM1YTBhMTY3N2JlZTcwNzZmNjNiNzMzODNmNmMwOFwiLFwiNjJkYjBlYjE2NzBlMmM1NDk4ZTBjZGUzYjMxYjdlYjBcIixcIjI1YzUwZWU2NTk4ZGM4YjljY2ViNzU2YjA5MjQ2NDQyXCIsXCJjZWRhYTk4Yzg2MWU5OTQ3NGUxMjMwMWNjYjNlZjc2NVwiLFwiMjg0MTgwMjgwOGNjMWJiZDU0MzgxZTFkMDhmZjA5MTZcIixcImIzMGZiMDA5ODZlNzQ0MDI3MzNmMGRiMTU5YTYwZThhXCIsXCIyMjA3MGU2MjE5ODE5YzU5ZTM5ZDEyNGQ4ODVlZmI1ZFwiLFwiOGYzYmRiZmIzMGYxYTA3NDkxY2MwY2NlNDBjYzg4MGJcIixcImQ3MThiNDcxZDA4MjIyM2ZmZWIxZjNhYTBkYzlhZGZiXCIsXCJlYTMwZmVmMjAyNGM4ZTA1MGRkMTE3ZDY3NGU0MGNmZVwiLFwiYmJhNDI0Yjk1ODM1ODU1OGU3MjFhYTdlOGNmOTI2YjFcIixcIjhkN2ZlNDA3MGFlNzQ2NTdmMTY0YzY3NTQxMTliMmM3XCIsXCI4MWQzMmJkMTI2YzRmMDQzNGY5ZTFmNTllNTdiOTI1NVwiLFwiZWZhODA3NzcwMzI2OWQzYTQ2ZTc1OTM0MmE2YTI1YThcIixcIjRlYjhiZGNhY2FlN2JmNDhjNGYyNDAzMjZjNjE5Nzg5XCIsXCI4NTkwNzRlYzkwYWIzNzMwYWVlNGQ0ZTE5NmNmNzhmOVwiLFwiYzhkODIwZWNjOWU3YjM5NDIyMzYyNTVkYzhiYWI0NWZcIixcImEwMzEwNWU3ZjNlNDliNTAzYTQ1Zjk1MDY5YzEzNWFhXCIsXCJmZTJiNjE3OGRlYWU1ZDhjMjM2ZGExZGEzZjZkNGExOFwiLFwiYjJkYWM4OWE1MGYzZjEyMTg4NTE1ZWYyZmZlYmU5NWVcIixcImRmOTcxOTRlODAxNGEyOWFlNTZmZTg0YjVjMDM3MDc3XCIsXCI4ZjdjM2M1NzFhZjZhZWIwYjIxZGFjYjZiNjk4OGM4NFwiLFwiYjA3NTExMjlkNmIxOTUxNDAzMDQ0YTY1MDk0MTM4OTNcIixcIjEwZGVlZGMzYjQxZmI4ZjEwMzk2ZDVhYzFiM2M5ZjgzXCIsXCIzMjlhOGUxZTlkZjEyMjgyZjNkYmJlZWQxOWM3Mzc1OVwiLFwiMGJjYjcxOTJiMzliZWE3NmE2OGExYWMwMjIyMjdiZTBcIixcIjMyMGZmMjM3OGYwNTRjMTM3NTA0NGEwY2U5ODljNzY5XCIsXCJlNmY1YjM4NzJiM2I1NjU5MmNmMWJjZGJhZjU5ZTIzZFwiLFwiMmYwMWUwNmE5ODE1Y2E4MWE2ZmVmMGFhMzViOGI3MWJcIixcImUzY2I2ZTljNGM1NjJmY2MwNGY4MTE0YjkzNjdlZjZmXCIsXCI4YjQxZjZkZTIwNzYwMmY4ODdkMTgwNGM1MDNhMzY5YVwiLFwiMjI0MzUwOGRhYjcxNDNkNzIzNTA0NWE3YWYxYjEwYjZcIixcIjYzOGI5M2NlZDA3OWE5ODQyOGRlZWJlMDNmNzkwZjhlXCIsXCIzZGUxY2I0MTdlNTI5NjQ5Y2MwZjQ1MTI4NGE5ZDc2OVwiLFwiYjhjMmIzMTZjYjg2OWI1MWFkMWNlYTM0NDkyM2Q2OThcIixcIjVmMTUwZDlmM2I3NzY1MTE4MTZiN2Y5YmNmMGJmZTdkXCIsXCIwOTZiY2I0MTcyNjg0OTY5NmZkZmY1ODNlMDczZWUwY1wiLFwiNzA5Njg0NTI1YjUzODYyZWE4YTEzYmIzZmQ1MThlMDlcIixcImM4ZjUxYzg3Mjg2MWU4MDVhZTE1YjY4Nzk1Y2EyYTA1XCIsXCJlM2M0OWI1ZjU5MGQ2YjJhNzgwNmY2MGY4MDZkMTJiYVwiLFwiZmRlYjk2YmY2YTliOTA2NTU2Y2EzMTM5M2E1NDY0MTRcIixcIjY2MzNhYTZmMTM4OTIwZWI1ZmEyYWEyMTVjNDY2OGZjXCIsXCI1YzYxOWVkNjAwMDVmMWM0N2FhYmFmNjVlMWI5NGU1NVwiLFwiY2IzMTU3YjkyYmU0NDkzMDQ3OTEwODg5Y2FmN2IxZGJcIixcIjEzM2FkYzk3MzFiYWYxOGYzNzcxYmRhN2E5ZThlOWRhXCIsXCJhZDJhZWM1Y2ZlMDVlYTA1YjhlMDJmNWM2OWJhNDdkN1wiLFwiYTFmYTZjMzRmNzAxNjUyNzVhYjAwYzE1OWQ1NGNmNzZcIixcImJhZGZhY2M4OTMwODdjODBjNDQ5ZTZhMzU2YzYxZjhkXCIsXCIwNWQ3MjNiZDgzNmZkMTU1NWU0ZDczYzMwNTkyNDhjMlwiLFwiOThkYjZlYTdiM2YwYTEwNGMxOTUyMGZiMjRmZGVjYTRcIixcIjEzODlhMWFjZDE5YTFmYTgxNjUxODM3YTgyMzFmYzA3XCIsXCIwMTVjOTM2YmNkOTgzOTA1OTcxNWMzY2U2ZTg5Mzc2NlwiLFwiZDk2Y2I2YmZlMTNlODIyMjVmNGZmM2EyMWI3ZGE5OTlcIixcImRjYmU5MGIxMWVkNzUzMTU5MTBkMDgxYTY2MTg0NmFjXCIsXCJhNWZmOTRjYzlmM2UxYzBlNzgwOTgxODk4YTlkYWRlMVwiLFwiYjhlZGI1N2YzZDM4MmQzNGFlMmVkMTYwZjQ4ODQ3ZThcIixcIjAzMjgyNTM2ZmNkNjQwZjgwZmFjZjdkZGI3OGM1NTUwXCIsXCIwYWJmZDQwNGM2YTIzMDM1NWJhMmE1YmJmN2ZiMjMyYVwiLFwiMjk1OGNhYWRmYjgwNDlhM2E5ZmU1OTQ1YjgwNDc5MDJcIixcImNmZDI4NzczMDVhNTM0YzcwYjljOWIwMmY3NzQ2MGRhXCIsXCI0MzVhZWFmNDQ5OWQ5ZDg1Zjg3ZjU4ZDdiNWQxYWM5NVwiLFwiODJiOGNmNzlmYjFiOTNjYmJlZjkwZTZlZjk3ODFlNGRcIixcImU4YzUyYjlhYjU2NTNjNDc1NTdjZTk1NDhjMjc3MmY4XCIsXCI2MDZjZjc2MjI5MGZiOWIzMWVlMTg2NjZkYjg1ZWNkNFwiLFwiMGRlOTdkMWJiY2U0ZmU1ZDI3YzdmMDRiZDg5OTk5YTdcIixcImNiNDFiOTU3OGYzYjk0ZDA0ODIyMzQ1ZDcyMzI1NGU0XCIsXCI5MmNlNWY0ODEyYjU2ZDJhOWUwYjU2ZTZjMWExZWJlMFwiLFwiOTc0OGZjYTliYTM1NjdiYzYwMmVlMmU1YmY4Y2QxMzBcIixcIjM0ZmJkY2NiOWY4MTg3MGQ4YTA4MjA0ZTRhY2U3OTg1XCIsXCI0YmJjN2MyYWI5ZTdjZWQ2OWZlYzIzYjhiNGM3NDlkOFwiLFwiYTkxZGJjN2JiNjVkMDM5M2Q2NWI5NDQ1YzU2MTFiZjBcIixcIjc5MmEyMzUzODcyODEzNzY2OWExYzMwNTAxODlhZGRkXCIsXCJkZTJmYjJmYmZlNmUzMGI2OGJjODQ1YmJhMTQ0ZTQ3ZlwiLFwiZGUxZjAwMzdiMThlNjFiOThiZWY3MzYwNzExYWFkOWRcIixcImUyNzlkMThhNDlmNmRlYTlmMmUwMGJiNmM5ZjQ4YTE4XCIsXCI4OTUyYjQ4MGVhNmY0ODUwMzU3OTEyOGE5MzczYTA3MFwiLFwiN2MzYmY1MDIwNzRmZDQ5ZDQ2ZTNhOGE1YzFhNjA4YWFcIixcIjBmNTE4OGQ1YTYzNWZlNTM2YmEyYWVmNzhlYmM1MzliXCIsXCI3MWE0ZGFiYWExZTYyOTdiZTVjZmNkYjliYTk3YzMwM1wiLFwiNTYyMmUxM2Q3ZjgyYzhlOGZjY2NiZjNlMWY1YTMyM2JcIixcImYwZmYyYjllZjQ1ZjgwNmU2MmMyMTNkOTkxZWI2MTlkXCIsXCIxOTI1Njk3NDY1YmE1YmNkN2M3YjQ1ZTZlOWJiOGZlNVwiLFwiY2Q5NzU5ZDQ3YzA0MzgwZjM4OTdiMDY1MzMxNzRlOTJcIixcImFkZGNlNjkxZjEyNmNhNjI2Y2ZmZjU3YjFiODcxODk2XCIsXCI2ZjYyNzJhY2Q5ZDRkM2I2Y2IyM2JjMjhmZDI3MTllM1wiLFwiYzgzNzJkZjA1ODc1MzM0N2E4Mzk5MDU1ZjI3ZmUyMThcIixcImQ1ZGFiNjI5Mjg2NDhjNGVjYjY1MTNmNDhhYTA1NTI4XCIsXCI1NDA5Yzk1NWUzOTNmMmYyYzE1ZTJiNzIyMjQxZmJhNVwiLFwiNTMxNWEzNGExODM4ODc0N2VkYmI2ZTEwMWZhZTM3MGZcIixcIjNmOTBiMGFiYWEwOWM3ZWNjYjNjZWNkMmVkZmEzNWEzXCIsXCI3OGI5NzM3ZWRiMDg2NWUwYzFiZjQ0MjQwNDA4ZTExM1wiLFwiOGQ1OTY4ZGIzOTE2MGZmZTM0YzU1Mjc1ODRhOGRiYzdcIixcIjhiZWYzNjgwNzg5YTA1MjE1MWY2MDc2ZTQ4MjNmYTA0XCIsXCJkZGQyNjlmYzIwNjgxNzZkN2E5NWQ4ZmMxYzFlNjYxZFwiLFwiOTE0ZmU4YmM5ZjBhOWE3NGZjODRhMTkzYjRlYTQ0ZGNcIixcIjkwYTZiOGRhMWNjNThkYWNlZDE0ZDliNmY4YTQ5NGI4XCIsXCJkYmZlN2U0ZmNlYzc5Y2VhNDA4NmRiMmVhMzAzYmFjM1wiLFwiNTY2NWUzODM3Yzk0NzI0MmIwYTQ1ZjBhMTFlOWEyZjRcIixcIjYyYjhjMThkOWY1MDIzYWQ1ZmVmNzJjMDhmMGQ2OThmXCIsXCIwOTk0NmJmYzMxMDVmOWFhYjAyOGY3NzlkZDZmZTYyZFwiLFwiNzEwMDJmMWFjMjEwOTBiZGU3MGFiZGJlOGNmMmYwMDlcIixcIjRmOGRmNmI4ZmQ1NmFkMjE5Zjk4YjBiYjMzYzFkMGY4XCIsXCI3ZmJkY2EzZDFmOWZjOTI5NmJhNDc5MzY0N2I1MjQ4YlwiLFwiMzZjM2NkNDIyYjUzYWVhNGIzZWJhYTBjZjMyYmQwZTlcIixcIjk1ODNkZDk3MDUxMjdmZDdhZjk3NmQ5MTU2ZTBiY2MwXCIsXCI2NDRjMTU5OTQzMTA1NjVlMTIzNjkzOTg2NjlmNDgwZFwiLFwiZDU5M2VjYjRlYTU3NzUwMTc0YjQ5N2E4MjczYWU0NGJcIixcIjJjNTI3YzZlN2RlYzFkOWE4YWVhOWUwODA1NWYwYTVlXCIsXCIwMGZiZmNjNzdlMjcxZjA3ZjIwNTY0OGM4OTkwNTMzOFwiLFwiODM1MDViOWYwNGIxNjY5ZTIzNjlkMDViZDhiN2YyOGVcIixcIjA4YzFmYmY4MjcxMTIxYTM3ZWJkMmIyY2NiYmYyYmE0XCIsXCJhNzQwMzg1NTM5OTA0OGI5NWNkNWQ3ZjlhMmQ3ZGI2NFwiLFwiYmYzODk3ZDFiNDk2ZGVmYjMwZTQyNjRhNzRiZjhjMjFcIixcIjdlZmM3MjEwZmM4M2EyNDcyZWQ1YjVmYzExOTI4ZmM2XCIsXCIyYjVjMjY4YmQ0NGI1NjRmMDgwZDFmZTUzNjYzOWE4NFwiLFwiYzYwNzI3NTczYjk4N2U3NDYyZDdlMWE0ZGVmM2ZiOTFcIixcImQ4NWM0ZjIxZGU5MzBjZWYwODcyMTQ4YjZkYzkxZWMwXCIsXCI2MzllYzE5NGFmZTYwNWIzOTQwNWI2YmQwMzQzNTg4MlwiLFwiNGUzYjFkNzFhNjUxM2RkYzkyOGE1YjQyNzk4MDI3ZTVcIixcIjc0NmNhNTViYzkwM2E2MGJiMjBlMmIwMWQ5OTc5NDBhXCIsXCJiZDI4YTc5MjgzYjIyODJhMDgyYTkxNDU1YjJkNWVjMlwiLFwiMjk5YTcxNWE5NDZhZmY4MTEyNTRhZWJjNDI1NjM1YmJcIixcIjhjMTNjOWVhOTE1NDZjNWQ4ZGFkOGI4NDY2ODBlNzQ2XCIsXCJmODdjMDk4YTE4ZWJjMDFjYjEwNTJmM2Y3MWRiZGY2YVwiLFwiYjM4MmE5NjFhYWQxNTgyYmQ2YjVlNTE1NWQzZTFiOGZcIixcImNlODBiZjE5ZjNkOWJhZTJkMjcxNzlhNWRlN2UxNjQ3XCIsXCJmMDhiZGZhNTA2NTVkYTVhZDhjYTA2NDQyYTE2YWY4ZFwiLFwiMTcwNzY4NTdmY2FhODFmOWI4ZDhmYmUwNjM4NjNmY2ZcIixcImQxY2Y3MjI5MWVhZDI2MDcwZmQyOTExNjA1NjYyZjQ0XCIsXCIyNDI0MmNhYWM4MDMwNjI3MDljNzUzMGM0NTM1MTc2ZVwiLFwiZjg3NjI4YTA4ZmIwMmQxZWZkYWIwYWEwMTY0M2RjOGJcIixcIjU4OGE2OThlMjViMWYxZTkxMDYzZWRlMThjNjcxODZmXCIsXCIxMzMxMTQwMzQ1OWNlOTM0NmE3Y2RhOTY4MzQ3YTVkM1wiLFwiN2M3ZTNiOWM2YWE2ZGQxNTBmNzFkOWYzZjQxMjhlYWZcIixcIjZjOGM4MmEwNGE3MTQ4N2RmZWM5ZjY0NDJjYTYyZDg3XCIsXCJkNWE3YTcyOTA2OTU2Y2RhNmFlN2FmNTg4NmNjYTc5ZlwiLFwiMmE4NDJlZTAyMTg5OGUwMzYzN2I5ODNmYjFiMWVjMjFcIixcIjBlN2Y5YTZjZTc0MDAzNDE0ZTkwYTk2NmVkMzNmNjEzXCIsXCIwNmM2MzY1OTY0ZjFmMjcwMTRiYWUwNWU5Nzc2MmRlMFwiLFwiOTllMDE0MmNhM2NhZDMyNDQ2OTZjMTJmMTZkNDhkMWRcIixcImY0NjcxM2ZlMzM1NTRjYjA4MTFhMTU4MTQ2NDA5MjEzXCIsXCI4MTNiMTUyOWQ5ODY2ZjlhZDdkN2M3MzZlM2ZkYjdjNFwiLFwiMjU2YTI4ZWE1NmZkN2M0MDcxYWIyMzE0ZTkxMzVjMzNcIixcIjYzZTI4ZTRjOWI4YzA4ODRhYzc3MGMwMTAwNDdkMzExXCIsXCI5NmE3OTRkN2M2MTU2NjE2NmNiZTdjMDM2YTVlNzE4OFwiLFwiNjAxMDcyM2NmNDFjMmViNzQwMTkxMDQzMjg4Y2U2NjJcIixcIjBiYThjYzkxYjJhMDA5M2ZhMDZjNjJmZTZlMTdmYWUwXCIsXCI3ZmUxYjhkZjIyMTQ2NGRhYjg5NzU2MjNlMDUxOWVhM1wiLFwiMmQ5NDdlYzliMWU2NzlhZTZhMDM3NjE3YzI2MjlkYTZcIixcImM0NjZjNzcyMThmM2FiOWNiNzBkZjA4OTU2M2FkODUxXCIsXCJiZmY1Zjk3NWI5MjVmZGE2OGIwMjdkYThmNzdkMDJiNlwiLFwiNWQzNTRmNzY0MzdhOTBjNWIwNjRhMzEzMzcyYTZhZjRcIl0sXCIxOC4xXCI6XCI2MDU2N2MxNDg4MGNhYTA1MTFkMzVkMjNlOTljMDljYlwiLFwiMTguMlwiOlwiNDZiN2Q3YzZmMzY5OTAyZjQ2ZmE2NTE2OTE2MjE2M2RcIixcIjE4LjNcIjpcImZhM2JjNjg2OWVlNTQ5NDZlYTI4NDdmZGNkN2MzZjA4XCJ9IiwiODRiODUxOTQwNzg0MjkyNmYwY2FlNjhmN2JhZGQxODUiXQ==' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_5' id='gform_target_page_number_5' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_5' id='gform_source_page_number_5' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            <input type='hidden' name='gform_uploaded_files' id='gform_uploaded_files_5' value='' />
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_5' id='gform_ajax_frame_5' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 5, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_5').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_5');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_5').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_5').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_5').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_5').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_5').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_5').val();gformInitSpinner( 5, 'https://circularitgroup.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [5, current_page]);window['gf_submitting_5'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_5').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_5').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [5]);window['gf_submitting_5'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_5').text());}else{jQuery('#gform_5').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "5", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_5" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_5";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_5" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 5, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end:contact-cta -->
+ <!-- flexible-cards -->
+<section  id="Locations" data-magellan-target="Locations" data-magellan-name="Locations" class="flexible-cards white">
+	<div  class="grid-container wide">
+					<div class="grid-x grid-margin-x">
+				<div class="cell large-10 large-offset-1">
+					<div class="intro-content text">
+						<h2><strong>Our ITAD locations</strong></h2>
+					</div>
+				</div>
+			</div>
+					<div class="grid-x grid-margin-x grid-margin-y large-up-4 small-up-1 medium-up-2">
+							<div class="flexible-card-item cell">
+					<article class="white-bg card-image">
+						<div class="card-content small-order-2">
+							<h3 class="h5">United Kingdom</h3>						</div>
+													<div class="image-container small-order-1">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="strl-medium" alt="ITAD UK" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_uk.png.webp"><noscript><img width="600" height="600" src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_uk.png.webp" class="strl-medium" alt="ITAD UK"></noscript>
+								</div>
+												</article>
+				</div>
+								<div class="flexible-card-item cell">
+					<article class="white-bg card-image">
+						<div class="card-content small-order-2">
+							<h3 class="h5">Belgium</h3>						</div>
+													<div class="image-container small-order-1">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="strl-medium" alt="ITAD Belgium" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_be.png.webp"><noscript><img width="600" height="600" src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_be.png.webp" class="strl-medium" alt="ITAD Belgium"></noscript>
+								</div>
+												</article>
+				</div>
+								<div class="flexible-card-item cell">
+					<article class="white-bg card-image">
+						<div class="card-content small-order-2">
+							<h3 class="h5">Denmark</h3>						</div>
+													<div class="image-container small-order-1">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="strl-medium" alt="ITAD Denmark" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_dk.png.webp"><noscript><img width="600" height="600" src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_dk.png.webp" class="strl-medium" alt="ITAD Denmark"></noscript>
+								</div>
+												</article>
+				</div>
+								<div class="flexible-card-item cell">
+					<article class="white-bg card-image">
+						<div class="card-content small-order-2">
+							<h3 class="h5">Netherlands</h3>						</div>
+													<div class="image-container small-order-1">
+									<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="strl-medium" alt="ITAD Netherlands" data-lazy-src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_nl.png.webp"><noscript><img width="600" height="600" src="https://circularitgroup.com/wp-content/smush-webp/2025/07/landen-voor-itad_nl.png.webp" class="strl-medium" alt="ITAD Netherlands"></noscript>
+								</div>
+												</article>
+				</div>
+						</div>
+	</div>
+</section>
+<!-- end:flexible-cards -->
+
+	</main>
+	{% include 'footer' %}
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/stuurlui\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZLH4DC" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->        <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        
+
+
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/jquery.countTo.js?ver=1763439373" id="counter-js-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://circularitgroup.com/wp-content/cache/min/2/wp-content/plugins/wmd-co2-calculator/scripts/js/menuCounter.js?ver=1763439373" id="counter-js-custom-js" data-rocket-defer defer></script>
+<script id="swp-live-search-client-js-extra">
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","origin_id":1707,"config":{"default":{"engine":"default","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#424242","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js" id="swp-live-search-client-js" data-rocket-defer defer></script>
+<script src="https://kit.fontawesome.com/483c98a683.js" id="fontawesome-js" data-rocket-defer defer></script>
+<script id="nocache-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/nocache/nocache.min.js" id="nocache-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/vendor.min.js" id="vendor-js" data-rocket-defer defer></script>
+<script id="scripts-js-extra">
+var strl_vars = {"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","stylesheet_directory":"https:\/\/circularitgroup.com\/wp-content\/themes\/stuurlui"};
+</script>
+<script type="rocketlazyloadscript" data-cookieconsent="ignore" data-rocket-src="https://circularitgroup.com/wp-content/themes/stuurlui/assets/js/scripts.min.js" id="scripts-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/dom-ready.min.js" id="wp-dom-ready-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/i18n.min.js" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-11-13 00:57:08+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/dist/a11y.min.js" id="wp-a11y-js" data-rocket-defer defer></script>
+<script defer='defer' src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/jquery.json.min.js" id="gform_json-js"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_legacy = {"is_legacy":""};
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"d047e418f52f1a4b6ee813320a23d2d4","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/gravityforms.min.js" id="gform_gravityforms-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/plupload/moxie.min.js" id="moxiejs-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://circularitgroup.com/wp-includes/js/plupload/plupload.min.js" id="plupload-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js" id="gform_placeholder-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js" id="gform_gravityforms_utils-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js" id="gform_gravityforms_theme_vendors-js"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"d047e418f52f1a4b6ee813320a23d2d4"},"ajax":{"ajaxurl":"https:\/\/circularitgroup.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"01f49985ab","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/circularitgroup.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"bd55b38fd0"};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js" id="gform_gravityforms_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" id="gform_turnstile_vendor_script-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/vendor-theme.min.js" id="gform_turnstile_vendor_theme-js"></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src="https://circularitgroup.com/wp-content/plugins/gravityformsturnstile/assets/js/dist/scripts-theme.min.js" id="gform_turnstile_theme-js"></script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 5) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "5", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_5" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_5";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_5" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 5, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://circularitgroup.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "https://circularitgroup.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://circularitgroup.com/search/?_search_search={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
+		</body>
+</html>
+<!-- Rocket no webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
