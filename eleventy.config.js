@@ -9,8 +9,4 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('bundle.css');
     eleventyConfig.addPassthroughCopy('img');
     eleventyConfig.addPassthroughCopy('uploads');
-
-    return {
-        pathPrefix: "/ws/"
-    };
 }
